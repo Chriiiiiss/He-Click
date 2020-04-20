@@ -1,11 +1,39 @@
 html{
     font-family: 'Oswald', sans-serif;
-    background-color : #ffffff;
 }
+
+body{
+    margin: 0;
+}
+
+/* MAIN COLOR 1 : #2f3640 */
+/* MAIN COLOR 2 : #ecf0f1 */
 
 
 /* HEADER */
 
 .header{
     text-align: center;
+    background: #2f3640;
+    color : #ecf0f1;
+    padding: 20px;
 }
+
+h1{
+    font-size: 120px;
+    margin: 0;
+}
+
+.by{
+    font-size: 16px;
+}
+
+/* MAIN */
+
+.main{
+    background: #ecf0f1;
+    color: #2f3640;
+}
+
+
+/* FOOTER */
