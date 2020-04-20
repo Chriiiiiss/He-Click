@@ -31,6 +31,18 @@ h1{
     margin: 0;
 }
 
+.index{
+  position: absolute;
+  text-decoration: none;
+  top: 1%;
+  right: 4%;
+  font-size: 20px;
+}
+
+a.index:hover{
+  text-decoration: underline;
+}
+
 /* MAIN */
 
 .main{
@@ -38,7 +50,7 @@ h1{
 }
 
 .container{
-    margin: 0 40px;
+    margin: 0 80px;
 }
 
 h2{
@@ -55,7 +67,7 @@ div[class*="text-"]{
 .play{
     margin: 0 auto;
     text-align: center;
-    padding: 80px 500px;
+    padding: 80px 450px;
 }
 
 a{
@@ -72,6 +84,17 @@ a{
 
 .text-play:active{
     color: #ecf0f1
+}
+
+table{
+  width: 80%;
+  border-collapse: collapse;
+
+}
+
+td{
+  border: 1px solid black;
+
 }
 
 /* FOOTER */
