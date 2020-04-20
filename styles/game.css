@@ -1,0 +1,149 @@
+/***** MENU TOP LEFT *****/
+
+    /* LIST GESTION */
+    ul{
+        list-style: none;
+    }
+    
+    nav li ul{
+        display: none;
+    }
+    
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row;
+        width:200px;
+    }
+    
+    a{
+        text-decoration: none;
+        width:100px;
+        display:inline-block;
+        padding:15px;
+        text-align:center;
+      }
+    
+    
+      li{
+        position:relative
+      }
+      
+      ul, li{
+        margin:0;
+        padding:0;
+      }
+
+      /* MENU N°1 & N°2 */
+
+      img[class*="leave"]{
+        position: absolute;
+        left: 350px;
+        top: 10px;
+        max-width: 8%;
+    }
+
+    img[class*="leave"]:hover{
+        cursor: pointer;
+    }
+
+    img[class*="button-"]:hover{
+        cursor: pointer;
+    }
+
+
+    /* MENU N°1 */
+.menu-character{
+    /* background-image: url(../images/menu1-full.png); */
+    background: #333333;
+    width: 400px;
+    height: 675px;
+    position: relative;
+    color: #ffffff;
+}
+
+/* MENU N°1 - TOP */
+.menu-character-t{
+    padding-bottom: 35px;
+    box-shadow: #ffffff 0 4px;
+}
+
+.main-character{
+    padding: 60px 5px 30px 10px;
+    box-shadow: #ffffff 2px 0;
+}
+
+.name{
+    display: flex;
+    position: absolute;
+    top: 70px;
+    left: 210px;
+}
+
+.life{
+    display: flex;
+    position: absolute;
+    top: 90px;
+    left: 210px;
+}
+
+.att{
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 210px;
+}
+
+.vit{
+    display: flex;
+    position: absolute;
+    top: 130px;
+    left: 210px;
+}
+
+img[class*="ico"]{
+    width: 42px;
+    display: flex;
+    position: absolute;
+}
+
+.ico1{
+    top: 170px;
+    left: 200px;
+}
+
+.ico2{
+    top: 220px;
+    left: 200px;
+}
+
+.ico3{
+    top: 220px;
+    left: 250px;
+}
+
+.ico4{
+    top: 270px;
+    left: 200px;
+}
+
+/* MENU N°1 - BOT */
+
+.menu-character-b{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+img[class*="item"]{
+    padding: 8px;
+}
+
+    /* MENU N°2 */
+
+.menu-hetic{
+    background: blue;
+    width: 400px;
+    height: 650px;
+}
