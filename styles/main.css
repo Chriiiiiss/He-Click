@@ -1,0 +1,211 @@
+html{
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+/* MAIN COLOR 1 : #2f3640 */
+/* MAIN COLOR 2 : #ecf0f1 */
+
+
+/* HEADER */
+
+.header{
+    text-align: center;
+    background: #2f3640;
+    color : #ecf0f1;
+    padding: 20px;
+}
+
+.logo-hetic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 8%;
+}
+
+h1{
+    font-size: 120px;
+    margin: 0;
+}
+
+/* MAIN */
+
+.main{
+    background: #ecf0f1;
+}
+
+.container{
+    margin: 0 40px;
+}
+
+h2{
+    color: #2f3640;
+    text-decoration: underline;
+    margin: 0;
+    padding: 25px 15px 15px 15px;
+}
+
+div[class*="text-"]{
+    padding: 0px 30px;
+}
+
+.play{
+    margin: 0 auto;
+    text-align: center;
+    padding: 80px 500px;
+}
+
+a{
+    text-decoration: none;
+    color: #ecf0f1;
+
+}
+
+.button{
+    background: #2f3640;
+    font-weight: 800;
+    font-size: 90px;
+}
+
+.text-play:active{
+    color: #ecf0f1
+}
+
+/* FOOTER */
+
+footer{
+    background: #2f3640;
+    color: #ecf0f1
+    margin:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1.2px solid;
+  }
+  
+  div.mention{
+    color:#fff;
+    display:flex;
+    width:27%;
+    height:10%;
+    justify-content:space-around;
+    align-items:center;
+    margin-left:2%;
+  }
+  
+  div.mention a{
+    text-decoration:none;
+    color:#fff;
+    font-size:90%;
+    height:8em;
+    display:flex;
+    align-items:center;
+    margin-right:2em;
+  }
+  
+  div.mention a:nth-child(1){
+    width:8em;
+  }
+  
+  div.mention a:nth-child(2){
+    width:12em;
+  }
+  
+  div.reseaux{
+    width:15%;
+    height:10%;
+    display:flex;
+    margin-right:12em;
+  }
+  
+  .reseaux a{
+    background-size:contain;
+    background-repeat:no-repeat;
+  }
+  .reseaux a:nth-child(1){
+    background-image:url(../images/logo_youtube.png);
+    width:20em;
+    height:1.9em;
+    padding-top:0.1em;
+  
+  }
+  
+  .reseaux a:nth-child(2){
+    background-image:url(../images/logo_twitter.png);
+    width:20em;
+    height:2.2em;
+  }
+  
+  .reseaux a:nth-child(3){
+    background-image:url(../images/logo_insta.png);
+    width:20em;
+    height:2.2em;
+  }
+  
+  /************************************
+          RESPONSIVE FOOTER
+  ************************************/
+  @media screen and (max-width:1200px){
+    div.reseaux{
+      width:20%;
+      margin-right:8em;
+    }
+    div.mention{
+      margin-left:.1%;
+      font-size:130%;
+      width:40%;
+    }
+  }
+  
+  @media screen and (max-width:800px){
+    div.reseaux{
+      width:25%;
+      margin-right:.5em;
+    }
+    div.reseaux a:nth-child(1){
+      width:20em;
+      height:1.3em;
+      padding-right:.5em;
+    }
+    div.reseaux a:nth-child(2){
+      width:20em;
+      height:1.5em;
+    }
+    div.reseaux a:nth-child(3){
+      width:20em;
+      height:1.5em;
+    }
+    div.mention{
+      margin-left:0.5em;
+      font-size:110%;
+      width:45%;
+    }
+  }
+  
+  @media screen and (max-width:600px){
+    div.reseaux{
+      width:30%;
+      margin-right:0;
+    }
+    div.reseaux a:nth-child(1){
+      width:20em;
+      height:1em;
+    }
+    div.reseaux a:nth-child(2){
+      width:20em;
+      height:1.2em;
+    }
+    div.reseaux a:nth-child(3){
+      width:20em;
+      height:1.2em;
+    }
+    div.mention{
+      margin-left:0.5em;
+      font-size:65%;
+      width:60%;
+    }
+  }
+  
