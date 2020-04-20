@@ -1,0 +1,23 @@
+{
+  "name": "Semaine-Intensive-2---JS",
+  "version": "1.0.0",
+  "description": "HETIC PROJECT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files '**/*.css, **/*.js, **/*.html, !node_modules' --directory --port 7777"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chriiiiiss/Semaine-Intensive-2---JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chriiiiiss/Semaine-Intensive-2---JS/issues"
+  },
+  "homepage": "https://github.com/Chriiiiiss/Semaine-Intensive-2---JS#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
