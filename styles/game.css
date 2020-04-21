@@ -176,26 +176,43 @@ div[class*="line"]{
     height: 50px;
 }
 
-.inv-empty{
+.inv-empty, .inv-full{
     background-image: url(../images/empty-inv.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 50px;
     height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+div[class*="inv-"]{
+    background-image: url(../images/empty-inv.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
 .hand{
     background-image: url(../images/hand.png);
     background-repeat: no-repeat;
-    background-size: cover;
-    width: 80%;
-    height: 80%;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
 }
 
 .body{
     background-image: url(../images/body.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-position: center;
     width: 80%;
     height: 80%;
 }
@@ -203,7 +220,8 @@ div[class*="line"]{
 .head{
     background-image: url(../images/head.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     width: 80%;
     height: 80%;
 }
@@ -211,7 +229,8 @@ div[class*="line"]{
 .foot{
     background-image: url(../images/foot.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     width: 80%;
     height: 80%;
 }
