@@ -1,149 +1,224 @@
+html{
+
+}
+
 /***** MENU TOP LEFT *****/
 
     /* LIST GESTION */
-    ul{
-        list-style: none;
-    }
+ul{
+    list-style: none;
+}
+
+nav li ul{
+    display: none;
+}
     
-    nav li ul{
-        display: none;
-    }
-    
-    nav{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-direction: row;
-        width:200px;
-    }
-    
-    a{
-        text-decoration: none;
-        width:100px;
-        display:inline-block;
-        padding:15px;
-        text-align:center;
-      }
-    
-    
-      li{
-        position:relative
-      }
-      
-      ul, li{
-        margin:0;
-        padding:0;
-      }
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    width:200px;
+}
+
+a{
+    text-decoration: none;
+    width:100px;
+    display:inline-block;
+    padding:15px;
+    text-align:center;
+}
+
+li{
+    position:relative
+}
+
+ul, li{
+    margin:0;
+    padding:0;
+}
 
       /* MENU N°1 & N°2 */
 
-      img[class*="leave"]{
-        position: absolute;
-        left: 350px;
-        top: 10px;
-        max-width: 8%;
-    }
+img[class*="leave"]{
+    position: absolute;
+    left: 312px;
+    top: 14px;
+    max-width: 8%;
+}
 
-    img[class*="leave"]:hover{
-        cursor: pointer;
-    }
+img[class*="leave"]:hover{
+    cursor: pointer;
+}
 
-    img[class*="button-"]:hover{
-        cursor: pointer;
-    }
+img[class*="button-"]:hover{
+    cursor: pointer;
+}
 
+.button-character{
+    max-width: 60%;
+}
+
+.button-hetic{
+    max-width: 60%;
+}
 
     /* MENU N°1 */
+
 .menu-character{
-    /* background-image: url(../images/menu1-full.png); */
-    background: #333333;
-    width: 400px;
-    height: 675px;
     position: relative;
+    display: flex;
+    flex-direction: column;
     color: #ffffff;
 }
 
-/* MENU N°1 - TOP */
 .menu-character-t{
-    padding-bottom: 35px;
-    box-shadow: #ffffff 0 4px;
+    background: #1b1c1d;
+    width: 350px;
+    height: 350px;
+    top: 5px;
+    left: 5px;
+    border: 7px solid #3f3d3d;
+}
+
+/* MENU N°1 - TOP */
+.return-inventory{
+    position: absolute;
+    max-width: 15%;
 }
 
 .main-character{
-    padding: 60px 5px 30px 10px;
-    box-shadow: #ffffff 2px 0;
+    padding: 40px 0px 0px 10px;
+    max-width: 45%;
+}
+
+.character-stats{
+    font-size: 18px;
+    font-weight: 800;
 }
 
 .name{
-    display: flex;
-    position: absolute;
-    top: 70px;
-    left: 210px;
-}
-
-.life{
-    display: flex;
     position: absolute;
     top: 90px;
-    left: 210px;
+    left:180px;
+    max-width: 100px;
 }
 
-.att{
-    display: flex;
+.level{
     position: absolute;
-    top: 110px;
-    left: 210px;
+    top: 135px;
+    left: 180px;
+
 }
 
-.vit{
-    display: flex;
+.dmg{
     position: absolute;
-    top: 130px;
-    left: 210px;
+    top: 165px;
+    left: 180px;
+    color:#c73f3f;
+}
+
+.mag{
+    position: absolute;
+    top: 195px;
+    left: 180px;
+    color: #962eb4;  
+}
+
+.power{
+    position: absolute;
+    top: 225px;
+    left: 180px;
+    color: #3dcd69;
+}
+
+.character-item{
+    padding: 25px 8px 0 8px;
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
 }
 
 img[class*="ico"]{
-    width: 42px;
-    display: flex;
-    position: absolute;
+    width: 15%;
 }
 
-.ico1{
-    top: 170px;
-    left: 200px;
-}
-
-.ico2{
-    top: 220px;
-    left: 200px;
-}
-
-.ico3{
-    top: 220px;
-    left: 250px;
-}
-
-.ico4{
-    top: 270px;
-    left: 200px;
-}
 
 /* MENU N°1 - BOT */
 
 .menu-character-b{
-    margin-top: 20px;
-    text-align: center;
+    background: #1b1c1d;
+    width: 350px;
+    height: 215px;
+    margin-top: 25px;
+    left: -5px;
+    border: 7px solid #3f3d3d;
 }
 
+.inventory{
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 35px;
+    padding-top: 10px;
+}
+
+div[class*="line"]{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin: 5px 5px 8px 5px;
+}
 
 img[class*="item"]{
-    padding: 8px;
+    width: 12%;
 }
 
     /* MENU N°2 */
 
 .menu-hetic{
-    background: blue;
-    width: 400px;
-    height: 650px;
+    background: #1b1c1d;
+    border: 7px solid #3f3d3d;
+    width: 350px;
+    height: 618px;
+    top: 5px;
+    left: 7px;
+}
+
+.return-hetic{
+    position: absolute;
+    max-width: 15%;
+}
+
+.shop-hetic{
+    padding-top: 75px;
+}
+
+.buy1{
+    background-image: url(../images/background-hetic.png);
+    background-repeat: no-repeat;
+    background-size: 35%;
+    position: relative;
+    height: 100px;
+}
+
+
+.perso-hetic{
+    position: absolute;
+    max-width: 10%;
+    top: 5px;
+    left: 5px;
+    
+}
+
+/* .ifBuy{
+    max-width: 20%;
+    position: absolute;
+    display: none;
+} */
+
+.diamond{
+    max-width: 20%;
+    position: absolute;
+    top: 5px;
+    left: 20px;
 }
