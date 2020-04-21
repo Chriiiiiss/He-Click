@@ -41,41 +41,44 @@ leave2.addEventListener( 'click', () =>{
 
 //                 DRAG AND DROP GESTION
 
-const fill = document.querySelector('.fill')
+const fill = document.querySelectorAll('.fill')
 const emptiesInv = document.querySelectorAll('.inv-empty')
-// const emptiesIco = document.querySelectorAll('.ico')
-// const empties = Array.from(emptiesInv).concat(Array.from(emptiesIco))
 
-const typeItem = fill.classList[1]
 
 
 // Fill Listener
-
-fill.addEventListener('dragstart', dragStart);
-fill.addEventListener('dragend', dragEnd);
+let typeItem
+let itemElem
 
 // Loop through empties and call drag events
+
+
+
+
 for (const empty of emptiesInv){
-    empty.addEventListener('dragover', dragOver)
-    empty.addEventListener('dragenter', dragEnter)
-    empty.addEventListener('dragleave', dragLeave)
-    empty.addEventListener('drop', dragDrop)
+    for (const item of fill) {
+        empty.addEventListener('dragover', dragOver)
+        empty.addEventListener('dragenter', dragEnter)
+        empty.addEventListener('dragleave', dragLeave)
+        item.addEventListener('dragstart', dragStart);
+        item.addEventListener('dragend', dragEnd);
+        empty.addEventListener('drop', dragDrop)
+    }
 }
 
-
 //Drag Function
-function dragStart(){
+function dragStart(e){
     this.className += ' hold';
     setTimeout(() => (this.className = 'invisible'), 0);
+    typeItem = this.classList[1]
+    itemElem = this
 }
 
 function dragEnd(){
     this.className = `fill ${typeItem}`;
-    
 }
 
 function dragOver(){
-    console.log('over');
     event.preventDefault();
 }
 
@@ -84,18 +87,18 @@ function dragEnter(){
 }
 
 function dragLeave(){
-    this.className = 'inv-empty'
+    // this.className = 'inv-empty'
 }
 
 function dragDrop(){
     const invItem = this.classList[0]
     if ((typeItem == 'hand' && invItem == 'inv-hand')
     || (typeItem =='head' && invItem =='inv-head' )
-    || (typeItem == 'body' && invItem == 'inv-head')
+    || (typeItem == 'body' && invItem == 'inv-body')
     || (typeItem == 'foot' && invItem == 'inv-foot')
     || invItem == 'inv-empty'){
-        this.classname = 'inv-full'
-        this.append(fill)
+        // this.classname = 'inv-full'
+        this.append(itemElem)
     }
 }
 
