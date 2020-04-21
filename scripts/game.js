@@ -42,9 +42,9 @@ leave2.addEventListener( 'click', () =>{
 //                 DRAG AND DROP GESTION
 
 const fill = document.querySelector('.fill')
-const emptiesInv = document.querySelectorAll('.inv')
-const emptiesIco = document.querySelectorAll('.ico')
-const empties = Array.from(emptiesInv).concat(Array.from(emptiesIco))
+const emptiesInv = document.querySelectorAll('.inv-empty')
+// const emptiesIco = document.querySelectorAll('.ico')
+// const empties = Array.from(emptiesInv).concat(Array.from(emptiesIco))
 
 const typeItem = fill.classList[1]
 
@@ -55,7 +55,7 @@ fill.addEventListener('dragstart', dragStart);
 fill.addEventListener('dragend', dragEnd);
 
 // Loop through empties and call drag events
-for (const empty of empties){
+for (const empty of emptiesInv){
     empty.addEventListener('dragover', dragOver)
     empty.addEventListener('dragenter', dragEnter)
     empty.addEventListener('dragleave', dragLeave)
@@ -70,11 +70,12 @@ function dragStart(){
 }
 
 function dragEnd(){
-    this.className = 'fill hand';
+    this.className = `fill ${typeItem}`;
     
 }
 
 function dragOver(){
+    console.log('over');
     event.preventDefault();
 }
 
@@ -83,7 +84,7 @@ function dragEnter(){
 }
 
 function dragLeave(){
-    this.className = 'inv'
+    this.className = 'inv-empty'
 }
 
 function dragDrop(){
@@ -92,13 +93,13 @@ function dragDrop(){
     || (typeItem =='head' && invItem =='inv-head' )
     || (typeItem == 'body' && invItem == 'inv-head')
     || (typeItem == 'foot' && invItem == 'inv-foot')
-    || invItem == 'inv'){
-        this.classname = 'invItem inv-full'
+    || invItem == 'inv-empty'){
+        this.classname = 'inv-full'
         this.append(fill)
     }
 }
 
-//PROBLEEME : Ne met pas la class "inv-full" ?
+//PROBLEME : Ne met pas la class "inv-full" ?
 
 
 // function dragDrop(){

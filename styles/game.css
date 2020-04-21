@@ -1,5 +1,8 @@
 html{
+    height: 1080px;
+}
 
+.container{
 }
 
 /***** MENU TOP LEFT *****/
@@ -139,7 +142,6 @@ img[class*="button-"]:hover{
     display: flex;
 }
 
-
 /* MENU N°1 - BOT */
 
 .menu-character-b{
@@ -174,7 +176,7 @@ div[class*="line"]{
     height: 50px;
 }
 
-.inv{
+.inv-empty{
     background-image: url(../images/empty-inv.png);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -218,7 +220,6 @@ div[class*="line"]{
 
 .fill{
     cursor: pointer;
-
 }
 
 .hold{
@@ -322,4 +323,22 @@ span[class*="price-hetic"]{
     top: 40px;
     left: 50px;
     font-family: 'Anton', sans-serif;
+}
+
+
+/* ITEM BAR */
+.item-bar{
+}
+
+.background-bar{
+    background-image: url(../images/item-bar.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 700px;
+    height: 100px;
+    margin: 0 auto;
+    position: fixed;
+    top: 60%;
+    left: 25%;
 }
