@@ -96,42 +96,36 @@ function dragLeave(){
 
 function dragDrop(){
     const invItem = this.classList[0]
-    console.log(typeItem);
-    console.log(invItem);
+    // console.log(typeItem);
+    // console.log(invItem);
+
     if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
     || (typeItem =='head' && invItem =='inv-head')
     || (typeItem == 'body' && invItem == 'inv-body')
     || (typeItem == 'foot' && invItem == 'inv-foot')) 
-    && !this.hasChildNodes()
-    ){
-        this.append(itemElem)
-        
-
-    }
-    if (this.classList[0] == 'inv-empty' && !this.hasChildNodes())
+    && !this.hasChildNodes())
     {
         this.append(itemElem)
-    } //else if (this.hasChildNodes() )
+    }
+
+    // if (invItem == 'inv-empty' && !this.hasChildNodes())
     // {
-    //     inventoryLastPos.append(itemElem)
-    // }
-
-    // } else if (this.classList[0] === "inv-full") {     //POTENTIELLEMENT AMELIORABLE AVEC LES hasChildNodes
-    //     inventoryLastPos.append(itemElem)
-    //     inventoryLastPos.className = "inv-full"
-        
-    // } else if (this.classList[0] === "inv-empty"){
     //     this.append(itemElem)
-    //     this.className = "inv-full"
-    //     inventoryLastPos.className = "inv-empty"
-    // }
+    //     inventoryLastPos.append(itemElem)
+    // } 
+    
+    else if (this.hasChildNodes() )
+    {
+        inventoryLastPos.append(itemElem)
+    } else if (this.classList[0] === "inv-full") {     //POTENTIELLEMENT AMELIORABLE AVEC LES hasChildNodes
+        inventoryLastPos.append(itemElem)
+        inventoryLastPos.className = "inv-full"
+        
+    } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
+        this.append(itemElem)
+        this.classList.splice(0, 1, 'inv-full')
+        console.log(this.classList);
+        
+        inventoryLastPos.className = "inv-empty"
+    }
 }
-
-
-//PROBLEME : Ne met pas la class "inv-full" ?
-
-
-// function dragDrop(){
-//     this.className = 'inv-full'
-//     this.append(fill)
-// }
