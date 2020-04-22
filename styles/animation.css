@@ -1,0 +1,88 @@
+/********   PLACING THE ELEMENTS   ********/
+
+.opening-animation{
+    display: grid;
+    width: 100%;
+    height: 1000px;
+    justify-content: center;
+    align-content: center;
+}
+
+.point{
+    position: relative;
+    padding-bottom: 45px;
+    padding-left: 10px;
+}
+
+.mouse{
+    position: relative;
+    left: 1086px;
+    bottom: 127px;
+}
+
+
+/********   LOAD-ANIMATION   ********/
+
+
+/*  text animation  */
+
+.heclick{
+    animation: heclick 0.5s;
+}
+
+
+@keyframes heclick {
+    0%{
+        height: 208px;
+        width: 830px;
+    }
+
+    100%{
+        height: 250px;
+        width: 996px; 
+    }
+}
+
+
+/*  target (point) animation  */
+
+.point{
+    animation: point 1s;
+}
+
+@keyframes point {
+    0%{
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/*  mouse animation  */
+
+.mouse{
+    animation: mouse 2s;
+}
+
+@keyframes mouse {
+    0%{
+        visibility: hidden;
+    }
+
+    50% {
+        left: 1152px;
+        bottom: 66px;
+    }
+
+    100%{
+        left: 1086px;
+        bottom: 127px;
+    }
+}
