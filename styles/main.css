@@ -8,6 +8,8 @@ body{
   grid-template-rows: 10% 80% 10%;
 }
 
+/*************  HEADER  **************/
+
 header{
   display: grid;
   grid-template-columns: repeat(24,1fr);
@@ -51,6 +53,9 @@ header{
 .info:hover{
   color: #ffffff;
 }
+
+/*************  MAIN  **************/
+
 .container{
   margin: 0 auto;
   width:400px;
