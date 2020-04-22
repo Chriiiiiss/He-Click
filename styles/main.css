@@ -3,9 +3,9 @@ body{
   background-image : url("../images/background_main.jpg");
   background-repeat:no-repeat;
   background-size:cover;
-  height:100vh;
+  height:100%;
   display:grid;
-  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-rows: 10% 80% 10%;
 }
 
 header{
@@ -28,18 +28,17 @@ header{
   height:100%;
   grid-column: 22;
   position: relative;
-  top:0px;
   margin-top: 40px;
 }
 
 .info{
   position:absolute;
   top: 30px;
-  left: 14px;
+  left: 8px;
   text-decoration: none;
   text-transform: uppercase;
   font-family: 'Inter', sans-serif;
-  font-size: 35px;
+  font-size: 32px;
   color: #cecece;
 }
 
@@ -52,4 +51,17 @@ header{
 .info:hover{
   color: #ffffff;
 }
-  
+.container{
+  margin: 0 auto;
+  width:400px;
+}
+.sub_container{
+  height:140px;
+}
+  main{
+  height:100%;
+  width:100%;
+}
+.startbutton{
+  width:400px;
+}
