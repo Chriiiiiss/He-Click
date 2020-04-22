@@ -465,6 +465,9 @@ div[class*="buy"]{
     left: 8px;
 }
 
+div[class*="buy"]:hover{
+    cursor: pointer;
+}
 
 /* HETIC---SIZE */
 .perso1{
@@ -508,10 +511,10 @@ div[class*="buy"]{
 }
 
 .ifBuy{
-    width: 18%;
+    width: 40%;
     position: absolute;
-    left: 51px;
-    top: 6px;
+    left: 65px;
+    top: 10px;
     display: none;
 }
 

@@ -320,7 +320,7 @@ function dragDrop(){
         }
         else if (tierItem =='item5')
         {
-            actualMag -= boosMagt2
+            actualMag -= boostMag2
         }
         else if (tierItem == 'item6')
         {
@@ -353,7 +353,7 @@ function dragDrop(){
 
 // GOLD IMPROVEMENT
 let goldSpan = document.querySelector('.gold-posses')
-let actualGold = 0
+let actualGold = 20
 let goldWin = 2
 goldSpan.textContent = `${actualGold}`
 
@@ -362,6 +362,66 @@ const goldUp = () =>
     actualGold +=goldWin
     goldSpan.textContent = `${actualGold}`
 }
+
+
+//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
+
+const diamond = document.querySelector('.diamond')
+const ifBuy = document.querySelector('.ifBuy')
+const recrut = document.querySelector('.recrut')
+
+const price1 = 20
+const price2 = 30
+const price3 = 40
+const price4 = 50
+const price5 = 60
+const price6 = 70
+const price7 = 80
+const price8 = 90
+const price9 = 100
+const price10 = 110
+
+const buy1 = document.querySelector('.buy1')
+
+let priceHetic1 = document.querySelector('.price-hetic1')
+let priceHetic2 = document.querySelector('.price-hetic2')
+let priceHetic3 = document.querySelector('.price-hetic3')
+let priceHetic4 = document.querySelector('.price-hetic4')
+let priceHetic5 = document.querySelector('.price-hetic5')
+let priceHetic6 = document.querySelector('.price-hetic6')
+let priceHetic7 = document.querySelector('.price-hetic7')
+let priceHetic8 = document.querySelector('.price-hetic8')
+let priceHetic9 = document.querySelector('.price-hetic9')
+let priceHetic10 = document.querySelector('.price-hetic10')
+
+priceHetic1.textContent = price1
+priceHetic2.textContent = price2
+priceHetic3.textContent = price3
+priceHetic4.textContent = price4
+priceHetic5.textContent = price5
+priceHetic6.textContent = price6
+priceHetic7.textContent = price7
+priceHetic8.textContent = price8
+priceHetic9.textContent = price9
+priceHetic10.textContent = price10
+
+
+buy1.addEventListener('click', event => {
+    if (actualGold >= 20)
+    {
+        actualGold -= 20
+        console.log('lol');
+        ifBuy.style.display = 'inline'
+        diamond.style.display = 'none'
+        recrut.style.display = 'none'
+        priceHetic1.style.display = 'none'
+    }
+    goldSpan.textContent = `${actualGold}`
+
+  })
+
+
+
 
 
 
@@ -374,7 +434,7 @@ let magSpan = document.querySelector('.actual-mag')
 let powerSpan = document.querySelector('.actual-power')
 // STATS VARIABLES
 let actualLvl = 1
-let actualDmg = 2
+let actualDmg = 1
 let actualMag = 0
 let actualPower = 0
 // SPAN CHANGEMENT
@@ -449,7 +509,7 @@ let footInv = document.querySelector('.character-item :nth-child(4)')
 const boost1 = 1
 const boost2 = 3
 const boost3 = 5
-const bosstMag1 = 5
+const boostMag1 = 5
 const boostMag2 = 10
 const boostMag3 = 25
 const boostPower1 = 5
