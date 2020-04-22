@@ -187,10 +187,13 @@ div[class*="line"]{
     justify-items: center;
 }
 
+            /* STUFF LIST */
 
 
+    /* HAND */
+        /* SCPETRE */
 .item1[data-slot="hand"]{
-    background-image: url(../images/hand.png);
+    background-image: url(../images/stuff/sword1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -198,8 +201,93 @@ div[class*="line"]{
     height: 70%;
 }
 
+.item2[data-slot="hand"]{
+    background-image: url(../images/stuff/sword2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="hand"]{
+    background-image: url(../images/stuff/sword3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+        /* SWORD */
+.item4[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item5[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item6[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+
+        /* BOOK */
+.item7[data-slot="hand"]{
+    background-image: url(../images/stuff/book1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item8[data-slot="hand"]{
+    background-image: url(../images/stuff/book2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+.item9[data-slot="hand"]{
+    background-image: url(../images/stuff/book3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+
+
+    /* HEAD */
 .item1[data-slot="head"]{
-    background-image: url(../images/head-t1.png);
+    background-image: url(../images/stuff/head1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -207,8 +295,29 @@ div[class*="line"]{
     height: 70%;
 }
 
+.item2[data-slot="head"]{
+    background-image: url(../images/stuff/head2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="head"]{
+    background-image: url(../images/stuff/head3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+    /* BODY */
 .item1[data-slot="body"]{
-    background-image: url(../images/body-t1.png);
+    background-image: url(../images/stuff/body1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -216,8 +325,29 @@ div[class*="line"]{
     height: 70%;
 }
 
+.item2[data-slot="body"]{
+    background-image: url(../images/stuff/body2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="body"]{
+    background-image: url(../images/stuff/body3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+    /* FOOT */
 .item1[data-slot="foot"]{
-    background-image: url(../images/foot-t1.png);
+    background-image: url(../images/stuff/foot1.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -225,9 +355,26 @@ div[class*="line"]{
     height: 70%;
 }
 
+.item2[data-slot="foot"]{
+    background-image: url(../images/stuff/foot2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="foot"]{
+    background-image: url(../images/stuff/foot3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
 
 /* .hand{
-    background-image: url(../images/hand.png);
+    background-image: url(../images/stuff/hand.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -236,7 +383,7 @@ div[class*="line"]{
 }
 
 .body{
-    background-image: url(../images/body.png);
+    background-image: url(../images/stuff/body.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -246,7 +393,7 @@ div[class*="line"]{
 }
 
 .head{
-    background-image: url(../images/head.png);
+    background-image: url(../images/stuff/head.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -255,7 +402,7 @@ div[class*="line"]{
 }
 
 .foot{
-    background-image: url(../images/foot.png);
+    background-image: url(../images/stuff/foot.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -431,8 +578,15 @@ span[class*="price-hetic"]{
 .plus-text{
     color: #70c6e1;
     font-family: 'Anton', sans-serif;
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 500;   /* Je n'arrive pas à bien placr le "+" */
+    position: absolute;
+    top: -50px;
+    left: 3px;
+}
+
+.button-plus:hover{
+    cursor: pointer;
 }
 
 .diamond-top{
