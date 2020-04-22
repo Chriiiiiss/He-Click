@@ -27,19 +27,22 @@
 /*  text animation  */
 
 .heclick{
-    animation: heclick 0.5s;
+    animation: heclick 0.5s ease;
+    opacity: 0;
 }
 
 
 @keyframes heclick {
     0%{
-        height: 208px;
+        height: 200px;
         width: 830px;
+        opacity: 1;
     }
 
     100%{
         height: 250px;
         width: 996px; 
+        opacity: 0;
     }
 }
 
@@ -48,6 +51,7 @@
 
 .point{
     animation: point 1s;
+    opacity: 0;
 }
 
 @keyframes point {
@@ -56,11 +60,11 @@
     }
 
     50% {
-        opacity: 0;
+        opacity: 1;
     }
 
     100%{
-        opacity: 1;
+        opacity: 0;
     }
 }
 
@@ -69,6 +73,7 @@
 
 .mouse{
     animation: mouse 2s;
+    opacity: 0;
 }
 
 @keyframes mouse {
@@ -79,10 +84,12 @@
     50% {
         left: 1152px;
         bottom: 66px;
+        opacity: 1;
     }
 
     100%{
         left: 1086px;
         bottom: 127px;
+        opacity: 0;
     }
 }
