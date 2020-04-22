@@ -41,7 +41,7 @@ leave2.addEventListener( 'click', () =>{
 
 //                 DRAG AND DROP GENERAL GESTION
 
-const fill = document.querySelectorAll('.fill')
+let item = document.querySelectorAll('.item1, .item2, .item3')
 const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
 
 
@@ -57,13 +57,13 @@ let inventoryLastPos
 
 
 for (const empty of emptiesInv){
-    for (const item of fill) {
+    for (const items of item) {
         empty.addEventListener('dragover', dragOver)
         empty.addEventListener('dragenter', dragEnter)
         empty.addEventListener('dragleave', dragLeave)
         empty.addEventListener('drop', dragDrop)
-        item.addEventListener('dragstart', dragStart);
-        item.addEventListener('dragend', dragEnd);
+        items.addEventListener('dragstart', dragStart);
+        items.addEventListener('dragend', dragEnd);
     }
 }
 
@@ -71,7 +71,11 @@ for (const empty of emptiesInv){
 function dragStart(e){
     this.className += ' hold';
     setTimeout(() => (this.className = 'invisible'), 0);
-    typeItem = this.classList[1]
+    typeItem = this.getAttribute('data-slot')
+    tierItem = this.classList[0]
+    console.log(tierItem);  
+    
+    // console.log(typeItem);
     itemElem = this
     this.parentNode.className = "inv-empty"
     inventoryLastPos = this.parentNode
@@ -79,7 +83,9 @@ function dragStart(e){
 }
 
 function dragEnd(){
-    this.className = `fill ${typeItem}`;
+    this.className = `${tierItem} ${typeItem}`;
+    console.log(typeItem);
+    
 }
 
 function dragOver(){
@@ -91,41 +97,75 @@ function dragEnter(){
 }
 
 function dragLeave(){
-
 }
 
-function dragDrop(){
-    const invItem = this.classList[0]
+
+// function dragDrop(){
+//     const invItem = this.classList[0]
     // console.log(typeItem);
     // console.log(invItem);
 
-    if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
-    || (typeItem =='head' && invItem =='inv-head')
-    || (typeItem == 'body' && invItem == 'inv-body')
-    || (typeItem == 'foot' && invItem == 'inv-foot')) 
-    && !this.hasChildNodes())
-    {
-        this.append(itemElem)
-    }
+//     if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
+//     || (typeItem =='head' && invItem =='inv-head')
+//     || (typeItem == 'body' && invItem == 'inv-body')
+//     || (typeItem == 'foot' && invItem == 'inv-foot')) 
+//     && !this.hasChildNodes()) //ths.classlist.etc.
+//     {
+//         this.append(itemElem)
+//         this.classList.remove("inv-empty")
+//         this.classList.add("inv-full")
+//     }
 
-    // if (invItem == 'inv-empty' && !this.hasChildNodes())
-    // {
-    //     this.append(itemElem)
-    //     inventoryLastPos.append(itemElem)
-    // } 
+//     // if (invItem == 'inv-empty' && !this.hasChildNodes())
+//     // {
+//     //     this.append(itemElem)
+//     //     inventoryLastPos.append(itemElem)
+//     // } 
     
-    else if (this.hasChildNodes() )
+//     else if (this.hasChildNodes() )
+//     {
+//         inventoryLastPos.append(itemElem)
+//     } else if (this.classList[0] === "inv-full") {     //
+//         inventoryLastPos.append(itemElem)
+//         inventoryLastPos.className = "inv-full"
+        
+//     } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
+//         this.append(itemElem)
+//         this.classList.splice(0, 1, 'inv-full')
+//         console.log(this.classList);
+        
+//         inventoryLastPos.className = "inv-empty"
+//     }
+// }
+
+
+// DROP V2
+
+function dragDrop(){
+    let currentSlot = this.getAttribute('data-slot')
+    // console.log(currentSlot);
+    
+    // let currentItem = currentItem.getAttribute('data-slot')
+    
+    if (typeItem === currentSlot && !this.hasChildNodes())
     {
-        inventoryLastPos.append(itemElem)
-    } else if (this.classList[0] === "inv-full") {     //POTENTIELLEMENT AMELIORABLE AVEC LES hasChildNodes
-        inventoryLastPos.append(itemElem)
-        inventoryLastPos.className = "inv-full"
-        
-    } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
+        console.log(this.className);
         this.append(itemElem)
-        this.classList.splice(0, 1, 'inv-full')
-        console.log(this.classList);
-        
-        inventoryLastPos.className = "inv-empty"
+        this.classList.remove('inv-empty')
+        this.classList.add('inv-full')
+
+    } else if (currentSlot === 'inventory'){
+        if (this.hasChildNodes())
+        {
+            inventoryLastPos.append(itemElem)
+            inventoryLastPos.className = "inv-full"
+        } else if (this.className === 'inv-empty' && !this.hasChildNodes())
+        {
+            this.append(itemElem)
+            this.classList.remove('inv-empty')
+            this.classList.add('inv-full')
+            inventoryLastPos.classList.remove('inv-full')
+            inventoryLastPos.classList.add('inv-empty')
+        }
     }
 }

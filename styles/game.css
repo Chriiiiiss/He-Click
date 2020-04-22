@@ -4,8 +4,8 @@ html{
     font-family: 'Inter', sans-serif;
 }
 
-.container{
-}
+/* .container{
+} */
 
 /***** MENU TOP LEFT *****/
 
@@ -187,7 +187,46 @@ div[class*="line"]{
     justify-items: center;
 }
 
-.hand{
+
+
+.item1[data-slot="hand"]{
+    background-image: url(../images/hand.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item1[data-slot="head"]{
+    background-image: url(../images/head-t1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item1[data-slot="body"]{
+    background-image: url(../images/body-t1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item1[data-slot="foot"]{
+    background-image: url(../images/foot-t1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+/* .hand{
     background-image: url(../images/hand.png);
     background-repeat: no-repeat;
     background-size: contain;
@@ -222,7 +261,7 @@ div[class*="line"]{
     background-position: center;
     width: 80%;
     height: 80%;
-}
+} */
 
 /* FILL INVENTORY */
 
@@ -358,10 +397,81 @@ span[class*="price-hetic"]{
 }
 
 
-/* ITEM BAR */
-.item-bar{
-    /* margin: 0 auto; */
+/* GOLD GESTION */
+
+.top-right{
+    height: 54px;
+    width: 200px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
 }
+
+.button-plus{
+    background-image: url(../images/button-shop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gold-button{
+    background-image: url(../images/button-gold.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.plus-text{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 100px;
+    font-weight: 500;   /* Je n'arrive pas à bien placr le "+" */
+}
+
+.diamond-top{
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+.gold-posses{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/*
+.plus-shop{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.diamond-gold{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+}
+
+.gold-posses{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+} */
+
+/* ITEM BAR */
 
 .background-bar{
     background-image: url(../images/item-bar.png);
