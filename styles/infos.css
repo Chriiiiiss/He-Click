@@ -8,6 +8,7 @@ body{
 header{
     display: grid;
     grid-template-columns: repeat(24, 1fr);
+    height: 100px;
 }
 .home{
     width:70px;
@@ -25,15 +26,16 @@ header{
 /* CONTAINER OBJECTIF */
 
 .container{
-    height: 150px;
+    height: 90px;
     width: 100%;
     display: grid;
     justify-content: center;
 }
 
 .objectif{
+    transform: translateY(-30px);
     width:200px;
-    height:180px;
+    height:120px;
     display: grid;
     justify-content: center;
     background-size: contain;
@@ -51,7 +53,7 @@ header{
 
 .sub_container{
     width: 100%;
-    height: 230px;
+    height: 200px;
 }
 .objectif_paragraph{
     width: 800px;
@@ -64,7 +66,7 @@ header{
 /* CONTAINER TEAM */
 
 .container_team{
-    height: 80px;
+    height: 40px;
     width: 100%;
     display: grid;
     justify-content: center;
@@ -90,7 +92,7 @@ header{
 
 .team_pic{
     width: 100%;
-    height: 400px;
+    height: 350px;
     display: grid;
     justify-content: center;
 }
@@ -101,7 +103,11 @@ header{
 }
 .name_team{
     text-align: center;
+    font-size: 14px;
 }
+
+/* FOOTER */
+
 .footer{
     background: #262626;
     height: 50px;
