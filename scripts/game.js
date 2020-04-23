@@ -38,7 +38,93 @@ let monster_tab = [
     new monster(26, "puget", "monstre_bossfinal.png", 2000, 60)
 ]
 
-// INIT GLOABAL VAR RENDER
+// SPAN VARIABLES
+
+let lvlSpan = document.querySelector('.actual-level')
+let dmgSpan = document.querySelector('.actual-dmg')
+let magSpan = document.querySelector('.actual-mag')
+let powerSpan = document.querySelector('.actual-power')
+let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
+const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
+
+
+// STATS VARIABLES
+
+let actualLvl = 1
+let actualDmg = 1
+let actualMag = 0
+let actualPower = 0
+
+// SPAN CHANGEMENT
+
+lvlSpan.textContent = `${actualLvl}`
+dmgSpan.textContent = `${actualDmg}`
+magSpan.textContent = `${actualMag}`
+powerSpan.textContent = `${actualPower}%`
+
+// STATS WIN
+
+lvlWin = 1
+dmgWin = 1
+magWin = 5
+powerWin = 3
+
+// GOLD IMPROVEMENT
+
+let goldSpan = document.querySelector('.gold-posses')
+let actualGold = 1000
+let goldWin = 2
+goldSpan.textContent = `${actualGold}`
+
+const goldUp = () => 
+{
+    actualGold +=goldWin
+    goldSpan.textContent = `${actualGold}`
+}
+
+const price1 = 20
+const price2 = 30
+const price3 = 40
+const price4 = 50
+const price5 = 60
+const price6 = 70
+const price7 = 80
+const price8 = 90
+const price9 = 100
+const price10 = 110
+
+
+// DOM-GOLD
+
+const buy1 = document.querySelector('.click-buy1')
+const buy2 = document.querySelector('.click-buy2')
+const buy3 = document.querySelector('.click-buy3')
+const buy4 = document.querySelector('.click-buy4')
+const buy5 = document.querySelector('.click-buy5')
+const buy6 = document.querySelector('.click-buy6')
+const buy7 = document.querySelector('.click-buy7')
+const buy8 = document.querySelector('.click-buy8')
+const buy9 = document.querySelector('.click-buy9')
+const buy10 = document.querySelector('.click-buy10')
+let priceHetic1 = document.querySelector('.price-hetic1')
+let priceHetic2 = document.querySelector('.price-hetic2')
+let priceHetic3 = document.querySelector('.price-hetic3')
+let priceHetic4 = document.querySelector('.price-hetic4')
+let priceHetic5 = document.querySelector('.price-hetic5')
+let priceHetic6 = document.querySelector('.price-hetic6')
+let priceHetic7 = document.querySelector('.price-hetic7')
+let priceHetic8 = document.querySelector('.price-hetic8')
+let priceHetic9 = document.querySelector('.price-hetic9')
+let priceHetic10 = document.querySelector('.price-hetic10')
+
+
+// DRAG & DROG VAR
+
+let typeItem
+let itemElem
+let inventoryLastPos
+
+// INIT GLOBAL VAR RENDER
 
 let _w = window.innerWidth
 let _h = window.innerHeight
@@ -53,6 +139,47 @@ const character = document.querySelector('.list-menu-character')
 const characterHetic = document.querySelector('.list-menu-hetic')
 const leave = document.querySelector('.leave')
 const leave2 = document.querySelector('.leave2')
+const diamond1 = document.querySelector('.click-buy1 .diamond')
+const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
+const recrut1 = document.querySelector('.click-buy1 .recrut')
+const diamond2 = document.querySelector('.click-buy2 .diamond')
+const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
+const recrut2 = document.querySelector('.click-buy2 .recrut')
+const diamond3 = document.querySelector('.click-buy3 .diamond')
+const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
+const recrut3 = document.querySelector('.click-buy3 .recrut')
+const diamond5 = document.querySelector('.click-buy5 .diamond')
+const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
+const recrut5 = document.querySelector('.click-buy5 .recrut')
+const diamond4 = document.querySelector('.click-buy4 > .diamond')
+const ifBuy4 = document.querySelector('.click-buy4 > .ifBuy')
+const recrut4 = document.querySelector('.click-buy4 > .recrut')
+const diamond6 = document.querySelector('.click-buy6 .diamond')
+const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
+const recrut6 = document.querySelector('.click-buy6 .recrut')
+const diamond7 = document.querySelector('.click-buy7 .diamond')
+const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
+const recrut7 = document.querySelector('.click-buy7 .recrut')
+const diamond8 = document.querySelector('.click-buy8 .diamond')
+const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
+const recrut8 = document.querySelector('.click-buy8 .recrut')
+const diamond9 = document.querySelector('.click-buy9 .diamond')
+const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
+const recrut9 = document.querySelector('.click-buy9 .recrut')
+const diamond10 = document.querySelector('.click-buy10 .diamond')
+const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
+const recrut10 = document.querySelector('.click-buy10 .recrut')
+
+// VAR INVENTORY STATE
+let headInv = document.querySelector('.character-item :nth-child(1)')
+let bodyInv = document.querySelector('.character-item :nth-child(2)')
+let handInv = document.querySelector('.character-item :nth-child(3)')
+let footInv = document.querySelector('.character-item :nth-child(4)')
+
+//HETIC ITEMS RECUPERATION//
+
+let recup = 1
+const aa = document.querySelector('.hetic-item1')
 
 // INIT GLOBAL VAR PIXI
 
@@ -110,6 +237,21 @@ let id_game = 4
 let attack = 300
 let currentHP
 let level = 0
+let cmpt = 0
+
+
+// STATS BY ITEMS
+
+const boost1 = 1
+const boost2 = 3
+const boost3 = 5
+const boostMag1 = 5
+const boostMag2 = 10
+const boostMag3 = 25
+const boostPower1 = 5
+const boostPower2 = 10
+const boostPower3 = 25
+
 
 // INIT WINDOWS EVENT_LISTENER
 
@@ -483,21 +625,6 @@ leave2.addEventListener( 'click', () =>{
     elementHetic.style.display = 'inline'
 })
 
-
-
-
-//                 DRAG AND DROP GENERAL GESTION
-
-let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
-const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
-
-
-
-// Fill Listener
-let typeItem
-let itemElem
-let inventoryLastPos
-
 // Loop through empties and call drag events
 
 
@@ -580,46 +707,30 @@ function dragDrop(){
         }
     }
 
-
     // HEAD BOOST DMG 
-    if (headInv.hasChildNodes())
-    {
-    let headEquip = document.querySelector('.character-item :nth-child(1) > div')
+    if (headInv.hasChildNodes()) {
+        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
 
-    let tierItem = headEquip.classList[0]
-    console.log(tierItem);
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
-        }
-        else if (tierItem == 'item2')
-        {
+        let tierItem = headEquip.classList[0]
+        console.log(tierItem);
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
             actualDmg += boost2
-        } else if (tierItem == 'item3')
-        {
-            actualDmg += boost3
-            
-        }
-    }
-    else if (bodyInv.hasChildNodes())
-    {
+        } else if (tierItem == 'item3') {
+            actualDmg += boost3    
+        }} else if (bodyInv.hasChildNodes()) {
         let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
         let tierItem = bodyEquip.classList[0]
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
-        }
-        else if (tierItem == 'item2')
-        {
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
             actualDmg += boost2
-        } else if (tierItem == 'item3')
-        {
+        } else if (tierItem == 'item3') {
             actualDmg += boost3
         }
     }
-
-
-    else if (footInv.hasChildNodes())
+         else if (footInv.hasChildNodes())
     {
         let footEquip = document.querySelector('.character-item :nth-child(4) > div')
         let tierItem = footEquip.classList[0]
@@ -634,8 +745,7 @@ function dragDrop(){
         {
             actualDmg += boost3
         }
-    }
-    
+    }  
     
     else if (handInv.hasChildNodes())
     {
@@ -680,16 +790,11 @@ function dragDrop(){
             actualPower += boostPower3
         }
     }
-
-
     
     else
     {
         //Pas de retour de boost sans ce else ?
     }
-
-
-
 
     if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot')
     {
@@ -757,55 +862,7 @@ function dragDrop(){
 
 
 
-// GOLD IMPROVEMENT
-let goldSpan = document.querySelector('.gold-posses')
-let actualGold = 1000
-let goldWin = 2
-goldSpan.textContent = `${actualGold}`
-
-const goldUp = () => 
-{
-    actualGold +=goldWin
-    goldSpan.textContent = `${actualGold}`
-}
-
-
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
-
-
-
-const price1 = 20
-const price2 = 30
-const price3 = 40
-const price4 = 50
-const price5 = 60
-const price6 = 70
-const price7 = 80
-const price8 = 90
-const price9 = 100
-const price10 = 110
-
-const buy1 = document.querySelector('.click-buy1')
-const buy2 = document.querySelector('.click-buy2')
-const buy3 = document.querySelector('.click-buy3')
-const buy4 = document.querySelector('.click-buy4')
-const buy5 = document.querySelector('.click-buy5')
-const buy6 = document.querySelector('.click-buy6')
-const buy7 = document.querySelector('.click-buy7')
-const buy8 = document.querySelector('.click-buy8')
-const buy9 = document.querySelector('.click-buy9')
-const buy10 = document.querySelector('.click-buy10')
-
-let priceHetic1 = document.querySelector('.price-hetic1')
-let priceHetic2 = document.querySelector('.price-hetic2')
-let priceHetic3 = document.querySelector('.price-hetic3')
-let priceHetic4 = document.querySelector('.price-hetic4')
-let priceHetic5 = document.querySelector('.price-hetic5')
-let priceHetic6 = document.querySelector('.price-hetic6')
-let priceHetic7 = document.querySelector('.price-hetic7')
-let priceHetic8 = document.querySelector('.price-hetic8')
-let priceHetic9 = document.querySelector('.price-hetic9')
-let priceHetic10 = document.querySelector('.price-hetic10')
 
 priceHetic1.textContent = price1
 priceHetic2.textContent = price2
@@ -817,12 +874,6 @@ priceHetic7.textContent = price7
 priceHetic8.textContent = price8
 priceHetic9.textContent = price9
 priceHetic10.textContent = price10
-
-
-    // 1
-    const diamond1 = document.querySelector('.click-buy1 .diamond')
-    const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
-    const recrut1 = document.querySelector('.click-buy1 .recrut')
 
 buy1.addEventListener('click', event => {
     if (actualGold >= price1 && buy1.className === 'click-buy1')
@@ -841,12 +892,6 @@ buy1.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 2
-const diamond2 = document.querySelector('.click-buy2 .diamond')
-const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
-const recrut2 = document.querySelector('.click-buy2 .recrut')
-
 buy2.addEventListener('click', event => {
     if (actualGold >= price2 && buy2.className === 'click-buy2')
     {
@@ -861,12 +906,6 @@ buy2.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 3
-const diamond3 = document.querySelector('.click-buy3 .diamond')
-const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
-const recrut3 = document.querySelector('.click-buy3 .recrut')
 
 buy3.addEventListener('click', event => {
     if (actualGold >= price3 && buy3.className === 'click-buy3')
@@ -883,13 +922,6 @@ buy3.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-
-//     // 4
-const diamond4 = document.querySelector('.click-buy4 > .diamond')
-const ifBuy4 = document.querySelector('.click-buy4 > .ifBuy')
-const recrut4 = document.querySelector('.click-buy4 > .recrut')
-
 buy4.addEventListener('click', event => {
     if (actualGold >= price4 && buy4.className === 'click-buy4')
     {
@@ -904,12 +936,6 @@ buy4.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-//     // 5
-const diamond5 = document.querySelector('.click-buy5 .diamond')
-const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
-const recrut5 = document.querySelector('.click-buy5 .recrut')
 
 buy5.addEventListener('click', event => {
     if (actualGold >= price5 && buy5.className === 'click-buy5')
@@ -926,12 +952,6 @@ buy5.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 6
-const diamond6 = document.querySelector('.click-buy6 .diamond')
-const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
-const recrut6 = document.querySelector('.click-buy6 .recrut')
-
 buy6.addEventListener('click', event => {
     if (actualGold >= price6 && buy6.className === 'click-buy6')
     {
@@ -946,12 +966,6 @@ buy6.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 7
-const diamond7 = document.querySelector('.click-buy7 .diamond')
-const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
-const recrut7 = document.querySelector('.click-buy7 .recrut')
 
 buy7.addEventListener('click', event => {
     if (actualGold >= price7 && buy7.className === 'click-buy7')
@@ -968,12 +982,6 @@ buy7.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 8
-const diamond8 = document.querySelector('.click-buy8 .diamond')
-const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
-const recrut8 = document.querySelector('.click-buy8 .recrut')
-
 buy8.addEventListener('click', event => {
     if (actualGold >= price8 && buy8.className === 'click-buy8')
     {
@@ -988,12 +996,6 @@ buy8.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 9
-const diamond9 = document.querySelector('.click-buy9 .diamond')
-const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
-const recrut9 = document.querySelector('.click-buy9 .recrut')
 
 buy9.addEventListener('click', event => {
     if (actualGold >= price9 && buy9.className === 'click-buy9')
@@ -1010,12 +1012,6 @@ buy9.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 10
-const diamond10 = document.querySelector('.click-buy10 .diamond')
-const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
-const recrut10 = document.querySelector('.click-buy10 .recrut')
-
 buy10.addEventListener('click', event => {
     if (actualGold >= price10 && buy10.className === 'click-buy10')
     {
@@ -1031,14 +1027,6 @@ buy10.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-
-
-//HETIC ITEMS RECUPERATION//
-
-let recup = 1
-const aa = document.querySelector('.hetic-item1')
-
 if (recup === 1)
 {
     aa.style.display = "inline"
@@ -1048,28 +1036,6 @@ if (recup === 1)
 
     ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
-// SPAN VARIABLES
-let lvlSpan = document.querySelector('.actual-level')
-let dmgSpan = document.querySelector('.actual-dmg')
-let magSpan = document.querySelector('.actual-mag')
-let powerSpan = document.querySelector('.actual-power')
-// STATS VARIABLES
-let actualLvl = 1
-let actualDmg = 1
-let actualMag = 0
-let actualPower = 0
-// SPAN CHANGEMENT
-lvlSpan.textContent = `${actualLvl}`
-dmgSpan.textContent = `${actualDmg}`
-magSpan.textContent = `${actualMag}`
-powerSpan.textContent = `${actualPower}%`
-// STATS WIN
-lvlWin = 1
-dmgWin = 1
-magWin = 5
-powerWin = 3
-
-let cmpt = 0
 const lvlUp = () =>
 {
     actualLvl += lvlWin
@@ -1107,12 +1073,6 @@ const lvlUp = () =>
 
         // ITEMS BOOST
 
-// VAR INVENTORY STATE
-let headInv = document.querySelector('.character-item :nth-child(1)')
-let bodyInv = document.querySelector('.character-item :nth-child(2)')
-let handInv = document.querySelector('.character-item :nth-child(3)')
-let footInv = document.querySelector('.character-item :nth-child(4)')
-
 
 
 // console.log(headInv);
@@ -1124,20 +1084,6 @@ let footInv = document.querySelector('.character-item :nth-child(4)')
 
 
     // HEAD
-
-// STATS BY ITEMS
-
-const boost1 = 1
-const boost2 = 3
-const boost3 = 5
-const boostMag1 = 5
-const boostMag2 = 10
-const boostMag3 = 25
-const boostPower1 = 5
-const boostPower2 = 10
-const boostPower3 = 25
-
-
 
 // LEVEL HEAD BOOST
 
