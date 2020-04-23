@@ -38,7 +38,93 @@ let monster_tab = [
     new monster(26, "puget", "monstre_bossfinal.png", 2000, 60)
 ]
 
-// INIT GLOABAL VAR RENDER
+// SPAN VARIABLES
+
+let lvlSpan = document.querySelector('.actual-level')
+let dmgSpan = document.querySelector('.actual-dmg')
+let magSpan = document.querySelector('.actual-mag')
+let powerSpan = document.querySelector('.actual-power')
+let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
+const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
+
+
+// STATS VARIABLES
+
+let actualLvl = 1
+let actualDmg = 1
+let actualMag = 0
+let actualPower = 0
+
+// SPAN CHANGEMENT
+
+lvlSpan.textContent = `${actualLvl}`
+dmgSpan.textContent = `${actualDmg}`
+magSpan.textContent = `${actualMag}`
+powerSpan.textContent = `${actualPower}%`
+
+// STATS WIN
+
+lvlWin = 1
+dmgWin = 1
+magWin = 5
+powerWin = 3
+
+// GOLD IMPROVEMENT
+
+let goldSpan = document.querySelector('.gold-posses')
+let actualGold = 1000
+let goldWin = 2
+goldSpan.textContent = `${actualGold}`
+
+const goldUp = () => 
+{
+    actualGold +=goldWin
+    goldSpan.textContent = `${actualGold}`
+}
+
+const price1 = 20
+const price2 = 30
+const price3 = 40
+const price4 = 50
+const price5 = 60
+const price6 = 70
+const price7 = 80
+const price8 = 90
+const price9 = 100
+const price10 = 110
+
+
+// DOM-GOLD
+
+const buy1 = document.querySelector('.click-buy1')
+const buy2 = document.querySelector('.click-buy2')
+const buy3 = document.querySelector('.click-buy3')
+const buy4 = document.querySelector('.click-buy4')
+const buy5 = document.querySelector('.click-buy5')
+const buy6 = document.querySelector('.click-buy6')
+const buy7 = document.querySelector('.click-buy7')
+const buy8 = document.querySelector('.click-buy8')
+const buy9 = document.querySelector('.click-buy9')
+const buy10 = document.querySelector('.click-buy10')
+let priceHetic1 = document.querySelector('.price-hetic1')
+let priceHetic2 = document.querySelector('.price-hetic2')
+let priceHetic3 = document.querySelector('.price-hetic3')
+let priceHetic4 = document.querySelector('.price-hetic4')
+let priceHetic5 = document.querySelector('.price-hetic5')
+let priceHetic6 = document.querySelector('.price-hetic6')
+let priceHetic7 = document.querySelector('.price-hetic7')
+let priceHetic8 = document.querySelector('.price-hetic8')
+let priceHetic9 = document.querySelector('.price-hetic9')
+let priceHetic10 = document.querySelector('.price-hetic10')
+
+
+// DRAG & DROG VAR
+
+let typeItem
+let itemElem
+let inventoryLastPos
+
+// INIT GLOBAL VAR RENDER
 
 let _w = window.innerWidth
 let _h = window.innerHeight
@@ -53,6 +139,47 @@ const character = document.querySelector('.list-menu-character')
 const characterHetic = document.querySelector('.list-menu-hetic')
 const leave = document.querySelector('.leave')
 const leave2 = document.querySelector('.leave2')
+const diamond1 = document.querySelector('.click-buy1 .diamond')
+const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
+const recrut1 = document.querySelector('.click-buy1 .recrut')
+const diamond2 = document.querySelector('.click-buy2 .diamond')
+const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
+const recrut2 = document.querySelector('.click-buy2 .recrut')
+const diamond3 = document.querySelector('.click-buy3 .diamond')
+const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
+const recrut3 = document.querySelector('.click-buy3 .recrut')
+const diamond5 = document.querySelector('.click-buy5 .diamond')
+const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
+const recrut5 = document.querySelector('.click-buy5 .recrut')
+const diamond4 = document.querySelector('.click-buy4 > .diamond')
+const ifBuy4 = document.querySelector('.click-buy4 > .ifBuy')
+const recrut4 = document.querySelector('.click-buy4 > .recrut')
+const diamond6 = document.querySelector('.click-buy6 .diamond')
+const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
+const recrut6 = document.querySelector('.click-buy6 .recrut')
+const diamond7 = document.querySelector('.click-buy7 .diamond')
+const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
+const recrut7 = document.querySelector('.click-buy7 .recrut')
+const diamond8 = document.querySelector('.click-buy8 .diamond')
+const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
+const recrut8 = document.querySelector('.click-buy8 .recrut')
+const diamond9 = document.querySelector('.click-buy9 .diamond')
+const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
+const recrut9 = document.querySelector('.click-buy9 .recrut')
+const diamond10 = document.querySelector('.click-buy10 .diamond')
+const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
+const recrut10 = document.querySelector('.click-buy10 .recrut')
+
+// VAR INVENTORY STATE
+let headInv = document.querySelector('.character-item :nth-child(1)')
+let bodyInv = document.querySelector('.character-item :nth-child(2)')
+let handInv = document.querySelector('.character-item :nth-child(3)')
+let footInv = document.querySelector('.character-item :nth-child(4)')
+
+//HETIC ITEMS RECUPERATION//
+
+let recup = 1
+const aa = document.querySelector('.hetic-item1')
 
 // INIT GLOBAL VAR PIXI
 
@@ -110,6 +237,21 @@ let id_game = 4
 let attack = 300
 let currentHP
 let level = 0
+let cmpt = 0
+
+
+// STATS BY ITEMS
+
+const boost1 = 1
+const boost2 = 3
+const boost3 = 5
+const boostMag1 = 5
+const boostMag2 = 10
+const boostMag3 = 25
+const boostPower1 = 5
+const boostPower2 = 10
+const boostPower3 = 25
+
 
 // INIT WINDOWS EVENT_LISTENER
 
@@ -483,21 +625,6 @@ leave2.addEventListener( 'click', () =>{
     elementHetic.style.display = 'inline'
 })
 
-
-
-
-//                 DRAG AND DROP GENERAL GESTION
-
-let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
-const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
-
-
-
-// Fill Listener
-let typeItem
-let itemElem
-let inventoryLastPos
-
 // Loop through empties and call drag events
 
 
@@ -527,8 +654,6 @@ function dragStart(e){
 
 function dragEnd(){
     this.className = `${tierItem}`;
-    // console.log(typeItem);
-    
 }
 
 function dragOver(){
@@ -543,35 +668,25 @@ function dragLeave(){
 }
 
 
-//////////////////////////////////////////////////// DROP V2////////////////////////////////////////////////
+//////////////////////////////////////////////////// DROP////////////////////////////////////////////////
 
 function dragDrop(){
     let currentSlot = this.getAttribute('data-slot')
     let destination = this.getAttribute('data-slot')
     let lastPos = inventoryLastPos.getAttribute('data-slot')
-
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
     let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
     let handEquip = document.querySelector('.character-item :nth-child(3) > div')
     let footEquip = document.querySelector('.character-item :nth-child(4) > div')
-    
-    // console.log(currentSlot);
-    
-    // let currentItem = currentItem.getAttribute('data-slot')
-    
-    if (typeItem === currentSlot && !this.hasChildNodes())
-    {
+    if (typeItem === currentSlot && !this.hasChildNodes()){
         this.append(itemElem)
         this.classList.remove('inv-empty')
         this.classList.add('inv-full')
-
     } else if (currentSlot === 'inventory'){
-        if (this.hasChildNodes())
-        {
+        if (this.hasChildNodes()){
             inventoryLastPos.append(itemElem)
             inventoryLastPos.className = "inv-full"
-        } else if (this.className === 'inv-empty' && !this.hasChildNodes())
-        {
+        } else if (this.className === 'inv-empty' && !this.hasChildNodes()){
             this.append(itemElem)
             this.classList.remove('inv-empty')
             this.classList.add('inv-full')
@@ -579,172 +694,152 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-
+<<<<<<< HEAD
+    // STUFF BOOST DMG 
+    if (headInv.hasChildNodes()){
+        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
+        let tierItem = headEquip.classList[0]
+        console.log(tierItem);
+            if(tierItem == 'item1'){
+            actualDmg += boost1
+            }
+            else if (tierItem == 'item2'){
+                actualDmg += boost2
+            } else if (tierItem == 'item3'){
+                actualDmg += boost3
+            }
+        }
+        else if (bodyInv.hasChildNodes()){
+            let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
+            let tierItem = bodyEquip.classList[0]
+            if(tierItem == 'item1')
+            {
+            actualDmg += boost1
+            } else if (tierItem == 'item2'){
+                actualDmg += boost2
+            } else if (tierItem == 'item3'){
+                actualDmg += boost3
+            }
+=======
 
     // HEAD BOOST DMG 
-    if (headInv.hasChildNodes())
-    {
-    let headEquip = document.querySelector('.character-item :nth-child(1) > div')
+    if (headInv.hasChildNodes()) {
+        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
 
-    let tierItem = headEquip.classList[0]
-    console.log(tierItem);
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
-        }
-        else if (tierItem == 'item2')
-        {
+        let tierItem = headEquip.classList[0]
+        console.log(tierItem);
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
             actualDmg += boost2
-        } else if (tierItem == 'item3')
-        {
-            actualDmg += boost3
-            
-        }
-    }
-    else if (bodyInv.hasChildNodes())
-    {
+        } else if (tierItem == 'item3') {
+            actualDmg += boost3    
+        }} else if (bodyInv.hasChildNodes()) {
         let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
         let tierItem = bodyEquip.classList[0]
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
-        }
-        else if (tierItem == 'item2')
-        {
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
             actualDmg += boost2
-        } else if (tierItem == 'item3')
-        {
+        } else if (tierItem == 'item3') {
             actualDmg += boost3
         }
     }
-
-
-    else if (footInv.hasChildNodes())
+         else if (footInv.hasChildNodes())
     {
         let footEquip = document.querySelector('.character-item :nth-child(4) > div')
         let tierItem = footEquip.classList[0]
         if(tierItem == 'item1')
         {
         actualDmg += boost1
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         }
-        else if (tierItem == 'item2')
-        {
-            actualDmg += boost2
-        } else if (tierItem == 'item3')
-        {
-            actualDmg += boost3
+        else if (footInv.hasChildNodes()){
+            let footEquip = document.querySelector('.character-item :nth-child(4) > div')
+            let tierItem = footEquip.classList[0]
+            if(tierItem == 'item1'){
+            actualDmg += boost1
+            } else if (tierItem == 'item2'){
+                actualDmg += boost2
+            } else if (tierItem == 'item3'){
+                actualDmg += boost3
+            }
         }
-    }
+<<<<<<< HEAD
     
+=======
+    }  
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
     
-    else if (handInv.hasChildNodes())
-    {
+    else if (handInv.hasChildNodes()){
         let handEquip = document.querySelector('.character-item :nth-child(3) > div')
         console.log(handEquip);
         let tierItem = handEquip.classList[0]
         console.log(tierItem);
-        if(tierItem === 'item1')
-        {
+        if(tierItem === 'item1'){
         actualDmg += boost1
-        }
-        else if(tierItem === 'item2')
-        {
+        } else if(tierItem === 'item2'){
             actualDmg += boost2
-        }
-        else if (tierItem == 'item3')
-        {
+        } else if (tierItem == 'item3'){
             actualDmg += boost3
-        }
-        else if(tierItem === 'item4')
-        {
+        } else if(tierItem === 'item4'){
         actualMag += boostMag1
-        }
-        else if(tierItem === 'item5')
-        {
+        } else if(tierItem === 'item5'){
             actualMag += boostMag2
-        }
-        else if (tierItem == 'item6')
-        {
+        } else if (tierItem == 'item6'){
             actualMag += boostMag3
-        }
-        if(tierItem === 'item7')
-        {
+        } else if(tierItem === 'item7'){
         actualPower += boostPower1
-        }
-        else if(tierItem === 'item8')
-        {
+        } else if(tierItem === 'item8'){
             actualPower += boostPower2
-        }
-        else if (tierItem == 'item9')
-        {
+        } else if (tierItem == 'item9'){
             actualPower += boostPower3
         }
     }
-
-
+<<<<<<< HEAD
+    if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
+        if (tierItem == 'item1'){
+=======
     
     else
     {
         //Pas de retour de boost sans ce else ?
     }
 
-
-
-
     if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot')
     {
         if (tierItem == 'item1')
         {
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
             actualDmg -= boost1
-        }
-        else if (tierItem =="item2")
-        {
+        } else if (tierItem =="item2"){
             actualDmg -= boost2
-        }
-        else if (tierItem == 'item3')
-        {
+        } else if (tierItem == 'item3'){
             actualDmg -= boost3
         }
     }
-    if (lastPos === 'hand')
-    {
-        if (tierItem == 'item1')
-        {
+    if (lastPos === 'hand'){
+        if (tierItem == 'item1'){
             actualDmg -= boost1
-        }
-        else if (tierItem =='item2')
-        {
+        } else if (tierItem =='item2'){
             actualDmg -= boost2
-        }
-        else if (tierItem == 'item3')
-        {
+        } else if (tierItem == 'item3'){
             actualDmg -= boost3
-        }
-        if (tierItem == 'item4')
-        {
+        } else if (tierItem == 'item4'){
             actualMag -= boostMag1
-        }
-        else if (tierItem =='item5')
-        {
+        } else if (tierItem =='item5'){
             actualMag -= boostMag2
-        }
-        else if (tierItem == 'item6')
-        {
+        } else if (tierItem == 'item6'){
             actualMag -= boostMag3
-        }
-        if (tierItem == 'item7')
-        {
+        } else if (tierItem == 'item7'){
             actualPower -= boostPower1
-        }
-        else if (tierItem =='item8')
-        {
+        } else if (tierItem =='item8'){
             actualPower -= boostPower2
-        }
-        else if (tierItem == 'item9')
-        {
+        } else if (tierItem == 'item9'){
             actualPower -= boostPower3
         }
     }
+    // STATS SPAN ACTUALISATION
     lvlSpan.textContent = `${actualLvl}`
     dmgSpan.textContent = `${actualDmg}`
     magSpan.textContent = `${actualMag}`
@@ -757,13 +852,15 @@ function dragDrop(){
 
 
 
+<<<<<<< HEAD
 // GOLD IMPROVEMENT
-let goldSpan = document.querySelector('.gold-posses')
+let goldSpan = document.querySelector('.gold-posses') //VAR A METTRE AU DEBUT
 let actualGold = 1000
-let goldWin = 2
+// let goldWin = 2  modifier selon le nmbre de gold gagner par mob tué
 goldSpan.textContent = `${actualGold}`
 
-const goldUp = () => 
+// GOLD IMPROVMENT WHILE MOB KILLED
+const goldUp = () =>   
 {
     actualGold +=goldWin
     goldSpan.textContent = `${actualGold}`
@@ -772,8 +869,7 @@ const goldUp = () =>
 
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
-
-
+// VAR A REMONTER
 const price1 = 20
 const price2 = 30
 const price3 = 40
@@ -807,6 +903,10 @@ let priceHetic8 = document.querySelector('.price-hetic8')
 let priceHetic9 = document.querySelector('.price-hetic9')
 let priceHetic10 = document.querySelector('.price-hetic10')
 
+=======
+//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
+
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 priceHetic1.textContent = price1
 priceHetic2.textContent = price2
 priceHetic3.textContent = price3
@@ -818,12 +918,16 @@ priceHetic8.textContent = price8
 priceHetic9.textContent = price9
 priceHetic10.textContent = price10
 
+<<<<<<< HEAD
 
     // 1
+    // 3 CONST A REMONTER A CHAQUE DEBUT DE PARTIE
     const diamond1 = document.querySelector('.click-buy1 .diamond')
     const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
     const recrut1 = document.querySelector('.click-buy1 .recrut')
 
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 buy1.addEventListener('click', event => {
     if (actualGold >= price1 && buy1.className === 'click-buy1')
     {
@@ -841,12 +945,6 @@ buy1.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 2
-const diamond2 = document.querySelector('.click-buy2 .diamond')
-const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
-const recrut2 = document.querySelector('.click-buy2 .recrut')
-
 buy2.addEventListener('click', event => {
     if (actualGold >= price2 && buy2.className === 'click-buy2')
     {
@@ -861,12 +959,6 @@ buy2.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 3
-const diamond3 = document.querySelector('.click-buy3 .diamond')
-const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
-const recrut3 = document.querySelector('.click-buy3 .recrut')
 
 buy3.addEventListener('click', event => {
     if (actualGold >= price3 && buy3.className === 'click-buy3')
@@ -883,13 +975,6 @@ buy3.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-
-//     // 4
-const diamond4 = document.querySelector('.click-buy4 > .diamond')
-const ifBuy4 = document.querySelector('.click-buy4 > .ifBuy')
-const recrut4 = document.querySelector('.click-buy4 > .recrut')
-
 buy4.addEventListener('click', event => {
     if (actualGold >= price4 && buy4.className === 'click-buy4')
     {
@@ -904,12 +989,6 @@ buy4.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-//     // 5
-const diamond5 = document.querySelector('.click-buy5 .diamond')
-const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
-const recrut5 = document.querySelector('.click-buy5 .recrut')
 
 buy5.addEventListener('click', event => {
     if (actualGold >= price5 && buy5.className === 'click-buy5')
@@ -926,12 +1005,6 @@ buy5.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 6
-const diamond6 = document.querySelector('.click-buy6 .diamond')
-const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
-const recrut6 = document.querySelector('.click-buy6 .recrut')
-
 buy6.addEventListener('click', event => {
     if (actualGold >= price6 && buy6.className === 'click-buy6')
     {
@@ -946,12 +1019,6 @@ buy6.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 7
-const diamond7 = document.querySelector('.click-buy7 .diamond')
-const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
-const recrut7 = document.querySelector('.click-buy7 .recrut')
 
 buy7.addEventListener('click', event => {
     if (actualGold >= price7 && buy7.className === 'click-buy7')
@@ -968,12 +1035,6 @@ buy7.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 8
-const diamond8 = document.querySelector('.click-buy8 .diamond')
-const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
-const recrut8 = document.querySelector('.click-buy8 .recrut')
-
 buy8.addEventListener('click', event => {
     if (actualGold >= price8 && buy8.className === 'click-buy8')
     {
@@ -988,12 +1049,6 @@ buy8.addEventListener('click', event => {
     }
     goldSpan.textContent = `${actualGold}`
     })
-
-
-    // 9
-const diamond9 = document.querySelector('.click-buy9 .diamond')
-const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
-const recrut9 = document.querySelector('.click-buy9 .recrut')
 
 buy9.addEventListener('click', event => {
     if (actualGold >= price9 && buy9.className === 'click-buy9')
@@ -1010,12 +1065,6 @@ buy9.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-
-    // 10
-const diamond10 = document.querySelector('.click-buy10 .diamond')
-const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
-const recrut10 = document.querySelector('.click-buy10 .recrut')
-
 buy10.addEventListener('click', event => {
     if (actualGold >= price10 && buy10.className === 'click-buy10')
     {
@@ -1031,23 +1080,76 @@ buy10.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
+<<<<<<< HEAD
 
 
 
 //HETIC ITEMS RECUPERATION//
 
-let recup = 1
-const aa = document.querySelector('.hetic-item1')
+// NE PAS TOUCHER POUR LE MOMENT
 
+// 
+
+let heticRecup1 = 1
+const heticItem1 = document.querySelector('.hetic-item1')
+
+let heticRecup2 = 1
+const heticItem2 = document.querySelector('.hetic-item2')
+
+let heticRecup3 = 0
+const heticItem3 = document.querySelector('.hetic-item3')
+
+let heticRecup4 = 0
+const heticItem4 = document.querySelector('.hetic-item4')
+
+let heticRecup5 = 1
+const heticItem5 = document.querySelector('.hetic-item5')
+
+let heticRecup6 = 0
+const heticItem6 = document.querySelector('.hetic-item6')
+
+let heticRecup7 = 1
+const heticItem7 = document.querySelector('.hetic-item7')
+
+let heticRecup8 = 0
+const heticItem8 = document.querySelector('.hetic-item8')
+
+let heticRecup9 = 1
+const heticItem9 = document.querySelector('.hetic-item9')
+
+let heticRecup10 = 1
+const heticItem10 = document.querySelector('.hetic-item10')
+
+const listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+const listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+
+const i = listRecupHetic.length
+
+for (const i of listRecupHetic) {
+    if (listRecupHetic[i] === 1){
+        console.log(listItemHetic[i]);
+        listItemHetic[i].style.display = 'inline'
+        
+    }
+=======
 if (recup === 1)
 {
     aa.style.display = "inline"
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 }
+
+
+
+
 
 
 
     ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
+<<<<<<< HEAD
+    // VAR A REMONTER 
 // SPAN VARIABLES
 let lvlSpan = document.querySelector('.actual-level')
 let dmgSpan = document.querySelector('.actual-dmg')
@@ -1069,11 +1171,13 @@ dmgWin = 1
 magWin = 5
 powerWin = 3
 
+// STATS IMPROVMENET WHILE LVL UP
 let cmpt = 0
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 const lvlUp = () =>
 {
     actualLvl += lvlWin
-    // actualDmg += dmgWin
     cmpt += 1
     if (cmpt%5 === 0)
     {
@@ -1088,6 +1192,8 @@ const lvlUp = () =>
     powerSpan.textContent = `${actualPower}%`
 }
 
+
+// FUNCTION STATS IMRPOVMENT
 // const dmgUp = () =>
 // {
 //     actualDmg += dmgWin
@@ -1107,12 +1213,16 @@ const lvlUp = () =>
 
         // ITEMS BOOST
 
+<<<<<<< HEAD
+// VAR A REMONTER
 // VAR INVENTORY STATE
 let headInv = document.querySelector('.character-item :nth-child(1)')
 let bodyInv = document.querySelector('.character-item :nth-child(2)')
 let handInv = document.querySelector('.character-item :nth-child(3)')
 let footInv = document.querySelector('.character-item :nth-child(4)')
 
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 
 
 // console.log(headInv);
@@ -1125,8 +1235,10 @@ let footInv = document.querySelector('.character-item :nth-child(4)')
 
     // HEAD
 
+<<<<<<< HEAD
 // STATS BY ITEMS
 
+// VAR A REMONTER ( = BOOST SELON LE NIV DE L'ITEM)
 const boost1 = 1
 const boost2 = 3
 const boost3 = 5
@@ -1139,7 +1251,11 @@ const boostPower3 = 25
 
 
 
+// LEVEL HEAD BOOST BEFORE ADDING IN DRAG.DROP
+
+=======
 // LEVEL HEAD BOOST
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 
 // const test = () =>
 // {
