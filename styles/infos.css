@@ -26,14 +26,13 @@ header{
 /* CONTAINER OBJECTIF */
 
 .container{
-    height: 90px;
+    height: 120px;
     width: 100%;
     display: grid;
     justify-content: center;
 }
 
 .objectif{
-    transform: translateY(-30px);
     width:200px;
     height:120px;
     display: grid;
@@ -63,8 +62,146 @@ header{
     font-weight: 600;
 }
 
-/* CONTAINER TEAM */
+/* CONTAINER RÈGLES */
 
+.regles_container{
+    height: 120px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.regles{
+    width:200px;
+    height:120px;
+    display: grid;
+    justify-content: center;
+    background-size: contain;
+    background-image: url(../images/objectif_infos.png);
+    background-repeat: no-repeat;
+}
+
+.regles_text{
+    margin-top: 40px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 600;
+}
+.teamprof{
+    margin: 0 auto;
+    width: 800px;;
+    height:340px;
+    text-align: center;
+}
+
+.prof_general{
+    width:800px;
+    margin-bottom: 40px;
+}
+
+.texte_teamprof{
+    font-weight: 600;
+    font-size: 26px;
+
+}
+
+.item{
+    width:100px;
+}
+
+.items1{
+    height:200px;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    align-items: center;
+}
+
+.item1_hetic{
+    width:140px;
+    grid-column: 1;
+    margin-left: 20px;
+}
+.item2_hetic{
+    grid-column: 7;
+}
+.item3_hetic{
+    grid-column: 13;
+}
+.item4_hetic{
+    width:50px;
+    grid-column: 19;
+}
+.texte1_hetic{
+    grid-column: 3 / 6;
+}
+.texte2_hetic{
+    grid-column: 9 / 12;
+}
+.texte3_hetic{
+    grid-column:15 / 18;
+}
+.texte4_hetic{
+    grid-column:21/ 24;
+}
+
+.items2{
+    height:200px;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    align-items: center;
+
+}
+.item5_hetic{
+    grid-column: 4;
+}
+.item6_hetic{
+    grid-column: 10;
+}
+.item7_hetic{
+    grid-column: 16;
+}
+
+.texte5_hetic{
+    grid-column: 6/9;
+}
+.texte6_hetic{
+    grid-column:12 / 15;
+}
+.texte7_hetic{
+    grid-column:18/ 21;
+}
+
+.items3{
+    height:200px;
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    align-items: center;
+
+}
+.item8_hetic{
+    grid-column: 4;
+    width:80px;
+}
+.item9_hetic{
+    grid-column: 10;
+}
+.item10_hetic{
+    grid-column: 16;
+    width:80px;
+}
+.texte8_hetic{
+    grid-column: 6/9;
+}
+.texte9_hetic{
+    grid-column:12 / 15;
+}
+.texte10_hetic{
+    grid-column:18/ 21;
+}
+
+/* CONTAINER TEAM */
+/* 
 .container_team{
     height: 40px;
     width: 100%;
@@ -120,4 +257,4 @@ header{
 .footer_text{
     color: #ffffff;
     font-size: 12px;
-}
+} */
