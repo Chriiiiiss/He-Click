@@ -694,7 +694,6 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-<<<<<<< HEAD
     // STUFF BOOST DMG 
     if (headInv.hasChildNodes()){
         let headEquip = document.querySelector('.character-item :nth-child(1) > div')
@@ -720,39 +719,6 @@ function dragDrop(){
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }
-=======
-
-    // HEAD BOOST DMG 
-    if (headInv.hasChildNodes()) {
-        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
-
-        let tierItem = headEquip.classList[0]
-        console.log(tierItem);
-        if(tierItem == 'item1') {
-            actualDmg += boost1
-        } else if (tierItem == 'item2') {
-            actualDmg += boost2
-        } else if (tierItem == 'item3') {
-            actualDmg += boost3    
-        }} else if (bodyInv.hasChildNodes()) {
-        let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
-        let tierItem = bodyEquip.classList[0]
-        if(tierItem == 'item1') {
-            actualDmg += boost1
-        } else if (tierItem == 'item2') {
-            actualDmg += boost2
-        } else if (tierItem == 'item3') {
-            actualDmg += boost3
-        }
-    }
-         else if (footInv.hasChildNodes())
-    {
-        let footEquip = document.querySelector('.character-item :nth-child(4) > div')
-        let tierItem = footEquip.classList[0]
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         }
         else if (footInv.hasChildNodes()){
             let footEquip = document.querySelector('.character-item :nth-child(4) > div')
@@ -764,14 +730,7 @@ function dragDrop(){
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }
-        }
-<<<<<<< HEAD
-    
-=======
-    }  
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-    
-    else if (handInv.hasChildNodes()){
+        } else if (handInv.hasChildNodes()){
         let handEquip = document.querySelector('.character-item :nth-child(3) > div')
         console.log(handEquip);
         let tierItem = handEquip.classList[0]
