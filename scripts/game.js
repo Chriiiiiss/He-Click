@@ -694,7 +694,6 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-<<<<<<< HEAD
     // STUFF BOOST DMG 
     if (headInv.hasChildNodes()){
         let headEquip = document.querySelector('.character-item :nth-child(1) > div')
@@ -708,39 +707,6 @@ function dragDrop(){
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }
-=======
-
-    // HEAD BOOST DMG 
-    if (headInv.hasChildNodes()) {
-        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
-
-        let tierItem = headEquip.classList[0]
-        console.log(tierItem);
-        if(tierItem == 'item1') {
-            actualDmg += boost1
-        } else if (tierItem == 'item2') {
-            actualDmg += boost2
-        } else if (tierItem == 'item3') {
-            actualDmg += boost3    
-        }} else if (bodyInv.hasChildNodes()) {
-        let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
-        let tierItem = bodyEquip.classList[0]
-        if(tierItem == 'item1') {
-            actualDmg += boost1
-        } else if (tierItem == 'item2') {
-            actualDmg += boost2
-        } else if (tierItem == 'item3') {
-            actualDmg += boost3
-        }
-    }
-         else if (footInv.hasChildNodes())
-    {
-        let footEquip = document.querySelector('.character-item :nth-child(4) > div')
-        let tierItem = footEquip.classList[0]
-        if(tierItem == 'item1')
-        {
-        actualDmg += boost1
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         }
         else if (bodyInv.hasChildNodes()){
             let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
@@ -754,7 +720,6 @@ function dragDrop(){
                 actualDmg += boost3
             }
         }
-<<<<<<< HEAD
         else if (footInv.hasChildNodes()){
             let footEquip = document.querySelector('.character-item :nth-child(4) > div')
             let tierItem = footEquip.classList[0]
@@ -766,12 +731,6 @@ function dragDrop(){
                 actualDmg += boost3
             }
         } else if (handInv.hasChildNodes()){
-=======
-    }  
-    
-    else if (handInv.hasChildNodes())
-    {
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         let handEquip = document.querySelector('.character-item :nth-child(3) > div')
         console.log(handEquip);
         let tierItem = handEquip.classList[0]
@@ -796,24 +755,10 @@ function dragDrop(){
             actualPower += boostPower3
         }
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-    if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
-        if (tierItem == 'item1'){
-=======
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-    
-    else
-    {
-        //Pas de retour de boost sans ce else ?
-    }
-
     if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot')
     {
         if (tierItem == 'item1')
         {
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
             actualDmg -= boost1
         } else if (tierItem =="item2"){
             actualDmg -= boost2
@@ -853,68 +798,10 @@ function dragDrop(){
 
 //////////////////////////////////////////////END DROP//////////////////////////////////////////////////////
 
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-// GOLD IMPROVEMENT
-let goldSpan = document.querySelector('.gold-posses') //VAR A METTRE AU DEBUT
-let actualGold = 1000
-// let goldWin = 2  modifier selon le nmbre de gold gagner par mob tué
-goldSpan.textContent = `${actualGold}`
-
-// GOLD IMPROVMENT WHILE MOB KILLED
-const goldUp = () =>   
-{
-    actualGold +=goldWin
-    goldSpan.textContent = `${actualGold}`
-}
-
+//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
-// VAR A REMONTER
-const price1 = 20
-const price2 = 30
-const price3 = 40
-const price4 = 50
-const price5 = 60
-const price6 = 70
-const price7 = 80
-const price8 = 90
-const price9 = 100
-const price10 = 110
-
-const buy1 = document.querySelector('.click-buy1')
-const buy2 = document.querySelector('.click-buy2')
-const buy3 = document.querySelector('.click-buy3')
-const buy4 = document.querySelector('.click-buy4')
-const buy5 = document.querySelector('.click-buy5')
-const buy6 = document.querySelector('.click-buy6')
-const buy7 = document.querySelector('.click-buy7')
-const buy8 = document.querySelector('.click-buy8')
-const buy9 = document.querySelector('.click-buy9')
-const buy10 = document.querySelector('.click-buy10')
-
-let priceHetic1 = document.querySelector('.price-hetic1')
-let priceHetic2 = document.querySelector('.price-hetic2')
-let priceHetic3 = document.querySelector('.price-hetic3')
-let priceHetic4 = document.querySelector('.price-hetic4')
-let priceHetic5 = document.querySelector('.price-hetic5')
-let priceHetic6 = document.querySelector('.price-hetic6')
-let priceHetic7 = document.querySelector('.price-hetic7')
-let priceHetic8 = document.querySelector('.price-hetic8')
-let priceHetic9 = document.querySelector('.price-hetic9')
-let priceHetic10 = document.querySelector('.price-hetic10')
-
-=======
-//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
-
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-=======
-//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
-
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 priceHetic1.textContent = price1
 priceHetic2.textContent = price2
 priceHetic3.textContent = price3
@@ -926,19 +813,6 @@ priceHetic8.textContent = price8
 priceHetic9.textContent = price9
 priceHetic10.textContent = price10
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-    // 1
-    // 3 CONST A REMONTER A CHAQUE DEBUT DE PARTIE
-    const diamond1 = document.querySelector('.click-buy1 .diamond')
-    const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
-    const recrut1 = document.querySelector('.click-buy1 .recrut')
-
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 buy1.addEventListener('click', event => {
     if (actualGold >= price1 && buy1.className === 'click-buy1')
     {
@@ -1091,11 +965,6 @@ buy10.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-
 //HETIC ITEMS RECUPERATION//
 
 // NE PAS TOUCHER POUR LE MOMENT
@@ -1145,53 +1014,15 @@ for (const i of listRecupHetic) {
         listItemHetic[i].style.display = 'inline'
         
     }
-=======
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
+
 if (recup === 1)
 {
     aa.style.display = "inline"
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
+}
 }
 
+////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
-
-
-
-
-
-    ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-    // VAR A REMONTER 
-// SPAN VARIABLES
-let lvlSpan = document.querySelector('.actual-level')
-let dmgSpan = document.querySelector('.actual-dmg')
-let magSpan = document.querySelector('.actual-mag')
-let powerSpan = document.querySelector('.actual-power')
-// STATS VARIABLES
-let actualLvl = 1
-let actualDmg = 1
-let actualMag = 0
-let actualPower = 0
-// SPAN CHANGEMENT
-lvlSpan.textContent = `${actualLvl}`
-dmgSpan.textContent = `${actualDmg}`
-magSpan.textContent = `${actualMag}`
-powerSpan.textContent = `${actualPower}%`
-// STATS WIN
-lvlWin = 1
-dmgWin = 1
-magWin = 5
-powerWin = 3
-
-// STATS IMPROVMENET WHILE LVL UP
-let cmpt = 0
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 const lvlUp = () =>
 {
     actualLvl += lvlWin
@@ -1207,7 +1038,8 @@ const lvlUp = () =>
     dmgSpan.textContent = `${actualDmg}`
     magSpan.textContent = `${actualMag}`
     powerSpan.textContent = `${actualPower}%`
-}
+    }
+
 
 
 // FUNCTION STATS IMRPOVMENT
@@ -1227,58 +1059,10 @@ const lvlUp = () =>
 //     powerSpan.textContent = `${actualPower}%`
 // }
 
-
-        // ITEMS BOOST
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-// VAR A REMONTER
-// VAR INVENTORY STATE
-let headInv = document.querySelector('.character-item :nth-child(1)')
-let bodyInv = document.querySelector('.character-item :nth-child(2)')
-let handInv = document.querySelector('.character-item :nth-child(3)')
-let footInv = document.querySelector('.character-item :nth-child(4)')
-
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-
-
 // console.log(headInv);
 // console.log(bodyInv);
 // console.log(handInv);
 // console.log(footInv);
-
-
-
-
-    // HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-// STATS BY ITEMS
-
-// VAR A REMONTER ( = BOOST SELON LE NIV DE L'ITEM)
-const boost1 = 1
-const boost2 = 3
-const boost3 = 5
-const boostMag1 = 5
-const boostMag2 = 10
-const boostMag3 = 25
-const boostPower1 = 5
-const boostPower2 = 10
-const boostPower3 = 25
-
-
-
-// LEVEL HEAD BOOST BEFORE ADDING IN DRAG.DROP
-
-=======
-=======
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
-// LEVEL HEAD BOOST
->>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 
 // const test = () =>
 // {
@@ -1308,4 +1092,4 @@ const boostPower3 = 25
 // dmgSpan.textContent = `${actualDmg}`
 // magSpan.textContent = `${actualMag}`
 // powerSpan.textContent = `${actualPower}%`
-// }
+    // }
