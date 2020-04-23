@@ -520,8 +520,15 @@ div[class*='buy']:hover > span[class*="price"]{
 }
 
 .ifBuy{
+    background-image: url(../images/ifBuy.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
     width: 40%;
+    height: 70%;
     position: absolute;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
     left: 65px;
     top: 10px;
     display: none;
@@ -554,6 +561,69 @@ span[class*="price-hetic"]{
     left: 50px;
     font-family: 'Anton', sans-serif;
 }
+
+
+/* IF ITEMS */
+
+img[class*=hetic-item]{
+    display: none   ;
+}
+
+.hetic-item1{
+    width: 80%;
+    height: 70%;
+    padding: 6px;
+}
+.hetic-item2{
+    width: auto;
+    height: 70%;
+    padding: 10px;
+}
+.hetic-item3{
+    width: 80%;
+    height: 60%;
+    padding: 7px;
+}
+.hetic-item4{
+    width: 40%;
+    height: 75%;
+    padding: 6px;
+}
+.hetic-item5{
+    width: 80%;
+    height: 70%;
+    padding: 6px;
+}
+.hetic-item6{
+    width: 65%;
+    height: 75%;
+    padding: 8px;
+}
+.hetic-item7{
+    width: 80%;
+    height: 70%;
+    padding: 6px;
+}
+.hetic-item8{
+    width: 70%;
+    height: 85%;
+    padding: 6px;
+}
+.hetic-item9{
+    width: 80%;
+    height: 70%;
+    padding: 6px;
+}
+.hetic-item10{
+    width: 60%;
+    height: 70%;
+    padding: 6px;
+}
+
+
+
+
+
 
 
 /* GOLD GESTION */

@@ -96,47 +96,6 @@ function dragLeave(){
 }
 
 
-
-                                        // DROP FIRST TRY
-// function dragDrop(){
-//     const invItem = this.classList[0]
-    // console.log(typeItem);
-    // console.log(invItem);
-
-//     if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
-//     || (typeItem =='head' && invItem =='inv-head')
-//     || (typeItem == 'body' && invItem == 'inv-body')
-//     || (typeItem == 'foot' && invItem == 'inv-foot')) 
-//     && !this.hasChildNodes()) //ths.classlist.etc.
-//     {
-//         this.append(itemElem)
-//         this.classList.remove("inv-empty")
-//         this.classList.add("inv-full")
-//     }
-
-//     // if (invItem == 'inv-empty' && !this.hasChildNodes())
-//     // {
-//     //     this.append(itemElem)
-//     //     inventoryLastPos.append(itemElem)
-//     // } 
-    
-//     else if (this.hasChildNodes() )
-//     {
-//         inventoryLastPos.append(itemElem)
-//     } else if (this.classList[0] === "inv-full") {     //
-//         inventoryLastPos.append(itemElem)
-//         inventoryLastPos.className = "inv-full"
-        
-//     } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
-//         this.append(itemElem)
-//         this.classList.splice(0, 1, 'inv-full')
-//         console.log(this.classList);
-        
-//         inventoryLastPos.className = "inv-empty"
-//     }
-// }
-
-
 //////////////////////////////////////////////////// DROP V2////////////////////////////////////////////////
 
 function dragDrop(){
@@ -414,15 +373,14 @@ priceHetic10.textContent = price10
 
 
     // 1
-    const diamond1 = document.querySelector('.diamond')
-    const ifBuy1 = document.querySelector('.ifBuy')
-    const recrut1 = document.querySelector('.recrut')
+    const diamond1 = document.querySelector('.click-buy1 .diamond')
+    const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
+    const recrut1 = document.querySelector('.click-buy1 .recrut')
 
 buy1.addEventListener('click', event => {
     if (actualGold >= price1 && buy1.className === 'click-buy1')
     {
         actualGold -= price1
-        console.log('lol');
         ifBuy1.style.display = 'inline'
         diamond1.style.display = 'none'
         recrut1.style.display = 'none'
@@ -438,9 +396,9 @@ buy1.addEventListener('click', event => {
 
 
     // 2
-const diamond2 = document.querySelector('.click-buy2 > .diamond')
-const ifBuy2 = document.querySelector('.click-buy2 > .ifBuy')
-const recrut2 = document.querySelector('.click-buy2 >.recrut')
+const diamond2 = document.querySelector('.click-buy2 .diamond')
+const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
+const recrut2 = document.querySelector('.click-buy2 .recrut')
 
 buy2.addEventListener('click', event => {
     if (actualGold >= price2 && buy2.className === 'click-buy2')
@@ -459,9 +417,9 @@ buy2.addEventListener('click', event => {
 
 
     // 3
-const diamond3 = document.querySelector('.click-buy3 > .diamond')
-const ifBuy3 = document.querySelector('.click-buy3 > .ifBuy')
-const recrut3 = document.querySelector('.click-buy3 > .recrut')
+const diamond3 = document.querySelector('.click-buy3 .diamond')
+const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
+const recrut3 = document.querySelector('.click-buy3 .recrut')
 
 buy3.addEventListener('click', event => {
     if (actualGold >= price3 && buy3.className === 'click-buy3')
@@ -502,9 +460,9 @@ buy4.addEventListener('click', event => {
 
 
 //     // 5
-const diamond5 = document.querySelector('.click-buy5 > .diamond')
-const ifBuy5 = document.querySelector('.click-buy5 > .ifBuy')
-const recrut5 = document.querySelector('.click-buy5 > .recrut')
+const diamond5 = document.querySelector('.click-buy5 .diamond')
+const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
+const recrut5 = document.querySelector('.click-buy5 .recrut')
 
 buy5.addEventListener('click', event => {
     if (actualGold >= price5 && buy5.className === 'click-buy5')
@@ -523,9 +481,9 @@ buy5.addEventListener('click', event => {
 
 
     // 6
-const diamond6 = document.querySelector('.click-buy6 > .diamond')
-const ifBuy6 = document.querySelector('.click-buy6 > .ifBuy')
-const recrut6 = document.querySelector('.click-buy6 > .recrut')
+const diamond6 = document.querySelector('.click-buy6 .diamond')
+const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
+const recrut6 = document.querySelector('.click-buy6 .recrut')
 
 buy6.addEventListener('click', event => {
     if (actualGold >= price6 && buy6.className === 'click-buy6')
@@ -544,9 +502,9 @@ buy6.addEventListener('click', event => {
 
 
     // 7
-const diamond7 = document.querySelector('.click-buy7 > .diamond')
-const ifBuy7 = document.querySelector('.click-buy7 > .ifBuy')
-const recrut7 = document.querySelector('.click-buy7 >.recrut')
+const diamond7 = document.querySelector('.click-buy7 .diamond')
+const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
+const recrut7 = document.querySelector('.click-buy7 .recrut')
 
 buy7.addEventListener('click', event => {
     if (actualGold >= price7 && buy7.className === 'click-buy7')
@@ -565,9 +523,9 @@ buy7.addEventListener('click', event => {
 
 
     // 8
-const diamond8 = document.querySelector('.click-buy8 > .diamond')
-const ifBuy8 = document.querySelector('.click-buy8 > .ifBuy')
-const recrut8 = document.querySelector('.click-buy8 > .recrut')
+const diamond8 = document.querySelector('.click-buy8 .diamond')
+const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
+const recrut8 = document.querySelector('.click-buy8 .recrut')
 
 buy8.addEventListener('click', event => {
     if (actualGold >= price8 && buy8.className === 'click-buy8')
@@ -586,9 +544,9 @@ buy8.addEventListener('click', event => {
 
 
     // 9
-const diamond9 = document.querySelector('.click-buy9 > .diamond')
-const ifBuy9 = document.querySelector('.click-buy9 > .ifBuy')
-const recrut9 = document.querySelector('.click-buy9 > .recrut')
+const diamond9 = document.querySelector('.click-buy9 .diamond')
+const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
+const recrut9 = document.querySelector('.click-buy9 .recrut')
 
 buy9.addEventListener('click', event => {
     if (actualGold >= price9 && buy9.className === 'click-buy9')
@@ -607,15 +565,15 @@ buy9.addEventListener('click', event => {
 
 
     // 10
-const diamond10 = document.querySelector('.click-buy10 > .diamond')
-const ifBuy10 = document.querySelector('.click-buy10 > .ifBuy')
-const recrut10 = document.querySelector('.click-buy10 > .recrut')
+const diamond10 = document.querySelector('.click-buy10 .diamond')
+const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
+const recrut10 = document.querySelector('.click-buy10 .recrut')
 
 buy10.addEventListener('click', event => {
     if (actualGold >= price10 && buy10.className === 'click-buy10')
     {
         actualGold -= price10
-        ifBuy10.style.display = 'inline'
+        ifBuy10.style.display = 'inline-block'
         diamond10.style.display = 'none'
         recrut10.style.display = 'none'
         priceHetic10.style.display = 'none'
@@ -627,6 +585,17 @@ buy10.addEventListener('click', event => {
     })
 
 
+
+
+//HETIC ITEMS RECUPERATION//
+
+let recup = 1
+const aa = document.querySelector('.hetic-item1')
+
+if (recup === 1)
+{
+    aa.style.display = "inline"
+}
 
 
 
