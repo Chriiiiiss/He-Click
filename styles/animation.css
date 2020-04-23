@@ -1,11 +1,25 @@
 /********   PLACING THE ELEMENTS   ********/
 
+/* set the background */
+
+.background{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+/* set the elements */
+
 .opening-animation{
     display: grid;
+    position: relative;
+    top: -650px;
     width: 100%;
-    height: 1000px;
+   /* height: 1000px;*/
     justify-content: center;
-    align-content: center;
+    align-content: center
 }
 
 .point{
@@ -110,6 +124,12 @@
         opacity: 1;
     }
 
+    90%{
+        left: 1086px;
+        bottom: 127px;
+        opacity: 1;
+    }
+
     99%{
         left: 1086px;
         bottom: 127px;
@@ -119,6 +139,28 @@
     100%{
         left: 1086px;
         bottom: 127px;
+        opacity: 0;
+    }
+}
+
+
+/* background animation */
+
+.background{
+    animation: background 2s;
+    opacity: 0;
+}
+
+@keyframes background {
+    0%{
+        opacity: 1;
+    }
+
+    99%{
+        opacity: 1;
+    }
+
+    100%{
         opacity: 0;
     }
 }
