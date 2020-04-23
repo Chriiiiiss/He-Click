@@ -44,7 +44,7 @@ const item_tab = [
 ]
 
 const monster_tab = [
-    new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
+    // new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
     new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
     new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
     new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
@@ -79,14 +79,16 @@ let lvlSpan = document.querySelector('.actual-level')
 let dmgSpan = document.querySelector('.actual-dmg')
 let magSpan = document.querySelector('.actual-mag')
 let powerSpan = document.querySelector('.actual-power')
+let emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
 let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
-const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
+const invChar = document.querySelector('.list-menu-character')
+updateDropSlot()
 
 
 // STATS VARIABLES
 
 let actualLvl = 1
-let actualDmg = 100
+let actualDmg = 1
 let actualMag = 0
 let actualPower = 0
 
@@ -106,7 +108,7 @@ powerWin = 3
 
 // GOLD GESTION
 
-let actualGold = 0
+let actualGold = 20000
 let goldWin = 2
 const price1 = 20
 const price2 = 30
@@ -146,6 +148,16 @@ let priceHetic7 = document.querySelector('.price-hetic7')
 let priceHetic8 = document.querySelector('.price-hetic8')
 let priceHetic9 = document.querySelector('.price-hetic9')
 let priceHetic10 = document.querySelector('.price-hetic10')
+const heticChac1 = document.querySelector('.hetic-character1')
+const heticChac2 = document.querySelector('.hetic-character2')
+const heticChac3 = document.querySelector('.hetic-character3')
+const heticChac4 = document.querySelector('.hetic-character4')
+const heticChac5 = document.querySelector('.hetic-character5')
+const heticChac6 = document.querySelector('.hetic-character6')
+const heticChac7 = document.querySelector('.hetic-character7')
+const heticChac8 = document.querySelector('.hetic-character8')
+const heticChac9 = document.querySelector('.hetic-character9')
+const heticChac10 = document.querySelector('.hetic-character10')
 let goldSpan = document.querySelector('.gold-posses')
 
 
@@ -165,7 +177,6 @@ let _h = window.innerHeight
 // INIT DOM SHOP VAR
 
 const bg_view = document.querySelector(".game-bg")
-const health_nbr = document.querySelector(".health")
 const elementCharacter = document.querySelector('.button-character')
 const elementHetic = document.querySelector('.button-hetic')
 const character = document.querySelector('.list-menu-character') 
@@ -212,7 +223,6 @@ let footInv = document.querySelector('.character-item :nth-child(4)')
 //HETIC ITEMS RECUPERATION//
 
 let recup = 1
-const aa = document.querySelector('.hetic-item1')
 
 // INIT GLOBAL VAR PIXI
 
@@ -281,8 +291,8 @@ const boostMag1 = 5
 const boostMag2 = 10
 const boostMag3 = 25
 const boostPower1 = 5
-const boostPower2 = 10
-const boostPower3 = 25
+const boostPower2 = 25
+const boostPower3 = 30
 
 
 //HETIC ITEMS RECUPERATION//
@@ -505,7 +515,7 @@ function loadBaseSprite(bg_loader, hud_loader, char_loader, monster_load) {
     sprite_main_char = createSprite(texture_main_char, texture_main_char.width, texture_main_char.height, 0, 0, bg)
     sprite_xp = createSprite(texture_bar, xp_max, texture_bar.height, 0, 0, bg)
     sprite_monster_test = createSprite(texture_tab_monster[level], texture_tab_monster[level].width, texture_tab_monster[level].height,0,0, bg)
-    currentHP = monster_tab[id_game].hp
+    currentHP = monster_tab[level].hp
     sprite_monster_test.scale.y = 0.7
     sprite_monster_test.scale.x = 0.7
     
@@ -522,7 +532,7 @@ function loadBaseSprite(bg_loader, hud_loader, char_loader, monster_load) {
     // MANAGE VAR
 
     xp_max = texture_bar.width
-    sprite_xp.width = (xp_max / 5) * calcModuloProgress(xp_char, 5)
+    sprite_xp.width = (xp_max / 5) * calcModuloProgress(currentHP, 5)
     // setSpriteMonster()
 }
 
@@ -567,8 +577,8 @@ function attackAnim() {
         sprite_main_char.texture = texture_main_char
     }, 350)
     currentHP -= actualDmg
-    // bg.ticker.stop()
 }
+
 
 // FUNCTION USED FOR THE PARALLAX
 function bgScroll() {
@@ -633,7 +643,8 @@ function setSpriteMonster() {
 }
 
 function HandleHealth() {
-    health_nbr.textContent = currentHP
+    sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
+    
     if (currentHP < 0) {
         goldUp(monster_tab[level].gold)
         currentHP = 0
@@ -641,26 +652,42 @@ function HandleHealth() {
         // RANDOM MODE
         // respawnMob(Math.ceil(Math.random()* 25))
         level == 26 ? level = 0 : level++
-        respawnMob(level)
         dropItem()
+        bg_speed = -8   
+        setTimeout(() => {
+            bg_speed = 0
+            respawnMob(level)
+        }, 2000)
     }
 }
 
 // MAG DAMAGES
+
+
 setInterval (() =>{
-    currentHP -=actualMag
+    if (currentHP > 0) currentHP -= actualMag
 }, 1000)
+
+
+
+function getRandomMinMax(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+  }
+
 
 function dropItem (){
     let randTier = Math.random()
         if (monster_tab[level-1].drop === 1){
-        if (randTier < 0.70){
-            const randGetItem = Math.ceil(Math.random()*5)
+        if (randTier < 0.50){
+            const randGetItem = Math.floor(Math.random()*6)
             selectDrop(item_tab[randGetItem])
-        } else if (randTier < 0.9){
-            // console.log('tier2')
-        } else {
-            // console.log('tier3')
+        } else if (randTier < 0.7){
+            const randGetItem = Math.floor(getRandomMinMax(6, 12))
+            selectDrop(item_tab[randGetItem])
+        } else if  (randTier < 0.7){
+            const randGetItem = Math.floor(getRandomMinMax(12, 18))
+            selectDrop(item_tab[randGetItem])
+        } else{
         }
     } else {
         // console.log('item boss')
@@ -677,6 +704,7 @@ function selectDrop (item){
     emptySlot[0].classList.remove("inv-empty")
     emptySlot[0].classList.add("inv-full")
     lastPos = emptySlot[0]
+    updateDropSlot()
 }
 
 function respawnMob(index) {
@@ -726,24 +754,25 @@ leave2.addEventListener( 'click', () =>{
 
 // Loop through empties and call drag events
 
-for (const empty of emptiesInv){
-    for (const items of item) {
-        setInterval(() => {
-            console.log(items);
-            
-        }, 10000)
-        empty.addEventListener('dragover', dragOver)
-        empty.addEventListener('dragenter', dragEnter)
-        empty.addEventListener('dragleave', dragLeave)
-        empty.addEventListener('drop', dragDrop)
-        items.addEventListener('dragstart', dragStart);
-        items.addEventListener('dragend', dragEnd);
+    function updateDropSlot(){
+        emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
+        item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
+        for (const empty of emptiesInv){
+            for (const items of item) {
+                empty.addEventListener('dragover', dragOver)
+                empty.addEventListener('dragenter', dragEnter)
+                window.addEventListener('dragleave', dragLeave)
+                empty.addEventListener('drop', dragDrop)
+                items.addEventListener('dragstart', dragStart)
+                items.addEventListener('dragend', dragEnd)
+            }
+        }
     }
-}
+
 
 //Drag Function
 function dragStart(e){
-    this.className += ' hold';
+    this.className += ' hold'
     setTimeout(() => (this.className += ' invisible'), 0);
     typeItem = this.getAttribute('data-slot')
     tierItem = this.classList[0]
@@ -765,6 +794,7 @@ function dragEnter(){
 }
 
 function dragLeave(){
+    // console.log('lolilol');
 }
 
 
@@ -818,7 +848,6 @@ function dragDrop(){
             else if (currentSlot === 'hand' && handEquip == null){
                 let handEquip = document.querySelector('.character-item :nth-child(3) > div')
                 let tierItem = handEquip.classList[0]
-                console.log(handEquip)
                 if(tierItem === 'item1'){
                 actualDmg += boost1
                 } else if(tierItem === 'item2'){
@@ -876,40 +905,10 @@ function dragDrop(){
                     } else if (tierItem == 'item9'){
                         actualPower -= boostPower3
                 }}
-
-
-
-
-    //     } if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
-    //         if (tierItem == 'item1')
-    //         {
-    //             actualDmg -= boost1
-    //         } else if (tierItem =="item2"){
-    //             actualDmg -= boost2
-    //         } else if (tierItem == 'item3'){
-    //             actualDmg -= boost3
-    //         }
-        // } else  if (lastPos === 'hand'){
-        //     if (tierItem == 'item1'){
-        //         actualDmg -= boost1
-        //     } else if (tierItem =='item2'){
-        //         actualDmg -= boost2
-        //     } else if (tierItem == 'item3'){
-        //         actualDmg -= boost3
-        //     } else if (tierItem == 'item4'){
-        //         actualMag -= boostMag1
-        //     } else if (tierItem =='item5'){
-        //         actualMag -= boostMag2
-        //     } else if (tierItem == 'item6'){
-        //         actualMag -= boostMag3
-        //     } else if (tierItem == 'item7'){
-        //         actualPower -= boostPower1
-        //     } else if (tierItem =='item8'){
-        //         actualPower -= boostPower2
-        //     } else if (tierItem == 'item9'){
-        //         actualPower -= boostPower3
-        //     }
-        // }
+                if (currentSlot == 'OOF'){
+                    itemElem.remove()
+                    goldUp(5)
+                }   
     // STATS SPAN ACTUALISATION
     lvlSpan.textContent = `${actualLvl}`
     dmgSpan.textContent = `${actualDmg}`
@@ -941,7 +940,7 @@ buy1.addEventListener('click', event => {
         buy1.style.opacity = '100%'
         buy1.classList.remove('click-buy1')
         buy1.classList.add('buy1')
-        // AFFICHER LE PERSONNAGE A COTE DU HERO
+        heticChac1.style.display = 'inline'
         // AJOUTER LE BOOST APPORTE
     }
     goldSpan.textContent = `${actualGold}`
@@ -958,6 +957,7 @@ buy2.addEventListener('click', event => {
         buy2.style.opacity = '100%'
         buy2.classList.remove('click-buy2')
         buy2.classList.add('buy2')
+        heticChac2.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -973,6 +973,7 @@ buy3.addEventListener('click', event => {
         buy3.style.opacity = '100%'
         buy3.classList.remove('click-buy3')
         buy3.classList.add('buy3')
+        heticChac3.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -988,6 +989,7 @@ buy4.addEventListener('click', event => {
         buy4.style.opacity = '100%'
         buy4.classList.remove('click-buy4')
         buy4.classList.add('buy4')
+        heticChac4.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1003,6 +1005,7 @@ buy5.addEventListener('click', event => {
         buy5.style.opacity = '100%'
         buy5.classList.remove('click-buy5')
         buy5.classList.add('buy5')
+        heticChac5.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1018,6 +1021,7 @@ buy6.addEventListener('click', event => {
         buy6.style.opacity = '100%'
         buy6.classList.remove('click-buy6')
         buy6.classList.add('buy6')
+        heticChac6.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1033,6 +1037,7 @@ buy7.addEventListener('click', event => {
         buy7.style.opacity = '100%'
         buy7.classList.remove('click-buy7')
         buy7.classList.add('buy7')
+        heticChac7.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1048,6 +1053,7 @@ buy8.addEventListener('click', event => {
         buy8.style.opacity = '100%'
         buy8.classList.remove('click-buy8')
         buy8.classList.add('buy8')
+        heticChac8.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1063,6 +1069,7 @@ buy9.addEventListener('click', event => {
         buy9.style.opacity = '100%'
         buy9.classList.remove('click-buy9')
         buy9.classList.add('buy9')
+        heticChac9.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1078,6 +1085,7 @@ buy10.addEventListener('click', event => {
         buy10.style.opacity = '100%'
         buy10.classList.remove('click-buy10')
         buy10.classList.add('buy10')
+        heticChac10.style.display = 'inline'
     }
     goldSpan.textContent = `${actualGold}`
     })

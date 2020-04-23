@@ -5,7 +5,7 @@ body {
 
 .game-bg {
     position: absolute;
-    z-index: -1;
+    z-index: -20;
 }
 
 html{
@@ -57,6 +57,7 @@ img[class*="leave"]{
     left: 312px;
     top: 14px;
     max-width: 8%;
+
 }
 
 img[class*="leave"]:hover{
@@ -65,6 +66,10 @@ img[class*="leave"]:hover{
 
 img[class*="button-"]:hover{
     cursor: pointer;
+}
+
+img[class*=button-]{
+    user-select: none;
 }
 
 .button-character{
@@ -380,42 +385,18 @@ div[class*="line"]{
     height: 70%;
 }
 
-/* .hand{
-    background-image: url(../images/stuff/hand.png);
+.inv-empty[data-slot="OOF"]{
+    background-image: url(../images/poubelle.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
     background-position: center;
-    width: 70%;
-    height: 70%;
+    width: 15%;
+    height: 15%;
+    position: absolute;
+    top: 98%;
+    left: 3%;
 }
 
-.body{
-    background-image: url(../images/stuff/body.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    background-position: center;
-    width: 80%;
-    height: 80%;
-}
-
-.head{
-    background-image: url(../images/stuff/head.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 80%;
-    height: 80%;
-}
-
-.foot{
-    background-image: url(../images/stuff/foot.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    width: 80%;
-    height: 80%;
-} */
 
 /* FILL INVENTORY */
 
@@ -628,9 +609,146 @@ img[class^=hetic-item]{
 }
 
 
+/* HETIC CHARACTER */
 
 
+.hetic-character1{
+    background-image: url(../images/perso1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    top: 20%;
+    left: 39%;
+    z-index: -10;
+    display: none;
+}
 
+.hetic-character2{
+    background-image: url(../images/perso2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 380px;
+    width: 190px;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    z-index: -1;
+    display: none;
+}
+
+.hetic-character3{
+    background-image: url(../images/perso3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 300px;
+    width: 150px;
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    display: none;
+}
+
+.hetic-character4{
+    background-image: url(../images/perso4.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 350px;
+    width: 175px;
+    position: absolute;
+    top: 0%;
+    left: 12%;
+    z-index: -4;
+    display: none;
+}
+
+.hetic-character5{
+    background-image: url(../images/perso5.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 200px;
+    width: 100px;
+    position: absolute;
+    top: 0%;
+    left: 78%;
+    display: none;
+}
+
+.hetic-character6{
+    background-image: url(../images/perso6.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 375px;
+    width: 150px;
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    z-index: -7;
+    display: none;
+}
+
+.hetic-character7{
+    background-image: url(../images/perso7.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    top: 38%;
+    left: 28%;
+    z-index:-1;
+    display: none;
+}
+
+.hetic-character8{
+    background-image: url(../images/perso8.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 300px;
+    width: 150px;
+    position: absolute;
+    top: 35%;
+    left: 0%;
+    z-index: -1;
+    display: none;
+}
+
+.hetic-character9{
+    background-image: url(../images/perso9.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 400px;
+    width: 200px;
+    position: absolute;
+    top: 20%;
+    left: 18%;
+    z-index: -3;
+    display: none;
+}
+
+.hetic-character10{
+    background-image: url(../images/perso10.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 340px;
+    width: 170px;
+    position: absolute;
+    top: 38%;
+    left: 10%;
+    z-index: -1;
+    display: none;
+}
 
 
 /* GOLD GESTION */
