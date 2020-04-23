@@ -34,7 +34,8 @@ let monster_tab = [
     new monster(22, "litlevil", "monstre_litlevil.png", 450, 0),
     new monster(23, "gasper", "monstre_gasper.png", 500, 0),
     new monster(24, "dracula", "monstre_dracula.png", 550, 0),
-    new monster(25, "demon", "monstre_demon.png", 1000, 60)
+    new monster(25, "demon", "monstre_demon.png", 1000, 60),
+    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60)
 ]
 
 // INIT GLOABAL VAR RENDER
@@ -106,7 +107,7 @@ let bg = new PIXI.Application ({
 })
 let xp_char = 4
 let id_game = 4
-let attack = 5
+let attack = 300
 let currentHP
 let level = 0
 
