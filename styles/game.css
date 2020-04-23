@@ -456,6 +456,7 @@ div[class*="buy"]{
     position: relative;
     height: 100px;
     margin-left: 15px;
+    opacity: 60%;
 }
 
 
@@ -467,6 +468,14 @@ div[class*="buy"]{
 
 div[class*="buy"]:hover{
     cursor: pointer;
+    opacity: 100%;
+    transition: linear 200ms;
+}
+
+div[class*='buy']:hover > span[class*="price"]{
+    font-size: 28px;
+    font-weight: 900;
+    transition: linear 200ms;
 }
 
 /* HETIC---SIZE */
