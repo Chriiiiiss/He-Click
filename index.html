@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sound</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <audio id="audioPlayer">
+        <source src="audios/music.mp3">
+    </audio>
     
+    <button class="control" onclick="play('audioPlayer')"><img class="music_on" src=images/music_on.png></button>
+    <button class="control" onclick="resume('audioPlayer')"><img class="music_off" src=images/music_off.png></button>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
