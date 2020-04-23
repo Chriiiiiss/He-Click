@@ -41,7 +41,7 @@ leave2.addEventListener( 'click', () =>{
 
 //                 DRAG AND DROP GENERAL GESTION
 
-let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
+let item = document.querySelectorAll('.item1, .item2, .item3')
 const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
 
 
@@ -70,17 +70,21 @@ for (const empty of emptiesInv){
 //Drag Function
 function dragStart(e){
     this.className += ' hold';
-    setTimeout(() => (this.className += ' invisible'), 0);
+    setTimeout(() => (this.className = 'invisible'), 0);
     typeItem = this.getAttribute('data-slot')
     tierItem = this.classList[0]
+    console.log(tierItem);  
+    
+    // console.log(typeItem);
     itemElem = this
     this.parentNode.className = "inv-empty"
     inventoryLastPos = this.parentNode
+    // console.log(this.parentNode);
 }
 
 function dragEnd(){
-    this.className = `${tierItem}`;
-    // console.log(typeItem);
+    this.className = `${tierItem} ${typeItem}`;
+    console.log(typeItem);
     
 }
 
@@ -96,24 +100,56 @@ function dragLeave(){
 }
 
 
-//////////////////////////////////////////////////// DROP V2////////////////////////////////////////////////
+// function dragDrop(){
+//     const invItem = this.classList[0]
+    // console.log(typeItem);
+    // console.log(invItem);
+
+//     if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
+//     || (typeItem =='head' && invItem =='inv-head')
+//     || (typeItem == 'body' && invItem == 'inv-body')
+//     || (typeItem == 'foot' && invItem == 'inv-foot')) 
+//     && !this.hasChildNodes()) //ths.classlist.etc.
+//     {
+//         this.append(itemElem)
+//         this.classList.remove("inv-empty")
+//         this.classList.add("inv-full")
+//     }
+
+//     // if (invItem == 'inv-empty' && !this.hasChildNodes())
+//     // {
+//     //     this.append(itemElem)
+//     //     inventoryLastPos.append(itemElem)
+//     // } 
+    
+//     else if (this.hasChildNodes() )
+//     {
+//         inventoryLastPos.append(itemElem)
+//     } else if (this.classList[0] === "inv-full") {     //
+//         inventoryLastPos.append(itemElem)
+//         inventoryLastPos.className = "inv-full"
+        
+//     } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
+//         this.append(itemElem)
+//         this.classList.splice(0, 1, 'inv-full')
+//         console.log(this.classList);
+        
+//         inventoryLastPos.className = "inv-empty"
+//     }
+// }
+
+
+// DROP V2
 
 function dragDrop(){
     let currentSlot = this.getAttribute('data-slot')
-    let destination = this.getAttribute('data-slot')
-    let lastPos = inventoryLastPos.getAttribute('data-slot')
-
-    let headEquip = document.querySelector('.character-item :nth-child(1) > div')
-    let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
-    let handEquip = document.querySelector('.character-item :nth-child(3) > div')
-    let footEquip = document.querySelector('.character-item :nth-child(4) > div')
-    
     // console.log(currentSlot);
     
     // let currentItem = currentItem.getAttribute('data-slot')
     
     if (typeItem === currentSlot && !this.hasChildNodes())
     {
+        console.log(this.className);
         this.append(itemElem)
         this.classList.remove('inv-empty')
         this.classList.add('inv-full')
