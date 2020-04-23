@@ -694,6 +694,7 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
+<<<<<<< HEAD
     // STUFF BOOST DMG 
     if (headInv.hasChildNodes()){
         let headEquip = document.querySelector('.character-item :nth-child(1) > div')
@@ -707,6 +708,39 @@ function dragDrop(){
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }
+=======
+
+    // HEAD BOOST DMG 
+    if (headInv.hasChildNodes()) {
+        let headEquip = document.querySelector('.character-item :nth-child(1) > div')
+
+        let tierItem = headEquip.classList[0]
+        console.log(tierItem);
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
+            actualDmg += boost2
+        } else if (tierItem == 'item3') {
+            actualDmg += boost3    
+        }} else if (bodyInv.hasChildNodes()) {
+        let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
+        let tierItem = bodyEquip.classList[0]
+        if(tierItem == 'item1') {
+            actualDmg += boost1
+        } else if (tierItem == 'item2') {
+            actualDmg += boost2
+        } else if (tierItem == 'item3') {
+            actualDmg += boost3
+        }
+    }
+         else if (footInv.hasChildNodes())
+    {
+        let footEquip = document.querySelector('.character-item :nth-child(4) > div')
+        let tierItem = footEquip.classList[0]
+        if(tierItem == 'item1')
+        {
+        actualDmg += boost1
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         }
         else if (bodyInv.hasChildNodes()){
             let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
@@ -720,6 +754,7 @@ function dragDrop(){
                 actualDmg += boost3
             }
         }
+<<<<<<< HEAD
         else if (footInv.hasChildNodes()){
             let footEquip = document.querySelector('.character-item :nth-child(4) > div')
             let tierItem = footEquip.classList[0]
@@ -731,6 +766,12 @@ function dragDrop(){
                 actualDmg += boost3
             }
         } else if (handInv.hasChildNodes()){
+=======
+    }  
+    
+    else if (handInv.hasChildNodes())
+    {
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
         let handEquip = document.querySelector('.character-item :nth-child(3) > div')
         console.log(handEquip);
         let tierItem = handEquip.classList[0]
@@ -756,9 +797,12 @@ function dragDrop(){
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
         if (tierItem == 'item1'){
 =======
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
     
     else
     {
@@ -811,6 +855,7 @@ function dragDrop(){
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // GOLD IMPROVEMENT
 let goldSpan = document.querySelector('.gold-posses') //VAR A METTRE AU DEBUT
@@ -866,6 +911,10 @@ let priceHetic10 = document.querySelector('.price-hetic10')
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
 >>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
+=======
+//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
+
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 priceHetic1.textContent = price1
 priceHetic2.textContent = price2
 priceHetic3.textContent = price3
@@ -878,6 +927,7 @@ priceHetic9.textContent = price9
 priceHetic10.textContent = price10
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // 1
     // 3 CONST A REMONTER A CHAQUE DEBUT DE PARTIE
@@ -885,6 +935,8 @@ priceHetic10.textContent = price10
     const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
     const recrut1 = document.querySelector('.click-buy1 .recrut')
 
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 =======
 >>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 buy1.addEventListener('click', event => {
@@ -1040,6 +1092,7 @@ buy10.addEventListener('click', event => {
     })
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -1093,6 +1146,8 @@ for (const i of listRecupHetic) {
         
     }
 =======
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 if (recup === 1)
 {
     aa.style.display = "inline"
@@ -1107,6 +1162,7 @@ if (recup === 1)
 
     ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     // VAR A REMONTER 
 // SPAN VARIABLES
@@ -1132,6 +1188,8 @@ powerWin = 3
 
 // STATS IMPROVMENET WHILE LVL UP
 let cmpt = 0
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 =======
 >>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 const lvlUp = () =>
@@ -1173,6 +1231,7 @@ const lvlUp = () =>
         // ITEMS BOOST
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // VAR A REMONTER
 // VAR INVENTORY STATE
 let headInv = document.querySelector('.character-item :nth-child(1)')
@@ -1180,6 +1239,8 @@ let bodyInv = document.querySelector('.character-item :nth-child(2)')
 let handInv = document.querySelector('.character-item :nth-child(3)')
 let footInv = document.querySelector('.character-item :nth-child(4)')
 
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 =======
 >>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 
@@ -1194,6 +1255,7 @@ let footInv = document.querySelector('.character-item :nth-child(4)')
 
     // HEAD
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // STATS BY ITEMS
 
@@ -1213,6 +1275,8 @@ const boostPower3 = 25
 // LEVEL HEAD BOOST BEFORE ADDING IN DRAG.DROP
 
 =======
+=======
+>>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 // LEVEL HEAD BOOST
 >>>>>>> c860631d37a49bcb242b896a3ef1e290e7319994
 
