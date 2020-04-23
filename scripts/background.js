@@ -143,7 +143,6 @@ loadBgFiles(background_loader, ["forest_bg", "mountain_bg", "ocean_bg", "boss_bg
         monster_load.add(element.name, element.img_url)
         
     }
-    // monster_load.add("monster", "tiny_monster.png")
     monster_load.load()
     loadFinalFiles(monster_load)
 
