@@ -1,41 +1,42 @@
 class monster {
-    constructor(id, name, img_url, hp, cd) {
+    constructor(id, name, img_url, hp, cd, gold) {
         this.id = id,
         this.name = name,
         this.img_url = img_url,
         this.hp = hp,
-        this.cd = cd
+        this.cd = cd,
+        this.gold = gold
     }
 }
 
 let monster_tab = [
-    new monster(0, "tiny_shit", "tiny_monster.png", 5, 0),
-    new monster(1, "pirate", "monstre_pirate.png", 10, 0),
-    new monster(2, "croco", "monstre_croco.png", 15, 0),
-    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0),
-    new monster(4, "singe", "monstre_singe.png", 25, 0),
-    new monster(5, "serpent", "monstre_serpent.png", 50, 60),
-    new monster(6, "machin", "monstre_machin.png", 50, 0),
-    new monster(7, "bidule", "monstre_bidule.png", 65, 0),
-    new monster(8, "truc", "monstre_truc.png", 70, 0),
-    new monster(9, "muche", "monstre_muche.png", 75, 0),
-    new monster(10, "boche", "monstre_boche.png", 100, 60),
-    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0),
-    new monster(12, "momie", "monstre_momie.png", 110, 0),
-    new monster(13, "zombie", "monstre_zombie.png", 125, 0),
-    new monster(14, "garde", "monstre_garde.png", 130, 0),
-    new monster(15, "faucheur", "monstre_faucheur.png", 200, 60),
-    new monster(16, "loup", "monstre_loup.png", 210, 0),
-    new monster(17, "callas", "monstre_callas.png", 230, 0),
-    new monster(18, "morvus", "monstre_morvus.png", 250, 0),
-    new monster(19, "screed", "monstre_screed.png", 280, 0),
-    new monster(20, "gandalf", "monstre_gandalf.png", 400, 60),
-    new monster(21, "gargouille", "monstre_gargouille.png", 400, 0),
-    new monster(22, "litlevil", "monstre_litlevil.png", 450, 0),
-    new monster(23, "gasper", "monstre_gasper.png", 500, 0),
-    new monster(24, "dracula", "monstre_dracula.png", 550, 0),
-    new monster(25, "demon", "monstre_demon.png", 1000, 60),
-    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60)
+    new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2),
+    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3),
+    new monster(2, "croco", "monstre_croco.png", 15, 0, 4),
+    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5),
+    new monster(4, "singe", "monstre_singe.png", 25, 0, 6),
+    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7),
+    new monster(6, "machin", "monstre_machin.png", 50, 0, 8),
+    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9),
+    new monster(8, "truc", "monstre_truc.png", 70, 0, 10),
+    new monster(9, "muche", "monstre_muche.png", 75, 0, 11),
+    new monster(10, "boche", "monstre_boche.png", 100, 60, 12),
+    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13),
+    new monster(12, "momie", "monstre_momie.png", 110, 0, 14),
+    new monster(13, "zombie", "monstre_zombie.png", 125, 0, 15),
+    new monster(14, "garde", "monstre_garde.png", 130, 0, 17),
+    new monster(15, "faucheur", "monstre_faucheur.png", 200, 60, 20),
+    new monster(16, "loup", "monstre_loup.png", 210, 0, 23),
+    new monster(17, "callas", "monstre_callas.png", 230, 0, 26),
+    new monster(18, "morvus", "monstre_morvus.png", 250, 0, 28),
+    new monster(19, "screed", "monstre_screed.png", 280, 0, 30),
+    new monster(20, "gandalf", "monstre_gandalf.png", 400, 60, 35),
+    new monster(21, "gargouille", "monstre_gargouille.png", 400, 0, 40),
+    new monster(22, "litlevil", "monstre_litlevil.png", 450, 0, 45),
+    new monster(23, "gasper", "monstre_gasper.png", 500, 0, 50),
+    new monster(24, "dracula", "monstre_dracula.png", 550, 0, 60),
+    new monster(25, "demon", "monstre_demon.png", 1000, 60, 70),
+    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60, 10000)
 ]
 
 // SPAN VARIABLES
@@ -69,19 +70,10 @@ dmgWin = 1
 magWin = 5
 powerWin = 3
 
-// GOLD IMPROVEMENT
+// GOLD GESTION
 
-let goldSpan = document.querySelector('.gold-posses')
-let actualGold = 1000
+let actualGold = 0
 let goldWin = 2
-goldSpan.textContent = `${actualGold}`
-
-const goldUp = () => 
-{
-    actualGold +=goldWin
-    goldSpan.textContent = `${actualGold}`
-}
-
 const price1 = 20
 const price2 = 30
 const price3 = 40
@@ -93,6 +85,10 @@ const price8 = 90
 const price9 = 100
 const price10 = 110
 
+function goldUp (goldWin){
+    actualGold +=goldWin
+    goldSpan.textContent = `${actualGold}`
+}
 
 // DOM-GOLD
 
@@ -116,6 +112,7 @@ let priceHetic7 = document.querySelector('.price-hetic7')
 let priceHetic8 = document.querySelector('.price-hetic8')
 let priceHetic9 = document.querySelector('.price-hetic9')
 let priceHetic10 = document.querySelector('.price-hetic10')
+let goldSpan = document.querySelector('.gold-posses')
 
 
 // DRAG & DROG VAR
@@ -124,12 +121,14 @@ let typeItem
 let itemElem
 let inventoryLastPos
 
+
 // INIT GLOBAL VAR RENDER
 
 let _w = window.innerWidth
 let _h = window.innerHeight
 
-// INIT DOM GLOBAL VAR
+
+// INIT DOM SHOP VAR
 
 const bg_view = document.querySelector(".game-bg")
 const health_nbr = document.querySelector(".health")
@@ -234,10 +233,9 @@ let bg = new PIXI.Application ({
 })
 let xp_char = 4
 let id_game = 4
-let attack = 300
 let currentHP
 let level = 0
-let cmpt = 0
+let cmptStatsUpStatsUp = 0
 
 
 // STATS BY ITEMS
@@ -251,6 +249,35 @@ const boostMag3 = 25
 const boostPower1 = 5
 const boostPower2 = 10
 const boostPower3 = 25
+
+
+//HETIC ITEMS RECUPERATION//
+
+let heticRecup1 = 0
+const heticItem1 = document.querySelector('.hetic-item1')
+let heticRecup2 = 0
+const heticItem2 = document.querySelector('.hetic-item2')
+let heticRecup3 = 0
+const heticItem3 = document.querySelector('.hetic-item3')
+let heticRecup4 = 0
+const heticItem4 = document.querySelector('.hetic-item4')
+let heticRecup5 = 0
+const heticItem5 = document.querySelector('.hetic-item5')
+let heticRecup6 = 0
+const heticItem6 = document.querySelector('.hetic-item6')
+let heticRecup7 = 0
+const heticItem7 = document.querySelector('.hetic-item7')
+let heticRecup8 = 0
+const heticItem8 = document.querySelector('.hetic-item8')
+let heticRecup9 = 0
+const heticItem9 = document.querySelector('.hetic-item9')
+let heticRecup10 = 0
+const heticItem10 = document.querySelector('.hetic-item10')
+const listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+const listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+const comptItemHetic = listRecupHetic.length
 
 
 // INIT WINDOWS EVENT_LISTENER
@@ -506,7 +533,7 @@ function attackAnim() {
     setTimeout(() => {
         sprite_main_char.texture = texture_main_char
     }, 350)
-    currentHP -= attack
+    currentHP -= actualDmg
     // bg.ticker.stop()
 }
 
@@ -575,6 +602,7 @@ function setSpriteMonster() {
 function HandleHealth() {
     health_nbr.textContent = currentHP
     if (currentHP < 0) {
+        goldUp(monster_tab[level].gold)
         currentHP = 0
         sprite_monster_test.destroy()
         // RANDOM MODE
@@ -583,6 +611,12 @@ function HandleHealth() {
         respawnMob(level)
     }
 }
+
+// MAG DAMAGES
+setInterval (() =>{
+    currentHP -=actualMag
+}, 1000)
+
 
 function respawnMob(index) {
     sprite_monster_test = createSprite(texture_tab_monster[index], texture_tab_monster[index].width, texture_tab_monster[index].height,0,0, bg)
@@ -626,9 +660,6 @@ leave2.addEventListener( 'click', () =>{
 })
 
 // Loop through empties and call drag events
-
-
-
 
 for (const empty of emptiesInv){
     for (const items of item) {
@@ -694,33 +725,28 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-    // STUFF BOOST DMG 
+    // STUFF BOOST DMG
     if (headInv.hasChildNodes()){
         let headEquip = document.querySelector('.character-item :nth-child(1) > div')
         let tierItem = headEquip.classList[0]
-        console.log(tierItem);
-            if(tierItem == 'item1'){
-            actualDmg += boost1
-            }
-            else if (tierItem == 'item2'){
-                actualDmg += boost2
-            } else if (tierItem == 'item3'){
-                actualDmg += boost3
-            }
-        }
-        else if (bodyInv.hasChildNodes()){
-            let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
-            let tierItem = bodyEquip.classList[0]
-            if(tierItem == 'item1')
-            {
+            if(tierItem === 'item1'){
             actualDmg += boost1
             } else if (tierItem == 'item2'){
                 actualDmg += boost2
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
-            }
-        }
-        else if (footInv.hasChildNodes()){
+            }}
+            if (bodyInv.hasChildNodes()){
+            let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
+            let tierItem = bodyEquip.classList[0]
+            if(tierItem == 'item1'){
+            actualDmg += boost1
+            } else if (tierItem == 'item2'){
+                actualDmg += boost2
+            } else if (tierItem == 'item3'){
+                actualDmg += boost3
+            }}  
+            if (footInv.hasChildNodes()){
             let footEquip = document.querySelector('.character-item :nth-child(4) > div')
             let tierItem = footEquip.classList[0]
             if(tierItem == 'item1'){
@@ -729,64 +755,59 @@ function dragDrop(){
                 actualDmg += boost2
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
-            }
-        } else if (handInv.hasChildNodes()){
-        let handEquip = document.querySelector('.character-item :nth-child(3) > div')
-        console.log(handEquip);
-        let tierItem = handEquip.classList[0]
-        console.log(tierItem);
-        if(tierItem === 'item1'){
-        actualDmg += boost1
-        } else if(tierItem === 'item2'){
-            actualDmg += boost2
-        } else if (tierItem == 'item3'){
-            actualDmg += boost3
-        } else if(tierItem === 'item4'){
-        actualMag += boostMag1
-        } else if(tierItem === 'item5'){
-            actualMag += boostMag2
-        } else if (tierItem == 'item6'){
-            actualMag += boostMag3
-        } else if(tierItem === 'item7'){
-        actualPower += boostPower1
-        } else if(tierItem === 'item8'){
-            actualPower += boostPower2
-        } else if (tierItem == 'item9'){
-            actualPower += boostPower3
-        }
-    }
-    if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot')
-    {
-        if (tierItem == 'item1')
-        {
-            actualDmg -= boost1
-        } else if (tierItem =="item2"){
-            actualDmg -= boost2
-        } else if (tierItem == 'item3'){
-            actualDmg -= boost3
-        }
-    }
-    if (lastPos === 'hand'){
-        if (tierItem == 'item1'){
-            actualDmg -= boost1
-        } else if (tierItem =='item2'){
-            actualDmg -= boost2
-        } else if (tierItem == 'item3'){
-            actualDmg -= boost3
-        } else if (tierItem == 'item4'){
-            actualMag -= boostMag1
-        } else if (tierItem =='item5'){
-            actualMag -= boostMag2
-        } else if (tierItem == 'item6'){
-            actualMag -= boostMag3
-        } else if (tierItem == 'item7'){
-            actualPower -= boostPower1
-        } else if (tierItem =='item8'){
-            actualPower -= boostPower2
-        } else if (tierItem == 'item9'){
-            actualPower -= boostPower3
-        }
-    }
+            }}
+    // if (handInv.hasChildNodes()){
+    //     let handEquip = document.querySelector('.character-item :nth-child(3) > div')
+    //     let tierItem = handEquip.classList[0]
+    //     if(tierItem === 'item1'){
+    //     actualDmg += boost1
+    //     } else if(tierItem === 'item2'){
+    //         actualDmg += boost2
+    //     } else if (tierItem == 'item3'){
+    //         actualDmg += boost3
+    //     } else if(tierItem === 'item4'){
+    //         actualMag += boostMag1
+    //     } else if(tierItem === 'item5'){
+    //         actualMag += boostMag2
+    //     } else if (tierItem == 'item6'){
+    //         actualMag += boostMag3
+    //     } else if(tierItem === 'item7'){
+    //     actualPower += boostPower1
+    //     } else if(tierItem === 'item8'){
+    //         actualPower += boostPower2
+    //     } else if (tierItem == 'item9'){
+    //         actualPower += boostPower3
+    //     }
+    //     } if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
+    //         if (tierItem == 'item1')
+    //         {
+    //             actualDmg -= boost1
+    //         } else if (tierItem =="item2"){
+    //             actualDmg -= boost2
+    //         } else if (tierItem == 'item3'){
+    //             actualDmg -= boost3
+    //         }
+    //     } else  if (lastPos === 'hand'){
+    //         if (tierItem == 'item1'){
+    //             actualDmg -= boost1
+    //         } else if (tierItem =='item2'){
+    //             actualDmg -= boost2
+    //         } else if (tierItem == 'item3'){
+    //             actualDmg -= boost3
+    //         } else if (tierItem == 'item4'){
+    //             actualMag -= boostMag1
+    //         } else if (tierItem =='item5'){
+    //             actualMag -= boostMag2
+    //         } else if (tierItem == 'item6'){
+    //             actualMag -= boostMag3
+    //         } else if (tierItem == 'item7'){
+    //             actualPower -= boostPower1
+    //         } else if (tierItem =='item8'){
+    //             actualPower -= boostPower2
+    //         } else if (tierItem == 'item9'){
+    //             actualPower -= boostPower3
+    //         }
+    //     }
     // STATS SPAN ACTUALISATION
     lvlSpan.textContent = `${actualLvl}`
     dmgSpan.textContent = `${actualDmg}`
@@ -965,74 +986,45 @@ buy10.addEventListener('click', event => {
     goldSpan.textContent = `${actualGold}`
     })
 
-//HETIC ITEMS RECUPERATION//
 
-// NE PAS TOUCHER POUR LE MOMENT
 
-// 
 
-let heticRecup1 = 1
-const heticItem1 = document.querySelector('.hetic-item1')
 
-let heticRecup2 = 1
-const heticItem2 = document.querySelector('.hetic-item2')
+/////////////////// HETIC ITEM POSSESSION
 
-let heticRecup3 = 0
-const heticItem3 = document.querySelector('.hetic-item3')
+const heticItemLock1 = document.querySelector('.items-slots :nth-child(1) > .lock')
+const heticItemLock2 = document.querySelector('.items-slots :nth-child(2) > .lock')
+const heticItemLock3 = document.querySelector('.items-slots :nth-child(3) > .lock')
+const heticItemLock4 = document.querySelector('.items-slots :nth-child(4) > .lock')
+const heticItemLock5 = document.querySelector('.items-slots :nth-child(5) > .lock')
+const heticItemLock6 = document.querySelector('.items-slots :nth-child(6) > .lock')
+const heticItemLock7 = document.querySelector('.items-slots :nth-child(7) > .lock')
+const heticItemLock8 = document.querySelector('.items-slots :nth-child(8) > .lock')
+const heticItemLock9 = document.querySelector('.items-slots :nth-child(9) > .lock')
+const heticItemLock10 = document.querySelector('.items-slots :nth-child(10) > .lock')
 
-let heticRecup4 = 0
-const heticItem4 = document.querySelector('.hetic-item4')
+listHeticLock = [heticItemLock1, heticItemLock2, heticItemLock3, heticItemLock4, heticItemLock5,
+                heticItemLock6, heticItemLock7, heticItemLock8, heticItemLock9, heticItemLock10]
 
-let heticRecup5 = 1
-const heticItem5 = document.querySelector('.hetic-item5')
 
-let heticRecup6 = 0
-const heticItem6 = document.querySelector('.hetic-item6')
-
-let heticRecup7 = 1
-const heticItem7 = document.querySelector('.hetic-item7')
-
-let heticRecup8 = 0
-const heticItem8 = document.querySelector('.hetic-item8')
-
-let heticRecup9 = 1
-const heticItem9 = document.querySelector('.hetic-item9')
-
-let heticRecup10 = 1
-const heticItem10 = document.querySelector('.hetic-item10')
-
-const listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
-                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
-const listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
-    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
-
-const i = listRecupHetic.length
-
-for (const i of listRecupHetic) {
-    if (listRecupHetic[i] === 1){
-        console.log(listItemHetic[i]);
-        listItemHetic[i].style.display = 'inline'
-        
+for (const comptItemHetic in listRecupHetic) {
+    if (listRecupHetic[comptItemHetic] === 1){
+        listItemHetic[comptItemHetic].style.display = 'inline'
+        listHeticLock[comptItemHetic].style.opacity = '100%'
     }
-
-if (recup === 1)
-{
-    aa.style.display = "inline"
 }
-}
-
 ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
 const lvlUp = () =>
 {
     actualLvl += lvlWin
-    cmpt += 1
-    if (cmpt%5 === 0)
+    cmptStatsUp += 1
+    if (cmptStatsUp%5 === 0)
     {
         actualDmg += dmgWin
         actualMag += magWin
         actualPower += powerWin
-        cmpt = 0
+        cmptStatsUp = 0
     }
     lvlSpan.textContent = `${actualLvl}`
     dmgSpan.textContent = `${actualDmg}`
