@@ -607,7 +607,8 @@ function HandleHealth() {
         sprite_monster_test.destroy()
         // RANDOM MODE
         // respawnMob(Math.ceil(Math.random()* 25))
-        level >= 25 ? level - 25 : level++
+        console.log(level);
+        level == 26 ? level = 0 : level++
         respawnMob(level)
     }
 }
@@ -622,11 +623,15 @@ function respawnMob(index) {
     sprite_monster_test = createSprite(texture_tab_monster[index], texture_tab_monster[index].width, texture_tab_monster[index].height,0,0, bg)
     sprite_monster_test.scale.y = 0.7
     sprite_monster_test.scale.x = 0.7
-    currentHP = monster_tab[index].hp
+    currentHP = monster_tab[level].hp
     setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.7, 0.5)
+    if (level === 26) {
+        sprite_monster_test.scale.x = 1.2
+        sprite_monster_test.scale.y = 1.2
+        setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.2, 0.7)   
+    }
     sprite_monster_test.interactive = true;
     sprite_monster_test.on('click', attackAnim)
-    console.log(level);
     
 }
 
