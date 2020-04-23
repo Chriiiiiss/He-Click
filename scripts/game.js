@@ -756,70 +756,64 @@ function dragDrop(){
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }}
-    // if (handInv.hasChildNodes()){
-    //     let handEquip = document.querySelector('.character-item :nth-child(3) > div')
-    //     let tierItem = handEquip.classList[0]
-    //     if(tierItem === 'item1'){
-    //     actualDmg += boost1
-    //     } else if(tierItem === 'item2'){
-    //         actualDmg += boost2
-    //     } else if (tierItem == 'item3'){
-    //         actualDmg += boost3
-    //     } else if(tierItem === 'item4'){
-    //         actualMag += boostMag1
-    //     } else if(tierItem === 'item5'){
-    //         actualMag += boostMag2
-    //     } else if (tierItem == 'item6'){
-    //         actualMag += boostMag3
-    //     } else if(tierItem === 'item7'){
-    //     actualPower += boostPower1
-    //     } else if(tierItem === 'item8'){
-    //         actualPower += boostPower2
-    //     } else if (tierItem == 'item9'){
-    //         actualPower += boostPower3
-    //     }
-    //     } if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
-    //         if (tierItem == 'item1')
-    //         {
-    //             actualDmg -= boost1
-    //         } else if (tierItem =="item2"){
-    //             actualDmg -= boost2
-    //         } else if (tierItem == 'item3'){
-    //             actualDmg -= boost3
-    //         }
-    //     } else  if (lastPos === 'hand'){
-    //         if (tierItem == 'item1'){
-    //             actualDmg -= boost1
-    //         } else if (tierItem =='item2'){
-    //             actualDmg -= boost2
-    //         } else if (tierItem == 'item3'){
-    //             actualDmg -= boost3
-    //         } else if (tierItem == 'item4'){
-    //             actualMag -= boostMag1
-    //         } else if (tierItem =='item5'){
-    //             actualMag -= boostMag2
-    //         } else if (tierItem == 'item6'){
-    //             actualMag -= boostMag3
-    //         } else if (tierItem == 'item7'){
-    //             actualPower -= boostPower1
-    //         } else if (tierItem =='item8'){
-    //             actualPower -= boostPower2
-    //         } else if (tierItem == 'item9'){
-    //             actualPower -= boostPower3
-    //         }
-    //     }
+    if (handInv.hasChildNodes()){
+        let handEquip = document.querySelector('.character-item :nth-child(3) > div')
+        let tierItem = handEquip.classList[0]
+        if(tierItem === 'item1'){
+        actualDmg += boost1
+        } else if(tierItem === 'item2'){
+            actualDmg += boost2
+        } else if (tierItem == 'item3'){
+            actualDmg += boost3
+        } else if(tierItem === 'item4'){
+            actualMag += boostMag1
+        } else if(tierItem === 'item5'){
+            actualMag += boostMag2
+        } else if (tierItem == 'item6'){
+            actualMag += boostMag3
+        } else if(tierItem === 'item7'){
+        actualPower += boostPower1
+        } else if(tierItem === 'item8'){
+            actualPower += boostPower2
+        } else if (tierItem == 'item9'){
+            actualPower += boostPower3
+        }
+        } if (lastPos === 'head' || lastPos === 'body' || lastPos === 'foot'){
+            if (tierItem == 'item1')
+            {
+                actualDmg -= boost1
+            } else if (tierItem =="item2"){
+                actualDmg -= boost2
+            } else if (tierItem == 'item3'){
+                actualDmg -= boost3
+            }
+        } else  if (lastPos === 'hand'){
+            if (tierItem == 'item1'){
+                actualDmg -= boost1
+            } else if (tierItem =='item2'){
+                actualDmg -= boost2
+            } else if (tierItem == 'item3'){
+                actualDmg -= boost3
+            } else if (tierItem == 'item4'){
+                actualMag -= boostMag1
+            } else if (tierItem =='item5'){
+                actualMag -= boostMag2
+            } else if (tierItem == 'item6'){
+                actualMag -= boostMag3
+            } else if (tierItem == 'item7'){
+                actualPower -= boostPower1
+            } else if (tierItem =='item8'){
+                actualPower -= boostPower2
+            } else if (tierItem == 'item9'){
+                actualPower -= boostPower3
+            }
+        }
     // STATS SPAN ACTUALISATION
     lvlSpan.textContent = `${actualLvl}`
     dmgSpan.textContent = `${actualDmg}`
     magSpan.textContent = `${actualMag}`
     powerSpan.textContent = `${actualPower}%`
 }
-
-
-
-//////////////////////////////////////////////END DROP//////////////////////////////////////////////////////
-
-//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
