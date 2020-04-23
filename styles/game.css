@@ -7,3 +7,733 @@ body {
     position: absolute;
     z-index: -1;
 }
+
+html{
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+/***** MENU TOP LEFT *****/
+
+    /* LIST GESTION */
+ul{
+    list-style: none;
+}
+
+nav li ul{
+    display: none;
+}
+    
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    width:200px;
+}
+
+a{
+    text-decoration: none;
+    width:100px;
+    display:inline-block;
+    padding:15px;
+    text-align:center;
+}
+
+li{
+    position:relative
+}
+
+ul, li{
+    margin:0;
+    padding:0;
+}
+
+      /* MENU N°1 & N°2 */
+
+img[class*="leave"]{
+    position: absolute;
+    left: 312px;
+    top: 14px;
+    max-width: 8%;
+}
+
+img[class*="leave"]:hover{
+    cursor: pointer;
+}
+
+img[class*="button-"]:hover{
+    cursor: pointer;
+}
+
+.button-character{
+    max-width: 60%;
+}
+
+.button-hetic{
+    max-width: 60%;
+}
+
+    /* MENU N°1 */
+
+.menu-character{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.menu-character-t{
+    background: #1b1c1d;
+    width: 350px;
+    height: 350px;
+    top: 5px;
+    left: 5px;
+    border: 7px solid #3f3d3d;
+}
+
+/* MENU N°1 - TOP */
+.return-inventory{
+    position: absolute;
+    max-width: 15%;
+}
+
+.main-character{
+    padding: 40px 0px 0px 10px;
+    max-width: 32%;
+}
+
+.character-stats{
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.name{
+    position: absolute;
+    top: 90px;
+    left:180px;
+    max-width: 100px;
+}
+
+.level{
+    position: absolute;
+    top: 135px;
+    left: 180px;
+
+}
+
+.dmg{
+    position: absolute;
+    top: 165px;
+    left: 180px;
+    color:#c73f3f;
+}
+
+.mag{
+    position: absolute;
+    top: 195px;
+    left: 180px;
+    color: #962eb4;  
+}
+
+.power{
+    position: absolute;
+    top: 225px;
+    left: 180px;
+    color: #3dcd69;
+}
+
+.character-item{
+    padding: 25px 8px 0 8px;
+    justify-content: space-around;
+    flex-direction: row;
+    display: flex;
+}
+
+/* MENU N°1 - BOT */
+
+.menu-character-b{
+    background: #1b1c1d;
+    width: 350px;
+    height: 215px;
+    margin-top: 25px;
+    padding-top: 10px;
+    left: -5px;
+    border: 7px solid #3f3d3d;
+}
+
+.inventory{
+    font-size: 18px;
+    font-weight: 800;
+    margin-left: 35px;
+}
+
+div[class*="line"]{
+    display: flex;
+    justify-content: space-around;
+    padding: 6px 2px 0 2px;
+    margin: 1px 5px 8px 1px;
+}
+
+.inv-full{
+    background-image: url(../images/full-inv.png);
+}
+
+.inv-empty{
+    background-image: url(../images/empty-inv.png);
+}
+
+.inv-empty, .inv-full{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+            /* STUFF LIST */
+
+
+    /* HAND */
+        /* SCPETRE */
+.item1[data-slot="hand"]{
+    background-image: url(../images/stuff/sword1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item2[data-slot="hand"]{
+    background-image: url(../images/stuff/sword2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="hand"]{
+    background-image: url(../images/stuff/sword3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+        /* SWORD */
+.item4[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item5[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item6[data-slot="hand"]{
+    background-image: url(../images/stuff/sceptre3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+
+        /* BOOK */
+.item7[data-slot="hand"]{
+    background-image: url(../images/stuff/book1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item8[data-slot="hand"]{
+    background-image: url(../images/stuff/book2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+.item9[data-slot="hand"]{
+    background-image: url(../images/stuff/book3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+
+
+    /* HEAD */
+.item1[data-slot="head"]{
+    background-image: url(../images/stuff/head1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item2[data-slot="head"]{
+    background-image: url(../images/stuff/head2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="head"]{
+    background-image: url(../images/stuff/head3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+    /* BODY */
+.item1[data-slot="body"]{
+    background-image: url(../images/stuff/body1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item2[data-slot="body"]{
+    background-image: url(../images/stuff/body2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="body"]{
+    background-image: url(../images/stuff/body3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+
+
+    /* FOOT */
+.item1[data-slot="foot"]{
+    background-image: url(../images/stuff/foot1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item2[data-slot="foot"]{
+    background-image: url(../images/stuff/foot2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.item3[data-slot="foot"]{
+    background-image: url(../images/stuff/foot3.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+/* .hand{
+    background-image: url(../images/stuff/hand.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 70%;
+}
+
+.body{
+    background-image: url(../images/stuff/body.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-position: center;
+    width: 80%;
+    height: 80%;
+}
+
+.head{
+    background-image: url(../images/stuff/head.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 80%;
+}
+
+.foot{
+    background-image: url(../images/stuff/foot.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 80%;
+} */
+
+/* FILL INVENTORY */
+
+.fill{
+    cursor: pointer;
+}
+
+.hold{
+    border: solid #cccccc 2px;
+}
+
+.invisible{
+    display: none;
+}
+
+    /* MENU N°2 */
+
+.menu-hetic{
+    background: #1b1c1d;
+    border: 7px solid #3f3d3d;
+    width: 350px;
+    height: 618px;
+    top: 5px;
+    left: 7px;
+}
+
+.return-hetic{
+    max-width: 15%;
+}
+
+.shop-hetic{
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 12px 1px;
+}
+
+/* INDIVIDUAL BUY */
+
+div[class*="buy"]{
+    background-image: url(../images/background-hetic.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    position: relative;
+    height: 100px;
+    margin-left: 15px;
+}
+
+
+.perso-hetic{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+}
+
+div[class*="buy"]:hover{
+    cursor: pointer;
+}
+
+/* HETIC---SIZE */
+.perso1{
+    width: 32%;
+}
+
+.perso2{
+    width: 28%;
+}
+
+.perso3{
+    width: 22%;
+}
+
+.perso4{
+    width: 24%;
+}
+
+.perso5{
+    width: 25%;
+}
+
+.perso6{
+    width: 24%;
+}
+
+.perso7{
+    width: 28%;
+}
+
+.perso8{
+    width: 20%;
+}
+
+.perso9{
+    width: 28%;
+}
+
+.perso10{
+    width: 20%;
+}
+
+.ifBuy{
+    width: 40%;
+    position: absolute;
+    left: 65px;
+    top: 10px;
+    display: none;
+}
+
+.diamond{
+    width: 18%;
+    position: absolute;
+    top: 15px;
+    left: 52px;
+}
+
+span[class*="price-hetic"]{
+    font-size: 25px;
+    color: #70c6e1;
+    position: absolute;
+    left: 88px;
+    top: 8px;
+    text-shadow: 1px 1px 1px #cecece;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 1px;
+}
+
+.recrut{
+    font-size: 22px;
+    font-weight: 500;
+    color: #ffffff;
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    font-family: 'Anton', sans-serif;
+}
+
+
+/* GOLD GESTION */
+
+.top-right{
+    height: 54px;
+    width: 200px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+}
+
+.button-plus{
+    background-image: url(../images/button-shop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.gold-button{
+    background-image: url(../images/button-gold.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.plus-text{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 90px;
+    font-weight: 500;   /* Je n'arrive pas à bien placr le "+" */
+    position: absolute;
+    top: -50px;
+    left: 3px;
+}
+
+.button-plus:hover{
+    cursor: pointer;
+}
+
+.diamond-top{
+    width: auto;
+    height: auto;
+    margin: 5px;
+}
+
+.gold-posses{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/*
+.plus-shop{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.diamond-gold{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+}
+
+.gold-posses{
+    color: #70c6e1;
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+} */
+
+/* ITEM BAR */
+
+.background-bar{
+    background-image: url(../images/item-bar.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 700px;
+    height: 75px;
+    margin: 0 auto;
+    position: fixed;
+    top: 93%; left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+div[class*="item-slot"]{
+    background-image: url(../images/item-slot.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    height: 40px;
+    width: 40px;
+    /* margin: 100px; */
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.background-bar span{
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    height: 10px;
+    width: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+.items-slots{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.items-nmb{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.hetic-item{
+    width: 100%;
+    margin-top: 2px;
+}
+
+.item-slot2 > img{
+    width: 60%;
+}
+
+.item-slot3 > img{
+    width: 90%;
+}
+
+.item-slot4 > img{
+    width: 35%;
+}
+
+.item-slot5 > img{
+    width: 85%;
+}
+
+.item-slot6 > img{
+    width: 65%;
+}
+
+.item-slot7 > img{
+    width: 80%;
+}
+
+.item-slot8 > img{
+    width: 60%;
+}
+
+.item-slot9 > img{
+    width: 80%;
+}
+
+.item-slot10 > img{
+    width: 58%;
+}
+
+.lock{
+    opacity: 20%;
+}
