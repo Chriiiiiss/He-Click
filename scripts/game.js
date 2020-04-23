@@ -1,42 +1,76 @@
 class monster {
-    constructor(id, name, img_url, hp, cd, gold) {
+    constructor(id, name, img_url, hp, cd, gold, drop) {
         this.id = id,
         this.name = name,
         this.img_url = img_url,
         this.hp = hp,
         this.cd = cd,
         this.gold = gold
+        this.drop = drop
     }
 }
 
-let monster_tab = [
-    new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2),
-    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3),
-    new monster(2, "croco", "monstre_croco.png", 15, 0, 4),
-    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5),
-    new monster(4, "singe", "monstre_singe.png", 25, 0, 6),
-    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7),
-    new monster(6, "machin", "monstre_machin.png", 50, 0, 8),
-    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9),
-    new monster(8, "truc", "monstre_truc.png", 70, 0, 10),
-    new monster(9, "muche", "monstre_muche.png", 75, 0, 11),
-    new monster(10, "boche", "monstre_boche.png", 100, 60, 12),
-    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13),
-    new monster(12, "momie", "monstre_momie.png", 110, 0, 14),
-    new monster(13, "zombie", "monstre_zombie.png", 125, 0, 15),
-    new monster(14, "garde", "monstre_garde.png", 130, 0, 17),
-    new monster(15, "faucheur", "monstre_faucheur.png", 200, 60, 20),
-    new monster(16, "loup", "monstre_loup.png", 210, 0, 23),
-    new monster(17, "callas", "monstre_callas.png", 230, 0, 26),
-    new monster(18, "morvus", "monstre_morvus.png", 250, 0, 28),
-    new monster(19, "screed", "monstre_screed.png", 280, 0, 30),
-    new monster(20, "gandalf", "monstre_gandalf.png", 400, 60, 35),
-    new monster(21, "gargouille", "monstre_gargouille.png", 400, 0, 40),
-    new monster(22, "litlevil", "monstre_litlevil.png", 450, 0, 45),
-    new monster(23, "gasper", "monstre_gasper.png", 500, 0, 50),
-    new monster(24, "dracula", "monstre_dracula.png", 550, 0, 60),
-    new monster(25, "demon", "monstre_demon.png", 1000, 60, 70),
-    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60, 10000)
+class itemSelect {
+    constructor(id, imgUrl, data, tier, classDrop) {
+        this.id = id
+        this.imgUrl = imgUrl
+        this.data = data
+        this.tier = tier
+        this.classDrop = classDrop
+    }
+}
+
+const ITEM_PATH = '../images/stuff/'
+
+const item_tab = [
+    new itemSelect(0, `${ITEM_PATH}body1`, 'body', 1, 'item1'),
+    new itemSelect(1, `${ITEM_PATH}head1`, 'head', 1, 'item1'),
+    new itemSelect(2, `${ITEM_PATH}foot1`, 'foot', 1, 'item1'),
+    new itemSelect(3, `${ITEM_PATH}sword1`, 'hand', 1, 'item1'),
+    new itemSelect(4, `${ITEM_PATH}sceptre1`, 'hand', 1, 'item4'),
+    new itemSelect(5, `${ITEM_PATH}book1`, 'hand', 1, 'item7'),
+    new itemSelect(6, `${ITEM_PATH}body2`, 'body', 2, 'item2'),
+    new itemSelect(7, `${ITEM_PATH}head2`, 'head', 2, 'item2'),
+    new itemSelect(8, `${ITEM_PATH}foot2`, 'foot', 2, 'item2'),
+    new itemSelect(9, `${ITEM_PATH}sword2`, 'hand', 2, 'item2'),
+    new itemSelect(10, `${ITEM_PATH}sceptre2`, 'hand', 2, 'item5'),
+    new itemSelect(11, `${ITEM_PATH}book2`, 'hand', 2, 'item8'),
+    new itemSelect(12, `${ITEM_PATH}body3`, 'body', 3, 'item3'),
+    new itemSelect(13, `${ITEM_PATH}head3`, 'head', 3, 'item3'),
+    new itemSelect(14, `${ITEM_PATH}foot3`, 'foot', 3, 'item3'),
+    new itemSelect(15, `${ITEM_PATH}sword3`, 'hand', 3, 'item3'),
+    new itemSelect(16, `${ITEM_PATH}sceptre3`, 'hand', 3, 'item6'),
+    new itemSelect(17, `${ITEM_PATH}book3`, 'hand', 3, 'item9'),
+]
+
+const monster_tab = [
+    new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
+    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
+    new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
+    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
+    new monster(4, "singe", "monstre_singe.png", 25, 0, 6, 1),
+    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7, 2),
+    new monster(6, "machin", "monstre_machin.png", 50, 0, 8, 1),
+    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9, 1),
+    new monster(8, "truc", "monstre_truc.png", 70, 0, 10, 1),
+    new monster(9, "muche", "monstre_muche.png", 75, 0, 11, 1),
+    new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
+    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
+    new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
+    new monster(13, "zombie", "monstre_zombie.png", 125, 0, 15, 1),
+    new monster(14, "garde", "monstre_garde.png", 130, 0, 17, 1),
+    new monster(15, "faucheur", "monstre_faucheur.png", 200, 60, 20, 2),
+    new monster(16, "loup", "monstre_loup.png", 210, 0, 23, 1),
+    new monster(17, "callas", "monstre_callas.png", 230, 0, 26, 1),
+    new monster(18, "morvus", "monstre_morvus.png", 250, 0, 28, 1),
+    new monster(19, "screed", "monstre_screed.png", 280, 0, 30, 1),
+    new monster(20, "gandalf", "monstre_gandalf.png", 400, 60, 35, 2),
+    new monster(21, "gargouille", "monstre_gargouille.png", 400, 0, 40, 1),
+    new monster(22, "litlevil", "monstre_litlevil.png", 450, 0, 45, 1),
+    new monster(23, "gasper", "monstre_gasper.png", 500, 0, 50, 1),
+    new monster(24, "dracula", "monstre_dracula.png", 550, 0, 60, 1),
+    new monster(25, "demon", "monstre_demon.png", 1000, 60, 70, 1),
+    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60, 10000, 2)
 ]
 
 // SPAN VARIABLES
@@ -52,7 +86,7 @@ const emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, 
 // STATS VARIABLES
 
 let actualLvl = 1
-let actualDmg = 1
+let actualDmg = 100
 let actualMag = 0
 let actualPower = 0
 
@@ -363,7 +397,6 @@ function loadBgFiles(loader, files, suffix) {
     loader.add(`front_${suffix[4]}`, `${files[4]}/front.png`)
     loader.add(`middle_${suffix[4]}`, `${files[4]}/middle.png`)
     loader.add(`back_${suffix[4]}`, `${files[4]}/back.png`)
-
     loadFiles(loader)
 }
 
@@ -607,9 +640,9 @@ function HandleHealth() {
         sprite_monster_test.destroy()
         // RANDOM MODE
         // respawnMob(Math.ceil(Math.random()* 25))
-        console.log(level);
         level == 26 ? level = 0 : level++
         respawnMob(level)
+        dropItem()
     }
 }
 
@@ -618,6 +651,33 @@ setInterval (() =>{
     currentHP -=actualMag
 }, 1000)
 
+function dropItem (){
+    let randTier = Math.random()
+        if (monster_tab[level-1].drop === 1){
+        if (randTier < 0.70){
+            const randGetItem = Math.ceil(Math.random()*5)
+            selectDrop(item_tab[randGetItem])
+        } else if (randTier < 0.9){
+            // console.log('tier2')
+        } else {
+            // console.log('tier3')
+        }
+    } else {
+        // console.log('item boss')
+    }
+}
+
+function selectDrop (item){
+    const emptySlot = document.querySelectorAll('.inv-empty[data-slot="inventory"')
+    const domItem = document.createElement('div')
+    domItem.classList.add(item.classDrop)
+    domItem.setAttribute('data-slot', item.data)
+    domItem.setAttribute('draggable', true)
+    emptySlot[0].appendChild(domItem)
+    emptySlot[0].classList.remove("inv-empty")
+    emptySlot[0].classList.add("inv-full")
+    lastPos = emptySlot[0]
+}
 
 function respawnMob(index) {
     sprite_monster_test = createSprite(texture_tab_monster[index], texture_tab_monster[index].width, texture_tab_monster[index].height,0,0, bg)
@@ -668,6 +728,10 @@ leave2.addEventListener( 'click', () =>{
 
 for (const empty of emptiesInv){
     for (const items of item) {
+        setInterval(() => {
+            console.log(items);
+            
+        }, 10000)
         empty.addEventListener('dragover', dragOver)
         empty.addEventListener('dragenter', dragEnter)
         empty.addEventListener('dragleave', dragLeave)
@@ -754,6 +818,7 @@ function dragDrop(){
             else if (currentSlot === 'hand' && handEquip == null){
                 let handEquip = document.querySelector('.character-item :nth-child(3) > div')
                 let tierItem = handEquip.classList[0]
+                console.log(handEquip)
                 if(tierItem === 'item1'){
                 actualDmg += boost1
                 } else if(tierItem === 'item2'){
