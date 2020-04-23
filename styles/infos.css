@@ -30,6 +30,7 @@ header{
     width: 100%;
     display: grid;
     justify-content: center;
+    animation: container 2s;
 }
 
 .objectif{
@@ -53,6 +54,7 @@ header{
 .sub_container{
     width: 100%;
     height: 200px;
+    animation: sub_container 2s;
 }
 .objectif_paragraph{
     width: 800px;
@@ -62,6 +64,34 @@ header{
     font-weight: 600;
 }
 
+
+@keyframes container {
+    0%{
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes sub_container {
+    0%{
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
 /* CONTAINER RÈGLES */
 
 .regles_container{
@@ -69,8 +99,22 @@ header{
     width: 100%;
     display: grid;
     justify-content: center;
+    animation: regles_container 4s;
 }
 
+@keyframes regles_container {
+    0%{
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
 .regles{
     width:200px;
     height:120px;
@@ -99,7 +143,22 @@ header{
     width:800px;
     margin-bottom: 40px;
 }
+.container_hetic{
+    animation: container_hetic 4s;
+}
+@keyframes container_hetic {
+    0%{
+        opacity: 0;
+    }
 
+    50% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
 .texte_teamprof{
     font-weight: 600;
     font-size: 26px;
@@ -108,6 +167,9 @@ header{
 
 .item{
     width:100px;
+}
+.item:hover{
+    width:120px;
 }
 
 .items1{
@@ -122,6 +184,10 @@ header{
     grid-column: 1;
     margin-left: 20px;
 }
+.item1_hetic:hover{
+    width:160px;
+}
+
 .item2_hetic{
     grid-column: 7;
 }
@@ -131,6 +197,9 @@ header{
 .item4_hetic{
     width:50px;
     grid-column: 19;
+}
+.item4_hetic:hover{
+    width:70px;
 }
 .texte1_hetic{
     grid-column: 3 / 6;
@@ -183,12 +252,18 @@ header{
     grid-column: 4;
     width:80px;
 }
+.item8_hetic:hover{
+    width:100px;
+}
 .item9_hetic{
     grid-column: 10;
 }
 .item10_hetic{
     grid-column: 16;
     width:80px;
+}
+.item10_hetic:hover{
+    width:100px;
 }
 .texte8_hetic{
     grid-column: 6/9;
@@ -248,13 +323,22 @@ header{
     grid-column: 4;
     width:40px;
 }
+.item4:hover{
+    width:50px;
+}
 .item5{
     grid-column: 10;
     width:40px;
 }
+.item5:hover{
+    width:50px;
+}
 .item6{
     grid-column: 16;
     width:40px;
+}
+.item6:hover{
+    width:50px;
 }
 .texte4{
     grid-column: 6/9;
@@ -326,13 +410,22 @@ header{
     grid-column: 4;
     width:80px;
 }
+.item13:hover{
+    width:100px;
+}
 .item14{
     grid-column: 10;
     width:80px;
 }
+.item14:hover{
+    width:100px;
+}
 .item15{
     grid-column: 16;
     width:80px;
+}
+.item15:hover{
+    width:100px;
 }
 .texte13{
     grid-column: 6/9;
@@ -354,13 +447,22 @@ header{
     grid-column: 4;
     width:80px;
 }
+.item16:hover{
+    width:100px;
+}
 .item17{
     grid-column: 10;
     width:80px;
 }
+.item17:hover{
+    width:100px;
+}
 .item18{
     grid-column: 16;
     width:80px;
+}
+.item18:hover{
+    width:100px;
 }
 .texte16{
     grid-column: 6/9;
