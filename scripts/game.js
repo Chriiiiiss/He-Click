@@ -543,47 +543,6 @@ function dragLeave(){
 }
 
 
-
-                                        // DROP FIRST TRY
-// function dragDrop(){
-//     const invItem = this.classList[0]
-    // console.log(typeItem);
-    // console.log(invItem);
-
-//     if (((typeItem == 'hand' && invItem == 'inv-hand')    // A AMELIORER AU NIVEAU DES PARENTHESES
-//     || (typeItem =='head' && invItem =='inv-head')
-//     || (typeItem == 'body' && invItem == 'inv-body')
-//     || (typeItem == 'foot' && invItem == 'inv-foot')) 
-//     && !this.hasChildNodes()) //ths.classlist.etc.
-//     {
-//         this.append(itemElem)
-//         this.classList.remove("inv-empty")
-//         this.classList.add("inv-full")
-//     }
-
-//     // if (invItem == 'inv-empty' && !this.hasChildNodes())
-//     // {
-//     //     this.append(itemElem)
-//     //     inventoryLastPos.append(itemElem)
-//     // } 
-    
-//     else if (this.hasChildNodes() )
-//     {
-//         inventoryLastPos.append(itemElem)
-//     } else if (this.classList[0] === "inv-full") {     //
-//         inventoryLastPos.append(itemElem)
-//         inventoryLastPos.className = "inv-full"
-        
-//     } else if (this.classList[0] === "inv-empty" && !this.hasChildNodes()){
-//         this.append(itemElem)
-//         this.classList.splice(0, 1, 'inv-full')
-//         console.log(this.classList);
-        
-//         inventoryLastPos.className = "inv-empty"
-//     }
-// }
-
-
 //////////////////////////////////////////////////// DROP V2////////////////////////////////////////////////
 
 function dragDrop(){
@@ -800,7 +759,7 @@ function dragDrop(){
 
 // GOLD IMPROVEMENT
 let goldSpan = document.querySelector('.gold-posses')
-let actualGold = 20
+let actualGold = 1000
 let goldWin = 2
 goldSpan.textContent = `${actualGold}`
 
@@ -813,9 +772,7 @@ const goldUp = () =>
 
 //////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
 
-const diamond = document.querySelector('.diamond')
-const ifBuy = document.querySelector('.ifBuy')
-const recrut = document.querySelector('.recrut')
+
 
 const price1 = 20
 const price2 = 30
@@ -828,7 +785,16 @@ const price8 = 90
 const price9 = 100
 const price10 = 110
 
-const buy1 = document.querySelector('.buy1')
+const buy1 = document.querySelector('.click-buy1')
+const buy2 = document.querySelector('.click-buy2')
+const buy3 = document.querySelector('.click-buy3')
+const buy4 = document.querySelector('.click-buy4')
+const buy5 = document.querySelector('.click-buy5')
+const buy6 = document.querySelector('.click-buy6')
+const buy7 = document.querySelector('.click-buy7')
+const buy8 = document.querySelector('.click-buy8')
+const buy9 = document.querySelector('.click-buy9')
+const buy10 = document.querySelector('.click-buy10')
 
 let priceHetic1 = document.querySelector('.price-hetic1')
 let priceHetic2 = document.querySelector('.price-hetic2')
@@ -853,26 +819,234 @@ priceHetic9.textContent = price9
 priceHetic10.textContent = price10
 
 
+    // 1
+    const diamond1 = document.querySelector('.click-buy1 .diamond')
+    const ifBuy1 = document.querySelector('.click-buy1 .ifBuy')
+    const recrut1 = document.querySelector('.click-buy1 .recrut')
+
 buy1.addEventListener('click', event => {
-    if (actualGold >= 20)
+    if (actualGold >= price1 && buy1.className === 'click-buy1')
     {
-        actualGold -= 20
-        console.log('lol');
-        ifBuy.style.display = 'inline'
-        diamond.style.display = 'none'
-        recrut.style.display = 'none'
+        actualGold -= price1
+        ifBuy1.style.display = 'inline'
+        diamond1.style.display = 'none'
+        recrut1.style.display = 'none'
         priceHetic1.style.display = 'none'
+        buy1.style.opacity = '100%'
+        buy1.classList.remove('click-buy1')
+        buy1.classList.add('buy1')
+        // AFFICHER LE PERSONNAGE A COTE DU HERO
+        // AJOUTER LE BOOST APPORTE
     }
     goldSpan.textContent = `${actualGold}`
-
-  })
-
+    })
 
 
+    // 2
+const diamond2 = document.querySelector('.click-buy2 .diamond')
+const ifBuy2 = document.querySelector('.click-buy2 .ifBuy')
+const recrut2 = document.querySelector('.click-buy2 .recrut')
+
+buy2.addEventListener('click', event => {
+    if (actualGold >= price2 && buy2.className === 'click-buy2')
+    {
+        actualGold -= price2
+        ifBuy2.style.display = 'inline'
+        diamond2.style.display = 'none'
+        recrut2.style.display = 'none'
+        priceHetic2.style.display = 'none'
+        buy2.style.opacity = '100%'
+        buy2.classList.remove('click-buy2')
+        buy2.classList.add('buy2')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 3
+const diamond3 = document.querySelector('.click-buy3 .diamond')
+const ifBuy3 = document.querySelector('.click-buy3 .ifBuy')
+const recrut3 = document.querySelector('.click-buy3 .recrut')
+
+buy3.addEventListener('click', event => {
+    if (actualGold >= price3 && buy3.className === 'click-buy3')
+    {
+        actualGold -= price3
+        ifBuy3.style.display = 'inline'
+        diamond3.style.display = 'none'
+        recrut3.style.display = 'none'
+        priceHetic3.style.display = 'none'
+        buy3.style.opacity = '100%'
+        buy3.classList.remove('click-buy3')
+        buy3.classList.add('buy3')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
 
 
 
-    // STATS IMRPROVMENT
+//     // 4
+const diamond4 = document.querySelector('.click-buy4 > .diamond')
+const ifBuy4 = document.querySelector('.click-buy4 > .ifBuy')
+const recrut4 = document.querySelector('.click-buy4 > .recrut')
+
+buy4.addEventListener('click', event => {
+    if (actualGold >= price4 && buy4.className === 'click-buy4')
+    {
+        actualGold -= price4
+        ifBuy4.style.display = 'inline'
+        diamond4.style.display = 'none'
+        recrut4.style.display = 'none'
+        priceHetic4.style.display = 'none'
+        buy4.style.opacity = '100%'
+        buy4.classList.remove('click-buy4')
+        buy4.classList.add('buy4')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+//     // 5
+const diamond5 = document.querySelector('.click-buy5 .diamond')
+const ifBuy5 = document.querySelector('.click-buy5 .ifBuy')
+const recrut5 = document.querySelector('.click-buy5 .recrut')
+
+buy5.addEventListener('click', event => {
+    if (actualGold >= price5 && buy5.className === 'click-buy5')
+    {
+        actualGold -= price5
+        ifBuy5.style.display = 'inline'
+        diamond5.style.display = 'none'
+        recrut5.style.display = 'none'
+        priceHetic5.style.display = 'none'
+        buy5.style.opacity = '100%'
+        buy5.classList.remove('click-buy5')
+        buy5.classList.add('buy5')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 6
+const diamond6 = document.querySelector('.click-buy6 .diamond')
+const ifBuy6 = document.querySelector('.click-buy6 .ifBuy')
+const recrut6 = document.querySelector('.click-buy6 .recrut')
+
+buy6.addEventListener('click', event => {
+    if (actualGold >= price6 && buy6.className === 'click-buy6')
+    {
+        actualGold -= price6
+        ifBuy6.style.display = 'inline'
+        diamond6.style.display = 'none'
+        recrut6.style.display = 'none'
+        priceHetic6.style.display = 'none'
+        buy6.style.opacity = '100%'
+        buy6.classList.remove('click-buy6')
+        buy6.classList.add('buy6')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 7
+const diamond7 = document.querySelector('.click-buy7 .diamond')
+const ifBuy7 = document.querySelector('.click-buy7 .ifBuy')
+const recrut7 = document.querySelector('.click-buy7 .recrut')
+
+buy7.addEventListener('click', event => {
+    if (actualGold >= price7 && buy7.className === 'click-buy7')
+    {
+        actualGold -= price7
+        ifBuy7.style.display = 'inline'
+        diamond7.style.display = 'none'
+        recrut7.style.display = 'none'
+        priceHetic7.style.display = 'none'
+        buy7.style.opacity = '100%'
+        buy7.classList.remove('click-buy7')
+        buy7.classList.add('buy7')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 8
+const diamond8 = document.querySelector('.click-buy8 .diamond')
+const ifBuy8 = document.querySelector('.click-buy8 .ifBuy')
+const recrut8 = document.querySelector('.click-buy8 .recrut')
+
+buy8.addEventListener('click', event => {
+    if (actualGold >= price8 && buy8.className === 'click-buy8')
+    {
+        actualGold -= price8
+        ifBuy8.style.display = 'inline'
+        diamond8.style.display = 'none'
+        recrut8.style.display = 'none'
+        priceHetic8.style.display = 'none'
+        buy8.style.opacity = '100%'
+        buy8.classList.remove('click-buy8')
+        buy8.classList.add('buy8')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 9
+const diamond9 = document.querySelector('.click-buy9 .diamond')
+const ifBuy9 = document.querySelector('.click-buy9 .ifBuy')
+const recrut9 = document.querySelector('.click-buy9 .recrut')
+
+buy9.addEventListener('click', event => {
+    if (actualGold >= price9 && buy9.className === 'click-buy9')
+    {
+        actualGold -= price9
+        ifBuy9.style.display = 'inline'
+        diamond9.style.display = 'none'
+        recrut9.style.display = 'none'
+        priceHetic9.style.display = 'none'
+        buy9.style.opacity = '100%'
+        buy9.classList.remove('click-buy9')
+        buy9.classList.add('buy9')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+    // 10
+const diamond10 = document.querySelector('.click-buy10 .diamond')
+const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
+const recrut10 = document.querySelector('.click-buy10 .recrut')
+
+buy10.addEventListener('click', event => {
+    if (actualGold >= price10 && buy10.className === 'click-buy10')
+    {
+        actualGold -= price10
+        ifBuy10.style.display = 'inline-block'
+        diamond10.style.display = 'none'
+        recrut10.style.display = 'none'
+        priceHetic10.style.display = 'none'
+        buy10.style.opacity = '100%'
+        buy10.classList.remove('click-buy10')
+        buy10.classList.add('buy10')
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+
+
+
+//HETIC ITEMS RECUPERATION//
+
+let recup = 1
+const aa = document.querySelector('.hetic-item1')
+
+if (recup === 1)
+{
+    aa.style.display = "inline"
+}
+
+
+
+    ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 
 // SPAN VARIABLES
 let lvlSpan = document.querySelector('.actual-level')
