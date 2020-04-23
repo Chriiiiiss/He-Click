@@ -730,14 +730,8 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-    // STUFF BOOST DMG
-console.log(currentSlot);
-console.log(tierItem);
-console.log(lastPos);
-
-
-
-    if  (currentSlot === 'head'){
+    /////////////////////////////////////////// STUFF BOOST DMG
+    if  (currentSlot === 'head' && headEquip == null){
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
     let tierItem = headEquip.classList[0]
         if(tierItem === 'item1'){
@@ -747,7 +741,7 @@ console.log(lastPos);
         } else if (tierItem == 'item3'){
             actualDmg += boost3
         }}
-        else if (currentSlot === 'body'){
+        else if (currentSlot === 'body' && bodyEquip == null){
             let bodyEquip = document.querySelector('.character-item :nth-child(2) > div')
             let tierItem = bodyEquip.classList[0]
             if(tierItem == 'item1'){
@@ -757,7 +751,7 @@ console.log(lastPos);
             } else if (tierItem == 'item3'){
                 actualDmg += boost3
             }}
-            else if (currentSlot === 'hand'){
+            else if (currentSlot === 'hand' && handEquip == null){
                 let handEquip = document.querySelector('.character-item :nth-child(3) > div')
                 let tierItem = handEquip.classList[0]
                 if(tierItem === 'item1'){
@@ -779,7 +773,7 @@ console.log(lastPos);
                 } else if (tierItem == 'item9'){
                     actualPower += boostPower3
                 }}
-            else if (currentSlot === 'foot'){
+            else if (currentSlot === 'foot' && footEquip == null){
                 let footEquip = document.querySelector('.character-item :nth-child(4) > div')
                 let tierItem = footEquip.classList[0]
                 if(tierItem == 'item1'){
