@@ -287,7 +287,7 @@ let xp_char = 4
 let id_game = 4
 let currentHP
 let level = 0
-let cmptStatsUpStatsUp = 0
+let cmptStatsUp = 0
 
 
 // STATS BY ITEMS
@@ -642,6 +642,7 @@ function HandleHealth() {
     modifierLvl.textContent = `----- LVL ${level +1} -----`
     
     if (currentHP < 0) {
+        lvlUp()
         goldUp(monster_tab[level].gold)
         currentHP = 0
         sprite_monster_test.destroy()
