@@ -1165,3 +1165,15 @@ function loadIndex() {
     // console.log("hello")
     window.location.href = "../index.html"
 }
+
+function play(idPlayer) {
+    const player = document.querySelector('#' + idPlayer);
+    
+        player.play();
+}
+
+function resume(idPlayer) {
+    const player = document.querySelector('#' + idPlayer);
+	
+    player.pause();
+}
