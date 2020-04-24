@@ -46,14 +46,10 @@
 
 @keyframes heclick {
     0%{
-        height: 200px;
-        width: 830px;
-        opacity: 1;
+        opacity: 0;
     }
 
     50%{
-        height: 250px;
-        width: 996px; 
         opacity: 1;
     }
 
@@ -166,7 +162,7 @@
 /* header animation */
 
 header{
-  animation: header 2s;
+  animation: header 4s;
 }
 
 @keyframes header{
@@ -174,15 +170,23 @@ header{
     opacity: 0;
   }
 
-  100%{
+  50%{
     opacity: 0;
+  }
+
+  65%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 1;
   }
 }
 
 /* start animation */
 
 .container{
-  animation: start 2s;
+  animation: start 4s;
 }
 
 @keyframes start{
@@ -190,10 +194,21 @@ header{
     opacity: 0;
   }
 
-  100%{
+  50%{
     opacity: 0;
   }
+
+  65%{
+    opacity: 1;
+  }
+
+  100%{
+    opacity: 1;
+  }
 }
+
+
+
 
 /**** SET THE ELEMENTS OF THE MAIN ****/
 
@@ -290,6 +305,3 @@ header{
   width: 600px;
   transition: 0.5s ease;
 }
-
-
-
