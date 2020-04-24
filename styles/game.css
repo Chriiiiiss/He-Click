@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
     /* background-color: #D7D7D7; */
     margin: 0;
@@ -15,6 +16,7 @@ html{
     font-family: 'Inter', sans-serif;
 }
 
+/* HUD MONSTER HP & LEVEL */
 .actualHP{
 
     position: absolute;
@@ -47,9 +49,8 @@ html{
     font-size: 18px;
 }
 
-/***** MENU TOP LEFT *****/
 
-    /* LIST GESTION */
+    /* LIST FOR MENUS */
 ul{
     list-style: none;
 }
@@ -83,14 +84,12 @@ ul, li{
     padding:0;
 }
 
-      /* MENU N°1 & N°2 */
-
+/* GLOBAL BUTTON */
 img[class*="leave"]{
     position: absolute;
     left: 312px;
     top: 14px;
     max-width: 8%;
-
 }
 
 img[class*="leave"]:hover{
@@ -113,8 +112,8 @@ img[class*=button-]{
     max-width: 60%;
 }
 
-    /* MENU N°1 */
 
+/* MENU CHARACTER */
 .menu-character{
     position: relative;
     display: flex;
@@ -131,7 +130,6 @@ img[class*=button-]{
     border: 7px solid #3f3d3d;
 }
 
-/* MENU N°1 - TOP */
 .return-inventory{
     position: absolute;
     max-width: 15%;
@@ -308,8 +306,6 @@ div[class*="line"]{
     height: 70%;
 }
 
-
-
         /* SWORD */
 .item4[data-slot="hand"]{
     background-image: url(../images/stuff/sceptre1.png);
@@ -337,9 +333,6 @@ div[class*="line"]{
     width: 70%;
     height: 70%;
 }
-
-
-
 
         /* BOOK */
 .item7[data-slot="hand"]{
@@ -370,10 +363,6 @@ div[class*="line"]{
     height: 70%;
 }
 
-
-
-
-
     /* HEAD */
 .item1[data-slot="head"]{
     background-image: url(../images/stuff/head1.png);
@@ -401,8 +390,6 @@ div[class*="line"]{
     width: 70%;
     height: 70%;
 }
-
-
 
     /* BODY */
 .item1[data-slot="body"]{
@@ -432,8 +419,6 @@ div[class*="line"]{
     height: 70%;
 }
 
-
-
     /* FOOT */
 .item1[data-slot="foot"]{
     background-image: url(../images/stuff/foot1.png);
@@ -462,6 +447,7 @@ div[class*="line"]{
     height: 70%;
 }
 
+/* TRASH */
 .inv-empty[data-slot="OOF"]{
     background-image: url(../images/poubelle.png);
     background-repeat: no-repeat;
@@ -475,7 +461,7 @@ div[class*="line"]{
 }
 
 
-/* FILL INVENTORY */
+/* INVENTORY FOR DRAG & DROP*/
 
 .fill{
     cursor: pointer;
@@ -489,8 +475,7 @@ div[class*="line"]{
     display: none;
 }
 
-    /* MENU N°2 */
-
+/* MENU SHOP */
 .menu-hetic{
     background: #1b1c1d;
     border: 7px solid #3f3d3d;
@@ -512,8 +497,7 @@ div[class*="line"]{
     grid-gap: 12px 1px;
 }
 
-/* INDIVIDUAL BUY */
-
+/* SHOP */
 div[class*="buy"]{
     background-image: url(../images/background-hetic.png);
     background-repeat: no-repeat;
@@ -523,7 +507,6 @@ div[class*="buy"]{
     margin-left: 15px;
     opacity: 60%;
 }
-
 
 .perso-hetic{
     position: absolute;
@@ -543,47 +526,7 @@ div[class*='buy']:hover > span[class*="price"]{
     transition: linear 200ms;
 }
 
-/* HETIC---SIZE */
-.perso1{
-    width: 32%;
-}
-
-.perso2{
-    width: 28%;
-}
-
-.perso3{
-    width: 22%;
-}
-
-.perso4{
-    width: 24%;
-}
-
-.perso5{
-    width: 25%;
-}
-
-.perso6{
-    width: 24%;
-}
-
-.perso7{
-    width: 28%;
-}
-
-.perso8{
-    width: 20%;
-}
-
-.perso9{
-    width: 28%;
-}
-
-.perso10{
-    width: 20%;
-}
-
+/* SHOP */
 .ifBuy{
     background-image: url(../images/ifBuy.png);
     background-repeat: no-repeat;
@@ -627,9 +570,39 @@ span[class*="price-hetic"]{
     font-family: 'Anton', sans-serif;
 }
 
+/* HETIC CHARACTER---SIZE */
+.perso1{
+    width: 32%;
+}
+.perso2{
+    width: 28%;
+}
+.perso3{
+    width: 22%;
+}
+.perso4{
+    width: 24%;
+}
+.perso5{
+    width: 25%;
+}
+.perso6{
+    width: 24%;
+}
+.perso7{
+    width: 28%;
+}
+.perso8{
+    width: 20%;
+}
+.perso9{
+    width: 28%;
+}
+.perso10{
+    width: 20%;
+}
 
 /* IF ITEMS */
-
 img[class^=hetic-item]{
     display: none   ;
 }
@@ -685,10 +658,7 @@ img[class^=hetic-item]{
     padding: 6px;
 }
 
-
 /* HETIC CHARACTER */
-
-
 .hetic-character1{
     background-image: url(../images/perso1.png);
     background-repeat: no-repeat;
@@ -702,7 +672,6 @@ img[class^=hetic-item]{
     z-index: -10;
     display: none;
 }
-
 .hetic-character2{
     background-image: url(../images/perso2.png);
     background-repeat: no-repeat;
@@ -716,7 +685,6 @@ img[class^=hetic-item]{
     z-index: -1;
     display: none;
 }
-
 .hetic-character3{
     background-image: url(../images/perso3.png);
     background-repeat: no-repeat;
@@ -729,7 +697,6 @@ img[class^=hetic-item]{
     left: 48%;
     display: none;
 }
-
 .hetic-character4{
     background-image: url(../images/perso4.png);
     background-repeat: no-repeat;
@@ -744,7 +711,6 @@ img[class^=hetic-item]{
     transform: rotateZ(18deg);
     display: none;
 }
-
 .hetic-character5{
     background-image: url(../images/perso5.png);
     background-repeat: no-repeat;
@@ -758,7 +724,6 @@ img[class^=hetic-item]{
     transform: rotateZ(-50deg);
     display: none;
 }
-
 .hetic-character6{
     background-image: url(../images/perso6.png);
     background-repeat: no-repeat;
@@ -772,7 +737,6 @@ img[class^=hetic-item]{
     z-index: -7;
     display: none;
 }
-
 .hetic-character7{
     background-image: url(../images/perso7.png);
     background-repeat: no-repeat;
@@ -786,7 +750,6 @@ img[class^=hetic-item]{
     z-index:-1;
     display: none;
 }
-
 .hetic-character8{
     background-image: url(../images/perso8.png);
     background-repeat: no-repeat;
@@ -800,7 +763,6 @@ img[class^=hetic-item]{
     z-index: -1;
     display: none;
 }
-
 .hetic-character9{
     background-image: url(../images/perso9.png);
     background-repeat: no-repeat;
@@ -814,7 +776,6 @@ img[class^=hetic-item]{
     z-index: -3;
     display: none;
 }
-
 .hetic-character10{
     background-image: url(../images/perso10.png);
     background-repeat: no-repeat;
@@ -829,9 +790,7 @@ img[class^=hetic-item]{
     display: none;
 }
 
-
-/* GOLD GESTION */
-
+/* GOLD MENU -- TOP RIGHT */
 .top-right{
     height: 54px;
     width: 200px;
@@ -889,10 +848,7 @@ img[class^=hetic-item]{
     letter-spacing: 2px;
 }
 
-
-
 /* ITEM BAR */
-
 .background-bar{
     background-image: url(../images/item-bar.png);
     background-repeat: no-repeat;
@@ -953,39 +909,30 @@ div[class*="item-slot"]{
     width: 100%;
     margin-top: 2px;
 }
-
 .item-slot2 > img{
     width: 60%;
 }
-
 .item-slot3 > img{
     width: 90%;
 }
-
 .item-slot4 > img{
     width: 35%;
 }
-
 .item-slot5 > img{
     width: 85%;
 }
-
 .item-slot6 > img{
     width: 65%;
 }
-
 .item-slot7 > img{
     width: 80%;
 }
-
 .item-slot8 > img{
     width: 60%;
 }
-
 .item-slot9 > img{
     width: 80%;
 }
-
 .item-slot10 > img{
     width: 58%;
 }
