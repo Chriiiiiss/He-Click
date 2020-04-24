@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <audio id="audioPlayer">
+        <source src="../audios/music.mp3">
+    </audio>
+    
+    <div class="control-panel">
+      <div class="control" onclick="play('audioPlayer')"><img class="music_on" src=../images/music_on.png></div>
+      <div class="control" onclick="resume('audioPlayer')"><img class="music_off" src=../images/music_off.png></div>
+    </div>
+    
     <canvas class="game-bg">
     </canvas>
     <span class="actualHP"></span>

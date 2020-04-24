@@ -4,6 +4,30 @@ body {
     user-select: none;
 }
 
+.music_on{
+    width:40px;
+}
+
+.control-panel {
+    display: flex;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.control{
+    width:40px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.music_off{
+    width:40px;
+    margin-left: 20px;
+}
+
 .game-bg {
     position: absolute;
     z-index: -20;
