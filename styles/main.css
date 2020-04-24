@@ -17,7 +17,7 @@
 .opening-animation{
     position: relative;
     top: -240px;
-    left: 350px;
+    left: 120px;
     width: 100%;
 }
 
@@ -30,7 +30,7 @@
 .mouse{
     position: relative;
     left: 1105px;
-    top: -695px;
+    top: -630px;
 }
 
 
@@ -114,25 +114,25 @@
 
     60% {
         left: 1180px;
-        top: -600px;
+        top: -545px;
         opacity: 1;
     }
 
     90%{
         left: 1105px;
-        top: -695px;
+        top: -630px;
         opacity: 1;
     }
 
     99%{
         left: 1105px;
-        top: -695px;
+        top: -630px;
         opacity: 0;
     }
 
     100%{
         left: 1105px;
-        top: -695px;
+        top: -630px;
         opacity: 0;
     }
 }
@@ -157,7 +157,7 @@
     100%{
         opacity: 0;
     }
-}
+} 
 
 /* header animation */
 
@@ -238,7 +238,7 @@ header{
   position: relative;
   grid-column: 2;
   width: 200px;
-  top: -415px
+  top: -346px
 }
 
 .infoButton{
