@@ -788,7 +788,7 @@ function attackAnim() {
     setTimeout(() => {
         sprite_main_char.texture = texture_main_char
     }, 350)
-    currentHP -= actualDmg
+    currentHP -= Math.floor(actualDmg + actualDmg * (actualPower * 0.1))
 }
 
 
