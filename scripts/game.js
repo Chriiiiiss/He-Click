@@ -905,17 +905,13 @@ function heticLock(){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-
 setInterval (() =>{
     if (currentHP > 0) currentHP -= actualMag
 }, 1000)
 
-
-
 function getRandomMinMax(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
   }
-
 
 function dropItem (){
     let randTier = Math.random()
