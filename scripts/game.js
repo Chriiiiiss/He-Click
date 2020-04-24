@@ -851,7 +851,6 @@ function setSpriteMonster() {
 
 function HandleHealth() {
     sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
-
     modifierHP.textContent = `${currentHP}/${monster_tab[level].hp}`
     modifierLvl.textContent = `----- LVL ${level +1} -----`
     if (currentHP < 0) {
