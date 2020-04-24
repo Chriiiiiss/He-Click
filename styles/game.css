@@ -10,12 +10,6 @@ body {
     z-index: -20;
 }
 
-html{
-    height: 1080px;
-    overflow: hidden;
-    font-family: 'Inter', sans-serif;
-}
-
 .music_on{
     width:40px;
 }
@@ -30,7 +24,6 @@ html{
 
 .control{
     width:40px;
-    border: none;
     cursor: pointer;
     outline: none;
 }
