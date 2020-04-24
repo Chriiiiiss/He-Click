@@ -57,20 +57,20 @@ const monster_tab = [
     new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
     new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
     new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
-    new monster(13, "zombie", "monstre_zombie.png", 125, 0, 15, 1),
-    new monster(14, "garde", "monstre_garde.png", 130, 0, 17, 1),
-    new monster(15, "faucheur", "monstre_faucheur.png", 200, 60, 20, 2),
-    new monster(16, "loup", "monstre_loup.png", 210, 0, 23, 1),
-    new monster(17, "callas", "monstre_callas.png", 230, 0, 26, 1),
-    new monster(18, "morvus", "monstre_morvus.png", 250, 0, 28, 1),
-    new monster(19, "screed", "monstre_screed.png", 280, 0, 30, 1),
-    new monster(20, "gandalf", "monstre_gandalf.png", 400, 60, 35, 2),
-    new monster(21, "gargouille", "monstre_gargouille.png", 400, 0, 40, 1),
-    new monster(22, "litlevil", "monstre_litlevil.png", 450, 0, 45, 1),
-    new monster(23, "gasper", "monstre_gasper.png", 500, 0, 50, 1),
-    new monster(24, "dracula", "monstre_dracula.png", 550, 0, 60, 1),
-    new monster(25, "demon", "monstre_demon.png", 1000, 60, 70, 1),
-    new monster(26, "puget", "monstre_bossfinal.png", 2000, 60, 10000, 2)
+    new monster(13, "zombie", "monstre_zombie.png", 150, 0, 15, 1),
+    new monster(14, "garde", "monstre_garde.png", 200, 0, 17, 1),
+    new monster(15, "faucheur", "monstre_faucheur.png", 260, 60, 20, 2),
+    new monster(16, "loup", "monstre_loup.png", 350, 0, 23, 1),
+    new monster(17, "callas", "monstre_callas.png", 500, 0, 26, 1),
+    new monster(18, "morvus", "monstre_morvus.png", 670, 0, 28, 1),
+    new monster(19, "screed", "monstre_screed.png", 750, 0, 30, 1),
+    new monster(20, "gandalf", "monstre_gandalf.png", 900, 60, 35, 2),
+    new monster(21, "gargouille", "monstre_gargouille.png", 1500, 0, 40, 1),
+    new monster(22, "litlevil", "monstre_litlevil.png", 3200, 0, 45, 1),
+    new monster(23, "gasper", "monstre_gasper.png", 5000, 0, 50, 1),
+    new monster(24, "dracula", "monstre_dracula.png", 6000, 0, 60, 1),
+    new monster(25, "demon", "monstre_demon.png", 10000, 60, 70, 1),
+    new monster(26, "puget", "monstre_bossfinal.png", 50000, 60, 10000, 2)
 ]
 
 // SPAN VARIABLES
@@ -82,6 +82,8 @@ let powerSpan = document.querySelector('.actual-power')
 let emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
 let item = document.querySelectorAll('.item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9')
 const invChar = document.querySelector('.list-menu-character')
+let modifierHP = document.querySelector('.actualHP')
+let modifierLvl = document.querySelector('.actualLvl')
 updateDropSlot()
 
 
@@ -108,8 +110,8 @@ powerWin = 3
 
 // GOLD GESTION
 
-let actualGold = 20000
-let goldWin = 2
+let actualGold = 0
+let goldWin = 4
 const price1 = 20
 const price2 = 30
 const price3 = 40
@@ -267,7 +269,9 @@ let sprite_monster_test
 
 let game = true
 let progress_bar_width
-let biome_value = "w"
+let biome_value = "f"
+const biome_tab = ['f', 'o', 'm', 'w', 'b']
+let biomeIndex = 0
 let bg_x = 0 
 let bg_speed = 0
 let xp_max
@@ -293,35 +297,6 @@ const boostMag3 = 25
 const boostPower1 = 5
 const boostPower2 = 25
 const boostPower3 = 30
-
-
-//HETIC ITEMS RECUPERATION//
-
-let heticRecup1 = 0
-const heticItem1 = document.querySelector('.hetic-item1')
-let heticRecup2 = 0
-const heticItem2 = document.querySelector('.hetic-item2')
-let heticRecup3 = 0
-const heticItem3 = document.querySelector('.hetic-item3')
-let heticRecup4 = 0
-const heticItem4 = document.querySelector('.hetic-item4')
-let heticRecup5 = 0
-const heticItem5 = document.querySelector('.hetic-item5')
-let heticRecup6 = 0
-const heticItem6 = document.querySelector('.hetic-item6')
-let heticRecup7 = 0
-const heticItem7 = document.querySelector('.hetic-item7')
-let heticRecup8 = 0
-const heticItem8 = document.querySelector('.hetic-item8')
-let heticRecup9 = 0
-const heticItem9 = document.querySelector('.hetic-item9')
-let heticRecup10 = 0
-const heticItem10 = document.querySelector('.hetic-item10')
-const listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
-                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
-const listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
-    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
-const comptItemHetic = listRecupHetic.length
 
 
 // INIT WINDOWS EVENT_LISTENER
@@ -561,6 +536,7 @@ function gameLoop() {
     HandleHealth()
     changeBg()
     bgScroll()
+    heticLock()
 }
 
 //  FUNCTION ANIMATION
@@ -644,7 +620,8 @@ function setSpriteMonster() {
 
 function HandleHealth() {
     sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
-    
+    modifierHP.textContent = `${currentHP}/${monster_tab[level].hp}`
+    modifierLvl.textContent = `----- LVL ${level +1} -----`
     if (currentHP < 0) {
         goldUp(monster_tab[level].gold)
         currentHP = 0
@@ -690,7 +667,8 @@ function dropItem (){
         } else{
         }
     } else {
-        // console.log('item boss')
+        biomeIndex++
+        biome_value = biome_tab[biomeIndex]
     }
 }
 
@@ -708,14 +686,17 @@ function selectDrop (item){
 }
 
 function respawnMob(index) {
+    console.log(index);
     sprite_monster_test = createSprite(texture_tab_monster[index], texture_tab_monster[index].width, texture_tab_monster[index].height,0,0, bg)
     sprite_monster_test.scale.y = 0.7
     sprite_monster_test.scale.x = 0.7
     currentHP = monster_tab[level].hp
     setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.7, 0.5)
-    if (level === 26) {
+    if (level === monster_tab.length-1) {
         sprite_monster_test.scale.x = 1.2
         sprite_monster_test.scale.y = 1.2
+        console.log(level);
+        
         setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.2, 0.7)   
     }
     sprite_monster_test.interactive = true;
@@ -932,6 +913,7 @@ priceHetic10.textContent = price10
 buy1.addEventListener('click', event => {
     if (actualGold >= price1 && buy1.className === 'click-buy1')
     {
+        heticRecup1 = 1
         actualGold -= price1
         ifBuy1.style.display = 'inline'
         diamond1.style.display = 'none'
@@ -941,7 +923,7 @@ buy1.addEventListener('click', event => {
         buy1.classList.remove('click-buy1')
         buy1.classList.add('buy1')
         heticChac1.style.display = 'inline'
-        // AJOUTER LE BOOST APPORTE
+        actualDmg += 3
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -949,6 +931,7 @@ buy1.addEventListener('click', event => {
 buy2.addEventListener('click', event => {
     if (actualGold >= price2 && buy2.className === 'click-buy2')
     {
+        heticRecup2 = 1
         actualGold -= price2
         ifBuy2.style.display = 'inline'
         diamond2.style.display = 'none'
@@ -958,6 +941,7 @@ buy2.addEventListener('click', event => {
         buy2.classList.remove('click-buy2')
         buy2.classList.add('buy2')
         heticChac2.style.display = 'inline'
+        actualMag += 3
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -965,6 +949,7 @@ buy2.addEventListener('click', event => {
 buy3.addEventListener('click', event => {
     if (actualGold >= price3 && buy3.className === 'click-buy3')
     {
+        heticRecup3 = 1
         actualGold -= price3
         ifBuy3.style.display = 'inline'
         diamond3.style.display = 'none'
@@ -974,6 +959,7 @@ buy3.addEventListener('click', event => {
         buy3.classList.remove('click-buy3')
         buy3.classList.add('buy3')
         heticChac3.style.display = 'inline'
+        actualDmg += 5
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -981,6 +967,7 @@ buy3.addEventListener('click', event => {
 buy4.addEventListener('click', event => {
     if (actualGold >= price4 && buy4.className === 'click-buy4')
     {
+        heticRecup4 = 1
         actualGold -= price4
         ifBuy4.style.display = 'inline'
         diamond4.style.display = 'none'
@@ -990,6 +977,7 @@ buy4.addEventListener('click', event => {
         buy4.classList.remove('click-buy4')
         buy4.classList.add('buy4')
         heticChac4.style.display = 'inline'
+        actualMag += 5
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -997,6 +985,7 @@ buy4.addEventListener('click', event => {
 buy5.addEventListener('click', event => {
     if (actualGold >= price5 && buy5.className === 'click-buy5')
     {
+        heticRecup5 = 1
         actualGold -= price5
         ifBuy5.style.display = 'inline'
         diamond5.style.display = 'none'
@@ -1006,6 +995,7 @@ buy5.addEventListener('click', event => {
         buy5.classList.remove('click-buy5')
         buy5.classList.add('buy5')
         heticChac5.style.display = 'inline'
+        actualDmg += 8
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1013,6 +1003,7 @@ buy5.addEventListener('click', event => {
 buy6.addEventListener('click', event => {
     if (actualGold >= price6 && buy6.className === 'click-buy6')
     {
+        heticRecup6 = 1
         actualGold -= price6
         ifBuy6.style.display = 'inline'
         diamond6.style.display = 'none'
@@ -1022,6 +1013,7 @@ buy6.addEventListener('click', event => {
         buy6.classList.remove('click-buy6')
         buy6.classList.add('buy6')
         heticChac6.style.display = 'inline'
+        actualMag += 8
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1029,6 +1021,7 @@ buy6.addEventListener('click', event => {
 buy7.addEventListener('click', event => {
     if (actualGold >= price7 && buy7.className === 'click-buy7')
     {
+        heticRecup7 = 1
         actualGold -= price7
         ifBuy7.style.display = 'inline'
         diamond7.style.display = 'none'
@@ -1038,6 +1031,7 @@ buy7.addEventListener('click', event => {
         buy7.classList.remove('click-buy7')
         buy7.classList.add('buy7')
         heticChac7.style.display = 'inline'
+        actualDmg += 12
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1045,6 +1039,7 @@ buy7.addEventListener('click', event => {
 buy8.addEventListener('click', event => {
     if (actualGold >= price8 && buy8.className === 'click-buy8')
     {
+        heticRecup8 = 1
         actualGold -= price8
         ifBuy8.style.display = 'inline'
         diamond8.style.display = 'none'
@@ -1054,6 +1049,7 @@ buy8.addEventListener('click', event => {
         buy8.classList.remove('click-buy8')
         buy8.classList.add('buy8')
         heticChac8.style.display = 'inline'
+        actualMag += 12
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1061,6 +1057,7 @@ buy8.addEventListener('click', event => {
 buy9.addEventListener('click', event => {
     if (actualGold >= price9 && buy9.className === 'click-buy9')
     {
+        heticRecup9 = 1
         actualGold -= price9
         ifBuy9.style.display = 'inline'
         diamond9.style.display = 'none'
@@ -1070,6 +1067,7 @@ buy9.addEventListener('click', event => {
         buy9.classList.remove('click-buy9')
         buy9.classList.add('buy9')
         heticChac9.style.display = 'inline'
+        actualDmg += 15
     }
     goldSpan.textContent = `${actualGold}`
     })
@@ -1077,6 +1075,7 @@ buy9.addEventListener('click', event => {
 buy10.addEventListener('click', event => {
     if (actualGold >= price10 && buy10.className === 'click-buy10')
     {
+        heticRecup10 = 1
         actualGold -= price10
         ifBuy10.style.display = 'inline-block'
         diamond10.style.display = 'none'
@@ -1086,15 +1085,45 @@ buy10.addEventListener('click', event => {
         buy10.classList.remove('click-buy10')
         buy10.classList.add('buy10')
         heticChac10.style.display = 'inline'
+        actualMag += 15
     }
     goldSpan.textContent = `${actualGold}`
     })
 
 
 
+//HETIC ITEMS RECUPERATION//
 
+let heticRecup1 = 0
+const heticItem1 = document.querySelector('.hetic-item1')
+let heticRecup2 = 0
+const heticItem2 = document.querySelector('.hetic-item2')
+let heticRecup3 = 0
+const heticItem3 = document.querySelector('.hetic-item3')
+let heticRecup4 = 0
+const heticItem4 = document.querySelector('.hetic-item4')
+let heticRecup5 = 0
+const heticItem5 = document.querySelector('.hetic-item5')
+let heticRecup6 = 0
+const heticItem6 = document.querySelector('.hetic-item6')
+let heticRecup7 = 0
+const heticItem7 = document.querySelector('.hetic-item7')
+let heticRecup8 = 0
+const heticItem8 = document.querySelector('.hetic-item8')
+let heticRecup9 = 0
+const heticItem9 = document.querySelector('.hetic-item9')
+let heticRecup10 = 0
+const heticItem10 = document.querySelector('.hetic-item10')
+let listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+let listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+const comptItemHetic = listRecupHetic.length
 
 /////////////////// HETIC ITEM POSSESSION
+
+// console.table(listRecupHetic)
+// console.table(listItemHetic)
 
 const heticItemLock1 = document.querySelector('.items-slots :nth-child(1) > .lock')
 const heticItemLock2 = document.querySelector('.items-slots :nth-child(2) > .lock')
@@ -1111,11 +1140,23 @@ listHeticLock = [heticItemLock1, heticItemLock2, heticItemLock3, heticItemLock4,
                 heticItemLock6, heticItemLock7, heticItemLock8, heticItemLock9, heticItemLock10]
 
 
-for (const comptItemHetic in listRecupHetic) {
-    if (listRecupHetic[comptItemHetic] === 1){
-        listItemHetic[comptItemHetic].style.display = 'inline'
-        listHeticLock[comptItemHetic].style.opacity = '100%'
+
+
+function heticLock(){
+    listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+        listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+            heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+    for (const comptItemHetic in listRecupHetic) {
+        if (listRecupHetic[comptItemHetic] === 1){
+            listItemHetic[comptItemHetic].style.display = 'inline'
+            listHeticLock[comptItemHetic].style.opacity = '100%'
+        }
     }
+    lvlSpan.textContent = `${actualLvl}`
+    dmgSpan.textContent = `${actualDmg}`
+    magSpan.textContent = `${actualMag}`
+    powerSpan.textContent = `${actualPower}%`
 }
 ////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
 

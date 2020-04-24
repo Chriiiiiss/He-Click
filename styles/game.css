@@ -1,6 +1,7 @@
 body {
     /* background-color: #D7D7D7; */
     margin: 0;
+    user-select: none;
 }
 
 .game-bg {
@@ -12,6 +13,38 @@ html{
     height: 1080px;
     overflow: hidden;
     font-family: 'Inter', sans-serif;
+}
+
+.actualHP{
+
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 8.35%;
+    font-family: 'Anton', sans-serif;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.level-hud{
+    background-image: url(../images/assets/hud/lvl_bar.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 15.5%;
+    left: 46.5%;
+    width: 120px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.actualLvl{
+    font-family: 'Anton', sans-serif;
+    color: #c6eb18;
+    font-size: 18px;
 }
 
 /***** MENU TOP LEFT *****/
@@ -187,6 +220,50 @@ div[class*="line"]{
 
 .inv-empty{
     background-image: url(../images/empty-inv.png);
+}
+
+.inv-empty[data-slot=head]{
+    background-image: url(../images/empty-head.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;  
+}
+
+.inv-empty[data-slot=body]{
+    background-image: url(../images/empty-body.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;  
+}
+
+.inv-empty[data-slot=hand]{
+    background-image: url(../images/empty-hand.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;  
+}
+
+.inv-empty[data-slot=foot]{
+    background-image: url(../images/empty-foot.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-items: center;  
 }
 
 .inv-empty, .inv-full{
@@ -664,6 +741,7 @@ img[class^=hetic-item]{
     top: 0%;
     left: 12%;
     z-index: -4;
+    transform: rotateZ(18deg);
     display: none;
 }
 
@@ -677,6 +755,7 @@ img[class^=hetic-item]{
     position: absolute;
     top: 0%;
     left: 78%;
+    transform: rotateZ(-50deg);
     display: none;
 }
 
@@ -810,27 +889,7 @@ img[class^=hetic-item]{
     letter-spacing: 2px;
 }
 
-/*
-.plus-shop{
-    color: #70c6e1;
-    font-family: 'Anton', sans-serif;
-    font-size: 90px;
-    font-weight: 700;
-}
 
-.diamond-gold{
-    height: 40px;
-    width: 40px;
-    margin: 5px;
-}
-
-.gold-posses{
-    color: #70c6e1;
-    font-family: 'Anton', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    letter-spacing: 2px;
-} */
 
 /* ITEM BAR */
 
