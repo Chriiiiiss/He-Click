@@ -10,6 +10,36 @@ class monster {
     }
 }
 
+const monster_tab = [
+    // new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
+    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
+    new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
+    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
+    new monster(4, "singe", "monstre_singe.png", 25, 0, 6, 1),
+    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7, 2),
+    new monster(6, "machin", "monstre_machin.png", 50, 0, 8, 1),
+    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9, 1),
+    new monster(8, "truc", "monstre_truc.png", 70, 0, 10, 1),
+    new monster(9, "muche", "monstre_muche.png", 75, 0, 11, 1),
+    new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
+    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
+    new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
+    new monster(13, "zombie", "monstre_zombie.png", 150, 0, 15, 1),
+    new monster(14, "garde", "monstre_garde.png", 200, 0, 17, 1),
+    new monster(15, "faucheur", "monstre_faucheur.png", 260, 60, 20, 2),
+    new monster(16, "loup", "monstre_loup.png", 350, 0, 23, 1),
+    new monster(17, "callas", "monstre_callas.png", 500, 0, 26, 1),
+    new monster(18, "morvus", "monstre_morvus.png", 670, 0, 28, 1),
+    new monster(19, "screed", "monstre_screed.png", 750, 0, 30, 1),
+    new monster(20, "gandalf", "monstre_gandalf.png", 900, 60, 35, 2),
+    new monster(21, "gargouille", "monstre_gargouille.png", 1500, 0, 40, 1),
+    new monster(22, "litlevil", "monstre_litlevil.png", 3200, 0, 45, 1),
+    new monster(23, "gasper", "monstre_gasper.png", 5000, 0, 50, 1),
+    new monster(24, "dracula", "monstre_dracula.png", 6000, 0, 60, 1),
+    new monster(25, "demon", "monstre_demon.png", 10000, 60, 70, 1),
+    new monster(26, "puget", "monstre_bossfinal.png", 50000, 60, 10000, 2)
+]
+
 class itemSelect {
     constructor(id, imgUrl, data, tier, classDrop) {
         this.id = id
@@ -43,36 +73,6 @@ const item_tab = [
     new itemSelect(17, `${ITEM_PATH}book3`, 'hand', 3, 'item9'),
 ]
 
-const monster_tab = [
-    // new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
-    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
-    new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
-    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
-    new monster(4, "singe", "monstre_singe.png", 25, 0, 6, 1),
-    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7, 2),
-    new monster(6, "machin", "monstre_machin.png", 50, 0, 8, 1),
-    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9, 1),
-    new monster(8, "truc", "monstre_truc.png", 70, 0, 10, 1),
-    new monster(9, "muche", "monstre_muche.png", 75, 0, 11, 1),
-    new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
-    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
-    new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
-    new monster(13, "zombie", "monstre_zombie.png", 150, 0, 15, 1),
-    new monster(14, "garde", "monstre_garde.png", 200, 0, 17, 1),
-    new monster(15, "faucheur", "monstre_faucheur.png", 260, 60, 20, 2),
-    new monster(16, "loup", "monstre_loup.png", 350, 0, 23, 1),
-    new monster(17, "callas", "monstre_callas.png", 500, 0, 26, 1),
-    new monster(18, "morvus", "monstre_morvus.png", 670, 0, 28, 1),
-    new monster(19, "screed", "monstre_screed.png", 750, 0, 30, 1),
-    new monster(20, "gandalf", "monstre_gandalf.png", 900, 60, 35, 2),
-    new monster(21, "gargouille", "monstre_gargouille.png", 1500, 0, 40, 1),
-    new monster(22, "litlevil", "monstre_litlevil.png", 3200, 0, 45, 1),
-    new monster(23, "gasper", "monstre_gasper.png", 5000, 0, 50, 1),
-    new monster(24, "dracula", "monstre_dracula.png", 6000, 0, 60, 1),
-    new monster(25, "demon", "monstre_demon.png", 10000, 60, 70, 1),
-    new monster(26, "puget", "monstre_bossfinal.png", 50000, 60, 10000, 2)
-]
-
 // SPAN VARIABLES
 
 let lvlSpan = document.querySelector('.actual-level')
@@ -87,7 +87,7 @@ let modifierLvl = document.querySelector('.actualLvl')
 updateDropSlot()
 
 
-// STATS VARIABLES
+// SBEGINNING VARIABLES
 
 let actualLvl = 1
 let actualDmg = 1
@@ -215,6 +215,236 @@ const recrut9 = document.querySelector('.click-buy9 .recrut')
 const diamond10 = document.querySelector('.click-buy10 .diamond')
 const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
 const recrut10 = document.querySelector('.click-buy10 .recrut')
+priceHetic1.textContent = price1
+priceHetic2.textContent = price2
+priceHetic3.textContent = price3
+priceHetic4.textContent = price4
+priceHetic5.textContent = price5
+priceHetic6.textContent = price6
+priceHetic7.textContent = price7
+priceHetic8.textContent = price8
+priceHetic9.textContent = price9
+priceHetic10.textContent = price10
+
+
+// SHOP DOM FOR VERIF
+
+
+const heticItemLock1 = document.querySelector('.items-slots :nth-child(1) > .lock')
+const heticItemLock2 = document.querySelector('.items-slots :nth-child(2) > .lock')
+const heticItemLock3 = document.querySelector('.items-slots :nth-child(3) > .lock')
+const heticItemLock4 = document.querySelector('.items-slots :nth-child(4) > .lock')
+const heticItemLock5 = document.querySelector('.items-slots :nth-child(5) > .lock')
+const heticItemLock6 = document.querySelector('.items-slots :nth-child(6) > .lock')
+const heticItemLock7 = document.querySelector('.items-slots :nth-child(7) > .lock')
+const heticItemLock8 = document.querySelector('.items-slots :nth-child(8) > .lock')
+const heticItemLock9 = document.querySelector('.items-slots :nth-child(9) > .lock')
+const heticItemLock10 = document.querySelector('.items-slots :nth-child(10) > .lock')
+let heticRecup1 = 0
+let heticRecup2 = 0
+let heticRecup3 = 0
+let heticRecup4 = 0
+let heticRecup5 = 0
+let heticRecup6 = 0
+let heticRecup7 = 0
+let heticRecup8 = 0
+let heticRecup9 = 0
+let heticRecup10 = 0
+const heticItem1 = document.querySelector('.hetic-item1')
+const heticItem2 = document.querySelector('.hetic-item2')
+const heticItem3 = document.querySelector('.hetic-item3')
+const heticItem4 = document.querySelector('.hetic-item4')
+const heticItem5 = document.querySelector('.hetic-item5')
+const heticItem6 = document.querySelector('.hetic-item6')
+const heticItem7 = document.querySelector('.hetic-item7')
+const heticItem8 = document.querySelector('.hetic-item8')
+const heticItem9 = document.querySelector('.hetic-item9')
+const heticItem10 = document.querySelector('.hetic-item10')
+let listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+let listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+const listHeticLock = [heticItemLock1, heticItemLock2, heticItemLock3, heticItemLock4, heticItemLock5, heticItemLock6, heticItemLock7, heticItemLock8, heticItemLock9, heticItemLock10]
+const comptItemHetic = listRecupHetic.length
+
+buy1.addEventListener('click', event => {
+    if (actualGold >= price1 && buy1.className === 'click-buy1')
+    {
+        heticRecup1 = 1
+        actualGold -= price1
+        ifBuy1.style.display = 'inline'
+        diamond1.style.display = 'none'
+        recrut1.style.display = 'none'
+        priceHetic1.style.display = 'none'
+        buy1.style.opacity = '100%'
+        buy1.classList.remove('click-buy1')
+        buy1.classList.add('buy1')
+        heticChac1.style.display = 'inline'
+        actualDmg += 3
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy2.addEventListener('click', event => {
+    if (actualGold >= price2 && buy2.className === 'click-buy2')
+    {
+        heticRecup2 = 1
+        actualGold -= price2
+        ifBuy2.style.display = 'inline'
+        diamond2.style.display = 'none'
+        recrut2.style.display = 'none'
+        priceHetic2.style.display = 'none'
+        buy2.style.opacity = '100%'
+        buy2.classList.remove('click-buy2')
+        buy2.classList.add('buy2')
+        heticChac2.style.display = 'inline'
+        actualMag += 3
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy3.addEventListener('click', event => {
+    if (actualGold >= price3 && buy3.className === 'click-buy3')
+    {
+        heticRecup3 = 1
+        actualGold -= price3
+        ifBuy3.style.display = 'inline'
+        diamond3.style.display = 'none'
+        recrut3.style.display = 'none'
+        priceHetic3.style.display = 'none'
+        buy3.style.opacity = '100%'
+        buy3.classList.remove('click-buy3')
+        buy3.classList.add('buy3')
+        heticChac3.style.display = 'inline'
+        actualDmg += 5
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy4.addEventListener('click', event => {
+    if (actualGold >= price4 && buy4.className === 'click-buy4')
+    {
+        heticRecup4 = 1
+        actualGold -= price4
+        ifBuy4.style.display = 'inline'
+        diamond4.style.display = 'none'
+        recrut4.style.display = 'none'
+        priceHetic4.style.display = 'none'
+        buy4.style.opacity = '100%'
+        buy4.classList.remove('click-buy4')
+        buy4.classList.add('buy4')
+        heticChac4.style.display = 'inline'
+        actualMag += 5
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy5.addEventListener('click', event => {
+    if (actualGold >= price5 && buy5.className === 'click-buy5')
+    {
+        heticRecup5 = 1
+        actualGold -= price5
+        ifBuy5.style.display = 'inline'
+        diamond5.style.display = 'none'
+        recrut5.style.display = 'none'
+        priceHetic5.style.display = 'none'
+        buy5.style.opacity = '100%'
+        buy5.classList.remove('click-buy5')
+        buy5.classList.add('buy5')
+        heticChac5.style.display = 'inline'
+        actualDmg += 8
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy6.addEventListener('click', event => {
+    if (actualGold >= price6 && buy6.className === 'click-buy6')
+    {
+        heticRecup6 = 1
+        actualGold -= price6
+        ifBuy6.style.display = 'inline'
+        diamond6.style.display = 'none'
+        recrut6.style.display = 'none'
+        priceHetic6.style.display = 'none'
+        buy6.style.opacity = '100%'
+        buy6.classList.remove('click-buy6')
+        buy6.classList.add('buy6')
+        heticChac6.style.display = 'inline'
+        actualMag += 8
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy7.addEventListener('click', event => {
+    if (actualGold >= price7 && buy7.className === 'click-buy7')
+    {
+        heticRecup7 = 1
+        actualGold -= price7
+        ifBuy7.style.display = 'inline'
+        diamond7.style.display = 'none'
+        recrut7.style.display = 'none'
+        priceHetic7.style.display = 'none'
+        buy7.style.opacity = '100%'
+        buy7.classList.remove('click-buy7')
+        buy7.classList.add('buy7')
+        heticChac7.style.display = 'inline'
+        actualDmg += 12
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy8.addEventListener('click', event => {
+    if (actualGold >= price8 && buy8.className === 'click-buy8')
+    {
+        heticRecup8 = 1
+        actualGold -= price8
+        ifBuy8.style.display = 'inline'
+        diamond8.style.display = 'none'
+        recrut8.style.display = 'none'
+        priceHetic8.style.display = 'none'
+        buy8.style.opacity = '100%'
+        buy8.classList.remove('click-buy8')
+        buy8.classList.add('buy8')
+        heticChac8.style.display = 'inline'
+        actualMag += 12
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy9.addEventListener('click', event => {
+    if (actualGold >= price9 && buy9.className === 'click-buy9')
+    {
+        heticRecup9 = 1
+        actualGold -= price9
+        ifBuy9.style.display = 'inline'
+        diamond9.style.display = 'none'
+        recrut9.style.display = 'none'
+        priceHetic9.style.display = 'none'
+        buy9.style.opacity = '100%'
+        buy9.classList.remove('click-buy9')
+        buy9.classList.add('buy9')
+        heticChac9.style.display = 'inline'
+        actualDmg += 15
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy10.addEventListener('click', event => {
+    if (actualGold >= price10 && buy10.className === 'click-buy10')
+    {
+        heticRecup10 = 1
+        actualGold -= price10
+        ifBuy10.style.display = 'inline-block'
+        diamond10.style.display = 'none'
+        recrut10.style.display = 'none'
+        priceHetic10.style.display = 'none'
+        buy10.style.opacity = '100%'
+        buy10.classList.remove('click-buy10')
+        buy10.classList.add('buy10')
+        heticChac10.style.display = 'inline'
+        actualMag += 15
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
 
 // VAR INVENTORY STATE
 let headInv = document.querySelector('.character-item :nth-child(1)')
@@ -252,8 +482,6 @@ let texture_main_char_anim0
 let texture_main_char_anim1
 let texture_monster_test
 let texture_tab_monster = new Array()
-let texture_win_screen
-let texture_win_bg
 
 // INIT SPRITE GLOBAL VAR
 
@@ -266,8 +494,6 @@ let sprite_xp_position_x
 let sprite_ground
 let sprite_main_char
 let sprite_monster_test
-let sprite_win_screen
-let sprite_win_bg
 
 // INIT GLOBAL VAR GAMELOOP
 
@@ -367,6 +593,7 @@ bg.ticker.add(gameLoop)
 bg.ticker.stop() 
 
 // FUNCTION THAT WILL LOAD BACKGROUND FILES
+
 function loadBgFiles(loader, files, suffix) {
     loader.add(`ground_${suffix[0]}`, `${files[0]}/ground.png`)
     loader.add(`front_${suffix[0]}`, `${files[0]}/front.png`)
@@ -638,6 +865,7 @@ function HandleHealth() {
         return
     }
     sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
+
     modifierHP.textContent = `${currentHP}/${monster_tab[level].hp}`
     modifierLvl.textContent = `----- LVL ${level +1} -----`
     
@@ -661,7 +889,41 @@ function HandleHealth() {
     }
 }
 
-// MAG DAMAGES
+///////////////////////////////////////////////////////////////
+const lvlUp = () =>
+{
+    actualLvl += lvlWin
+    cmptStatsUp += 1
+    if (cmptStatsUp%5 === 0)
+    {
+        actualDmg += dmgWin
+        actualMag += magWin
+        actualPower += powerWin
+        cmptStatsUp = 0
+    }
+    lvlSpan.textContent = `${actualLvl}`
+    dmgSpan.textContent = `${actualDmg}`
+    magSpan.textContent = `${actualMag}`
+    powerSpan.textContent = `${actualPower}%`
+    }
+
+function heticLock(){
+    listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+        listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+            heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+    for (const comptItemHetic in listRecupHetic) {
+        if (listRecupHetic[comptItemHetic] === 1){
+            listItemHetic[comptItemHetic].style.display = 'inline'
+            listHeticLock[comptItemHetic].style.opacity = '100%'
+        }
+    }
+    lvlSpan.textContent = `${actualLvl}`
+    dmgSpan.textContent = `${actualDmg}`
+    magSpan.textContent = `${actualMag}`
+    powerSpan.textContent = `${actualPower}%`
+}
+////////////////////////////////////////////////////////////////////////////////////////////
 
 
 setInterval (() =>{
@@ -724,7 +986,6 @@ function respawnMob(index) {
     }
     sprite_monster_test.interactive = true;
     sprite_monster_test.on('click', attackAnim)
-    
 }
 
 elementCharacter.addEventListener( 'click', () =>{
@@ -756,7 +1017,7 @@ leave2.addEventListener( 'click', () =>{
     elementHetic.style.display = 'inline'
 })
 
-// Loop through empties and call drag events
+///////////////////////////////////////// DRAG AND DROP FUNCTIONS
 
     function updateDropSlot(){
         emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
@@ -773,8 +1034,6 @@ leave2.addEventListener( 'click', () =>{
         }
     }
 
-
-//Drag Function
 function dragStart(e){
     this.className += ' hold'
     setTimeout(() => (this.className += ' invisible'), 0);
@@ -801,11 +1060,8 @@ function dragLeave(){
     // console.log('lolilol');
 }
 
-
-
-//////////////////////////////////////////////////// DROP////////////////////////////////////////////////
-
 function dragDrop(){
+    // VERIFICATION ITEM DROPPABLE
     let currentSlot = this.getAttribute('data-slot')
     let lastPos = inventoryLastPos.getAttribute('data-slot')
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
@@ -828,7 +1084,7 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-    /////////////////////////////////////////// STUFF BOOST DMG
+    // STATS CHANGMENT 
     if  (currentSlot === 'head' && headEquip == null){
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
     let tierItem = headEquip.classList[0]
