@@ -677,7 +677,7 @@ function getRandomMinMax(min, max) {
 
 function dropItem (){
     let randTier = Math.random()
-        if (monster_tab[level-1].drop === 1){
+        if (monster_tab[level].drop === 1){
         if (randTier < 0.50){
             const randGetItem = Math.floor(Math.random()*6)
             selectDrop(item_tab[randGetItem])
