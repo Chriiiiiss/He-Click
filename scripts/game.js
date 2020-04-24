@@ -482,6 +482,8 @@ let texture_main_char_anim0
 let texture_main_char_anim1
 let texture_monster_test
 let texture_tab_monster = new Array()
+let texture_win_screen
+let texture_win_bg
 
 // INIT SPRITE GLOBAL VAR
 
@@ -494,6 +496,8 @@ let sprite_xp_position_x
 let sprite_ground
 let sprite_main_char
 let sprite_monster_test
+let sprite_win_screen
+let sprite_win_bg
 
 // INIT GLOBAL VAR GAMELOOP
 
@@ -509,8 +513,6 @@ let bg = new PIXI.Application ({
     resizeTo: window,
     view: bg_view
 })
-let xp_char = 4
-let id_game = 4
 let currentHP
 let level = 0
 let cmptStatsUp = 0
@@ -575,6 +577,8 @@ loadBgFiles(background_loader, ["forest_bg", "mountain_bg", "ocean_bg", "boss_bg
 
 hud.add("progress_bar", "progress_bar.png")
 hud.add("progress_bar_xp", "xp_bar.png")
+hud.add("ggwp", "ggwp.png")
+hud.add("ggwp_bg", "bg_win.jpg")
 hud.load()
 loadFiles(hud)
 
@@ -678,8 +682,9 @@ function loadBaseSprite(bg_loader, hud_loader, char_loader, monster_load) {
     // HUD LOADER BASE SPRITE
     
     texture_progress_bar = hud_loader.resources.progress_bar.texture
-    
     texture_bar = hud_loader.resources.progress_bar_xp.texture
+    texture_win_bg = hud_loader.resources.ggwp_bg.texture
+    texture_win_screen = hud_loader.resources.ggwp.texture
 
     // MAIN_CHAR TEXTURE
 
@@ -841,18 +846,25 @@ function setSpriteMonster() {
         sprite_monster_test.texture = texture_tab_monster[index]
         sprite_monster_test.width = texture_tab_monster[index].width
         sprite_monster_test.height = texture_tab_monster[index].height
-        if (index < 25) {
-            index++
-        } else {
-            index = 0
-        }
     }, 1000)
 }
 
 function HandleHealth() {
+    sprite_xp.width = 0
+    if (level > 25) {
+        sprite_win_bg = createSprite(texture_win_bg, _w, _h, 0, 0, bg)
+        sprite_win_screen = createSprite(texture_win_screen, texture_win_screen.width, texture_win_screen.height, _w / 2, _h / 2, bg)
+        sprite_win_screen.on('click', loadIndex)
+        sprite_hud.destroy()
+        setSpritePosition(sprite_win_screen, _w / 2, _h / 2, 0.5, 0.5)
+        bg_view.style.zIndex = "25"
+        setTimeout(loadIndex, 2000)
+        bg.ticker.stop()
+        return
+    }
     sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
     modifierHP.textContent = `${currentHP}/${monster_tab[level].hp}`
-    modifierLvl.textContent = `----- LVL ${level +1} -----`
+    modifierLvl.textContent = `----- LVL ${level +1} -----`    
     if (currentHP < 0) {
         lvlUp()
         goldUp(monster_tab[level].gold)
@@ -866,7 +878,7 @@ function HandleHealth() {
         setTimeout(() => {
             bg_speed = 0
             respawnMob(level)
-        }, 2000)
+        }, 3000)
     }
 }
 
@@ -948,7 +960,6 @@ function selectDrop (item){
 }
 
 function respawnMob(index) {
-    console.log(index);
     sprite_monster_test = createSprite(texture_tab_monster[index], texture_tab_monster[index].width, texture_tab_monster[index].height,0,0, bg)
     sprite_monster_test.scale.y = 0.7
     sprite_monster_test.scale.x = 0.7
@@ -956,9 +967,7 @@ function respawnMob(index) {
     setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.7, 0.5)
     if (level === monster_tab.length-1) {
         sprite_monster_test.scale.x = 1.2
-        sprite_monster_test.scale.y = 1.2
-        console.log(level);
-        
+        sprite_monster_test.scale.y = 1.2        
         setSpritePosition(sprite_monster_test, _w / 2, _h / 2, -0.2, 0.7)   
     }
     sprite_monster_test.interactive = true;
@@ -1034,7 +1043,6 @@ function dragEnter(){
 }
 
 function dragLeave(){
-    // console.log('lolilol');
 }
 
 function dragDrop(){
@@ -1151,4 +1159,9 @@ function dragDrop(){
     dmgSpan.textContent = `${actualDmg}`
     magSpan.textContent = `${actualMag}`
     powerSpan.textContent = `${actualPower}%`
+}
+
+function loadIndex() {
+    // console.log("hello")
+    window.location.href = "../index.html"
 }
