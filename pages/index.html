@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>He'click</title>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../styles/main.css">
-    </head>
-    <body>
-<!------------ HEADER ----------->
-      <header>
-        <img class="logo" src="../images/logo.png" alt="logo">
-        <div class="infoButton">
-          <img class="buttonI"src="../images/info_main.png" alt="buttoninfo">
-          <a class="info" href="#">infos</a>
-        </div>
-      </header>
-<!------------ MAIN ----------->
-      <main>
-        <div class="container">
-            <div class="sub_container"></div>
-            <img class="startbutton"src="../images/startbutton_main.png" alt="startbutton">
-        </div>
-      </main>
-    </body>
-  </html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+    <audio id="audioPlayer">
+        <source src="../audios/music.mp3">
+    </audio>
+    
+    <button class="control" onclick="play('audioPlayer')"><img class="music_on" src=../images/music_on.png></button>
+    <button class="control" onclick="resume('audioPlayer')"><img class="music_off" src=../images/music_off.png></button>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>
