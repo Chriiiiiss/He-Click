@@ -10,6 +10,36 @@ class monster {
     }
 }
 
+const monster_tab = [
+    // new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
+    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
+    new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
+    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
+    new monster(4, "singe", "monstre_singe.png", 25, 0, 6, 1),
+    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7, 2),
+    new monster(6, "machin", "monstre_machin.png", 50, 0, 8, 1),
+    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9, 1),
+    new monster(8, "truc", "monstre_truc.png", 70, 0, 10, 1),
+    new monster(9, "muche", "monstre_muche.png", 75, 0, 11, 1),
+    new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
+    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
+    new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
+    new monster(13, "zombie", "monstre_zombie.png", 150, 0, 15, 1),
+    new monster(14, "garde", "monstre_garde.png", 200, 0, 17, 1),
+    new monster(15, "faucheur", "monstre_faucheur.png", 260, 60, 20, 2),
+    new monster(16, "loup", "monstre_loup.png", 350, 0, 23, 1),
+    new monster(17, "callas", "monstre_callas.png", 500, 0, 26, 1),
+    new monster(18, "morvus", "monstre_morvus.png", 670, 0, 28, 1),
+    new monster(19, "screed", "monstre_screed.png", 750, 0, 30, 1),
+    new monster(20, "gandalf", "monstre_gandalf.png", 900, 60, 35, 2),
+    new monster(21, "gargouille", "monstre_gargouille.png", 1500, 0, 40, 1),
+    new monster(22, "litlevil", "monstre_litlevil.png", 3200, 0, 45, 1),
+    new monster(23, "gasper", "monstre_gasper.png", 5000, 0, 50, 1),
+    new monster(24, "dracula", "monstre_dracula.png", 6000, 0, 60, 1),
+    new monster(25, "demon", "monstre_demon.png", 10000, 60, 70, 1),
+    new monster(26, "puget", "monstre_bossfinal.png", 50000, 60, 10000, 2)
+]
+
 class itemSelect {
     constructor(id, imgUrl, data, tier, classDrop) {
         this.id = id
@@ -41,36 +71,6 @@ const item_tab = [
     new itemSelect(15, `${ITEM_PATH}sword3`, 'hand', 3, 'item3'),
     new itemSelect(16, `${ITEM_PATH}sceptre3`, 'hand', 3, 'item6'),
     new itemSelect(17, `${ITEM_PATH}book3`, 'hand', 3, 'item9'),
-]
-
-const monster_tab = [
-    // new monster(0, "tiny_shit", "tiny_monster.png", 5, 0, 2, 1),
-    new monster(1, "pirate", "monstre_pirate.png", 10, 0, 3, 1),
-    new monster(2, "croco", "monstre_croco.png", 15, 0, 4, 1),
-    new monster(3, "tchoutchou", "monstre_zombie.png", 20, 0, 5, 1),
-    new monster(4, "singe", "monstre_singe.png", 25, 0, 6, 1),
-    new monster(5, "serpent", "monstre_serpent.png", 50, 60, 7, 2),
-    new monster(6, "machin", "monstre_machin.png", 50, 0, 8, 1),
-    new monster(7, "bidule", "monstre_bidule.png", 65, 0, 9, 1),
-    new monster(8, "truc", "monstre_truc.png", 70, 0, 10, 1),
-    new monster(9, "muche", "monstre_muche.png", 75, 0, 11, 1),
-    new monster(10, "boche", "monstre_boche.png", 100, 60, 12, 2),
-    new monster(11, "sorciere", "monstre_sorciere.png", 110, 0, 13, 1),
-    new monster(12, "momie", "monstre_momie.png", 110, 0, 14, 1),
-    new monster(13, "zombie", "monstre_zombie.png", 150, 0, 15, 1),
-    new monster(14, "garde", "monstre_garde.png", 200, 0, 17, 1),
-    new monster(15, "faucheur", "monstre_faucheur.png", 260, 60, 20, 2),
-    new monster(16, "loup", "monstre_loup.png", 350, 0, 23, 1),
-    new monster(17, "callas", "monstre_callas.png", 500, 0, 26, 1),
-    new monster(18, "morvus", "monstre_morvus.png", 670, 0, 28, 1),
-    new monster(19, "screed", "monstre_screed.png", 750, 0, 30, 1),
-    new monster(20, "gandalf", "monstre_gandalf.png", 900, 60, 35, 2),
-    new monster(21, "gargouille", "monstre_gargouille.png", 1500, 0, 40, 1),
-    new monster(22, "litlevil", "monstre_litlevil.png", 3200, 0, 45, 1),
-    new monster(23, "gasper", "monstre_gasper.png", 5000, 0, 50, 1),
-    new monster(24, "dracula", "monstre_dracula.png", 6000, 0, 60, 1),
-    new monster(25, "demon", "monstre_demon.png", 10000, 60, 70, 1),
-    new monster(26, "puget", "monstre_bossfinal.png", 50000, 60, 10000, 2)
 ]
 
 // SPAN VARIABLES
