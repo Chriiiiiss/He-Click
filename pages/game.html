@@ -8,6 +8,256 @@
 </head>
 <body>
     
+    <canvas class="game-bg">
+    </canvas>
+    <span class="actualHP"></span>
+    <div class="level-hud"><span class="actualLvl"></span></div>
+    <div class="container">
+        <nav class="list-menu">
+            <ul>
+                <li>
+                    <img class="button-character" src="../images/button-character.png" title="Bouton-menu">
+                    <ul class="list-menu-character">
+                        <li>
+                                <!-- MAIN CHARACTER - STATS/ITEMS -->
+                            <div class="menu-character">
+                                <div class="menu-character-t">
+                                    <img class="return-inventory" src="../images/main-inventory.png" title="Menu inventaire"> 
+                                    <img class="leave" src="../images/leave.png" title="Croix">
+                                    <img class="main-character" src="../images/main-character.png" title="Personnage">
+                                    <span class="name character-stats"> ALEX LE BOSS</span>
+                                    <span class="level character-stats">LVL  <span class="actual-level"></span></span>
+                                    <span class="dmg character-stats">DEGATS :  <span class="actual-dmg">1</span></span>
+                                    <span class="mag character-stats">MAGIE :  <span class="actual-mag"></span></span>
+                                    <span class="power character-stats">PUISSANCE :  <span class="actual-power"></span></span>
+                                    <div class="character-item">
+                                        <div class="inv-empty" data-slot="head"></div>
+                                        <div class="inv-empty" data-slot="body"></div>
+                                        <div class="inv-empty" data-slot="hand"></div>
+                                        <div class="inv-empty" data-slot="foot"></div>
+                                    </div>
+                                </div>
+                                <div class="menu-character-b">
+                                    <span class="inventory">INVENTAIRE</span>
+                                    <div class="line1">
+                                        <div class="inv-empty" data-slot="inventory"><div class="item1" data-slot="hand" draggable="true"></div></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                    </div>
+                                    <div class="line2">
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                    </div>
+                                    <div class="line3">
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                        <div class="inv-empty" data-slot="inventory"></div>
+                                    </div>
+                                </div>
+                                <div class='inv-empty' data-slot='OOF'></div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <img class="button-hetic" src="../images/button-hetic.png" title="Bouton-menu"></img>
+                    <ul class="list-menu-hetic">
+                        <li>
+                            <div class="menu-hetic">
+                                <img class="return-hetic" src="../images/hetic-inventory.png">
+                                <img class="leave2" src="../images/leave.png" title="Croix">
+                                <div class="shop-hetic">
+
+                                    <!-- HETIC 1 -->
+                                    <div class="click-buy1">
+                                        <img class="perso-hetic perso1" src="../images/perso1.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item1" src="../images/hetic-item1.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic1"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 6 -->
+                                    <div class="click-buy6">
+                                        <img class="perso-hetic perso6" src="../images/perso6.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item6" src="../images/hetic-item6.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic6"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 2 -->
+                                    <div class="click-buy2">
+                                        <img class="perso-hetic perso2" src="../images/perso2.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item2" src="../images/hetic-item2.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic2"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 7 -->
+                                    <div class="click-buy7">
+                                        <img class="perso-hetic perso7" src="../images/perso7.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item7" src="../images/hetic-item7.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic7"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 3 -->
+                                    <div class="click-buy3">
+                                        <img class="perso-hetic perso3" src="../images/perso3.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item3" src="../images/hetic-item3.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic3"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 8 -->
+                                    <div class="click-buy8">
+                                        <img class="perso-hetic perso8" src="../images/perso8.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item8" src="../images/hetic-item8.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic8"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 4 -->
+                                    <div class="click-buy4">
+                                        <img class="perso-hetic perso4" src="../images/perso4.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item4" src="../images/hetic-item4.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic4"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 9 -->
+                                    <div class="click-buy9">
+                                        <img class="perso-hetic perso9" src="../images/perso9.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item9" src="../images/hetic-item9.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic9"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 5 -->
+                                    <div class="click-buy5">
+                                        <img class="perso-hetic perso5" src="../images/perso5.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item5" src="../images/hetic-item5.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png">
+                                        <span class="price-hetic5"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+
+                                        <!-- HETIC 10 -->
+                                    <div class="click-buy10">
+                                        <img class="perso-hetic perso10" src="../images/perso10.png" Title="">
+                                        <div class="ifBuy"><img class="hetic-item10" src="../images/hetic-item10.png" title=""></div>
+                                        <img class="diamond" src="../images/diamond.png"> 
+                                        <span class="price-hetic10"></span>
+                                        <span class="recrut">RECRUTER</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+<!-- HETIC CHARACTERS -->
+
+        <div class="hetic-characters">
+            <div class="hetic-character1"></div>
+            <div class="hetic-character2"></div>
+            <div class="hetic-character3"></div>
+            <div class="hetic-character4"></div>
+            <div class="hetic-character5"></div>
+            <div class="hetic-character6"></div>
+            <div class="hetic-character7"></div>
+            <div class="hetic-character8"></div>
+            <div class="hetic-character9"></div>
+            <div class="hetic-character10"></div>
+        </div>
+
+
+<!-- GOLD GESTION -->
+
+        <div class="top-right">
+
+            <div class="button-plus">
+                <span class="plus-text">+</span>
+            </div>
+            <div class="gold-button">
+                <img class="diamond-top" src="../images/diamond.png" title="">
+                <span class="gold-posses">0000</span>
+            </div>
+
+
+            <!-- <div class="shop-button">
+                <span class="plus-shop">+</span>
+            </div>
+            <div class="gold-button">
+                <img class="diamond-gold" src="../images/diamond.png" title="">
+                <span class="gold-posses">0055</span>
+            </div> -->
+        </div>
+
+
+<!-- ITEM BAR -->
+
+        <div class="item-bar">
+            <div class="background-bar">
+                <div class="items-nmb">
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                </div>
+                <div class="items-slots">
+                    <div class="item-slot1">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item1.png" title="">
+                    </div>
+                    <div class="item-slot2">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item2.png" title="">
+                    </div>
+                    <div class="item-slot3">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item3.png" title="">
+                    </div>
+                    <div class="item-slot4">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item4.png" title="">
+                    </div>
+                    <div class="item-slot5">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item5.png" title="">
+                    </div>
+                    <div class="item-slot6">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item6.png" title="">
+                    </div>
+                    <div class="item-slot7">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item7.png" title="">
+                    </div>
+                    <div class="item-slot8">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item8.png" title="">
+                    </div>
+                    <div class="item-slot9">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item9.png" title="">
+                    </div>
+                    <div class="item-slot10">
+                        <img class="bar-hetic-item lock" src="../images/hetic-item10.png" title="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
     <script src="../scripts/game.js"></script>
 </body>
 </html>
