@@ -851,6 +851,7 @@ function setSpriteMonster() {
 
 function HandleHealth() {
     sprite_xp.width = texture_bar.width * currentHP / monster_tab[level].hp
+
     modifierHP.textContent = `${currentHP}/${monster_tab[level].hp}`
     modifierLvl.textContent = `----- LVL ${level +1} -----`
     if (currentHP < 0) {
@@ -966,7 +967,6 @@ function respawnMob(index) {
     }
     sprite_monster_test.interactive = true;
     sprite_monster_test.on('click', attackAnim)
-    
 }
 
 elementCharacter.addEventListener( 'click', () =>{
