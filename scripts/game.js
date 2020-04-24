@@ -1151,3 +1151,15 @@ function dragDrop(){
     magSpan.textContent = `${actualMag}`
     powerSpan.textContent = `${actualPower}%`
 }
+
+function play(idPlayer) {
+    const player = document.querySelector('#' + idPlayer);
+    
+        player.play();
+}
+
+function resume(idPlayer) {
+    const player = document.querySelector('#' + idPlayer);
+	
+    player.pause();
+}
