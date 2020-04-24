@@ -1,0 +1,14 @@
+.music_on{
+    width:40px;
+}
+
+.control{
+    width:40px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.music_off{
+    width:40px;
+}
