@@ -87,7 +87,7 @@ let modifierLvl = document.querySelector('.actualLvl')
 updateDropSlot()
 
 
-// STATS VARIABLES
+// SBEGINNING VARIABLES
 
 let actualLvl = 1
 let actualDmg = 1
@@ -215,6 +215,236 @@ const recrut9 = document.querySelector('.click-buy9 .recrut')
 const diamond10 = document.querySelector('.click-buy10 .diamond')
 const ifBuy10 = document.querySelector('.click-buy10 .ifBuy')
 const recrut10 = document.querySelector('.click-buy10 .recrut')
+priceHetic1.textContent = price1
+priceHetic2.textContent = price2
+priceHetic3.textContent = price3
+priceHetic4.textContent = price4
+priceHetic5.textContent = price5
+priceHetic6.textContent = price6
+priceHetic7.textContent = price7
+priceHetic8.textContent = price8
+priceHetic9.textContent = price9
+priceHetic10.textContent = price10
+
+
+// SHOP DOM FOR VERIF
+
+
+const heticItemLock1 = document.querySelector('.items-slots :nth-child(1) > .lock')
+const heticItemLock2 = document.querySelector('.items-slots :nth-child(2) > .lock')
+const heticItemLock3 = document.querySelector('.items-slots :nth-child(3) > .lock')
+const heticItemLock4 = document.querySelector('.items-slots :nth-child(4) > .lock')
+const heticItemLock5 = document.querySelector('.items-slots :nth-child(5) > .lock')
+const heticItemLock6 = document.querySelector('.items-slots :nth-child(6) > .lock')
+const heticItemLock7 = document.querySelector('.items-slots :nth-child(7) > .lock')
+const heticItemLock8 = document.querySelector('.items-slots :nth-child(8) > .lock')
+const heticItemLock9 = document.querySelector('.items-slots :nth-child(9) > .lock')
+const heticItemLock10 = document.querySelector('.items-slots :nth-child(10) > .lock')
+let heticRecup1 = 0
+let heticRecup2 = 0
+let heticRecup3 = 0
+let heticRecup4 = 0
+let heticRecup5 = 0
+let heticRecup6 = 0
+let heticRecup7 = 0
+let heticRecup8 = 0
+let heticRecup9 = 0
+let heticRecup10 = 0
+const heticItem1 = document.querySelector('.hetic-item1')
+const heticItem2 = document.querySelector('.hetic-item2')
+const heticItem3 = document.querySelector('.hetic-item3')
+const heticItem4 = document.querySelector('.hetic-item4')
+const heticItem5 = document.querySelector('.hetic-item5')
+const heticItem6 = document.querySelector('.hetic-item6')
+const heticItem7 = document.querySelector('.hetic-item7')
+const heticItem8 = document.querySelector('.hetic-item8')
+const heticItem9 = document.querySelector('.hetic-item9')
+const heticItem10 = document.querySelector('.hetic-item10')
+let listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+let listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+const listHeticLock = [heticItemLock1, heticItemLock2, heticItemLock3, heticItemLock4, heticItemLock5, heticItemLock6, heticItemLock7, heticItemLock8, heticItemLock9, heticItemLock10]
+const comptItemHetic = listRecupHetic.length
+
+buy1.addEventListener('click', event => {
+    if (actualGold >= price1 && buy1.className === 'click-buy1')
+    {
+        heticRecup1 = 1
+        actualGold -= price1
+        ifBuy1.style.display = 'inline'
+        diamond1.style.display = 'none'
+        recrut1.style.display = 'none'
+        priceHetic1.style.display = 'none'
+        buy1.style.opacity = '100%'
+        buy1.classList.remove('click-buy1')
+        buy1.classList.add('buy1')
+        heticChac1.style.display = 'inline'
+        actualDmg += 3
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy2.addEventListener('click', event => {
+    if (actualGold >= price2 && buy2.className === 'click-buy2')
+    {
+        heticRecup2 = 1
+        actualGold -= price2
+        ifBuy2.style.display = 'inline'
+        diamond2.style.display = 'none'
+        recrut2.style.display = 'none'
+        priceHetic2.style.display = 'none'
+        buy2.style.opacity = '100%'
+        buy2.classList.remove('click-buy2')
+        buy2.classList.add('buy2')
+        heticChac2.style.display = 'inline'
+        actualMag += 3
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy3.addEventListener('click', event => {
+    if (actualGold >= price3 && buy3.className === 'click-buy3')
+    {
+        heticRecup3 = 1
+        actualGold -= price3
+        ifBuy3.style.display = 'inline'
+        diamond3.style.display = 'none'
+        recrut3.style.display = 'none'
+        priceHetic3.style.display = 'none'
+        buy3.style.opacity = '100%'
+        buy3.classList.remove('click-buy3')
+        buy3.classList.add('buy3')
+        heticChac3.style.display = 'inline'
+        actualDmg += 5
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy4.addEventListener('click', event => {
+    if (actualGold >= price4 && buy4.className === 'click-buy4')
+    {
+        heticRecup4 = 1
+        actualGold -= price4
+        ifBuy4.style.display = 'inline'
+        diamond4.style.display = 'none'
+        recrut4.style.display = 'none'
+        priceHetic4.style.display = 'none'
+        buy4.style.opacity = '100%'
+        buy4.classList.remove('click-buy4')
+        buy4.classList.add('buy4')
+        heticChac4.style.display = 'inline'
+        actualMag += 5
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy5.addEventListener('click', event => {
+    if (actualGold >= price5 && buy5.className === 'click-buy5')
+    {
+        heticRecup5 = 1
+        actualGold -= price5
+        ifBuy5.style.display = 'inline'
+        diamond5.style.display = 'none'
+        recrut5.style.display = 'none'
+        priceHetic5.style.display = 'none'
+        buy5.style.opacity = '100%'
+        buy5.classList.remove('click-buy5')
+        buy5.classList.add('buy5')
+        heticChac5.style.display = 'inline'
+        actualDmg += 8
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy6.addEventListener('click', event => {
+    if (actualGold >= price6 && buy6.className === 'click-buy6')
+    {
+        heticRecup6 = 1
+        actualGold -= price6
+        ifBuy6.style.display = 'inline'
+        diamond6.style.display = 'none'
+        recrut6.style.display = 'none'
+        priceHetic6.style.display = 'none'
+        buy6.style.opacity = '100%'
+        buy6.classList.remove('click-buy6')
+        buy6.classList.add('buy6')
+        heticChac6.style.display = 'inline'
+        actualMag += 8
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy7.addEventListener('click', event => {
+    if (actualGold >= price7 && buy7.className === 'click-buy7')
+    {
+        heticRecup7 = 1
+        actualGold -= price7
+        ifBuy7.style.display = 'inline'
+        diamond7.style.display = 'none'
+        recrut7.style.display = 'none'
+        priceHetic7.style.display = 'none'
+        buy7.style.opacity = '100%'
+        buy7.classList.remove('click-buy7')
+        buy7.classList.add('buy7')
+        heticChac7.style.display = 'inline'
+        actualDmg += 12
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy8.addEventListener('click', event => {
+    if (actualGold >= price8 && buy8.className === 'click-buy8')
+    {
+        heticRecup8 = 1
+        actualGold -= price8
+        ifBuy8.style.display = 'inline'
+        diamond8.style.display = 'none'
+        recrut8.style.display = 'none'
+        priceHetic8.style.display = 'none'
+        buy8.style.opacity = '100%'
+        buy8.classList.remove('click-buy8')
+        buy8.classList.add('buy8')
+        heticChac8.style.display = 'inline'
+        actualMag += 12
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy9.addEventListener('click', event => {
+    if (actualGold >= price9 && buy9.className === 'click-buy9')
+    {
+        heticRecup9 = 1
+        actualGold -= price9
+        ifBuy9.style.display = 'inline'
+        diamond9.style.display = 'none'
+        recrut9.style.display = 'none'
+        priceHetic9.style.display = 'none'
+        buy9.style.opacity = '100%'
+        buy9.classList.remove('click-buy9')
+        buy9.classList.add('buy9')
+        heticChac9.style.display = 'inline'
+        actualDmg += 15
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
+buy10.addEventListener('click', event => {
+    if (actualGold >= price10 && buy10.className === 'click-buy10')
+    {
+        heticRecup10 = 1
+        actualGold -= price10
+        ifBuy10.style.display = 'inline-block'
+        diamond10.style.display = 'none'
+        recrut10.style.display = 'none'
+        priceHetic10.style.display = 'none'
+        buy10.style.opacity = '100%'
+        buy10.classList.remove('click-buy10')
+        buy10.classList.add('buy10')
+        heticChac10.style.display = 'inline'
+        actualMag += 15
+    }
+    goldSpan.textContent = `${actualGold}`
+    })
+
 
 // VAR INVENTORY STATE
 let headInv = document.querySelector('.character-item :nth-child(1)')
@@ -361,6 +591,7 @@ bg.ticker.add(gameLoop)
 bg.ticker.stop() 
 
 // FUNCTION THAT WILL LOAD BACKGROUND FILES
+
 function loadBgFiles(loader, files, suffix) {
     loader.add(`ground_${suffix[0]}`, `${files[0]}/ground.png`)
     loader.add(`front_${suffix[0]}`, `${files[0]}/front.png`)
@@ -638,7 +869,41 @@ function HandleHealth() {
     }
 }
 
-// MAG DAMAGES
+///////////////////////////////////////////////////////////////
+const lvlUp = () =>
+{
+    actualLvl += lvlWin
+    cmptStatsUp += 1
+    if (cmptStatsUp%5 === 0)
+    {
+        actualDmg += dmgWin
+        actualMag += magWin
+        actualPower += powerWin
+        cmptStatsUp = 0
+    }
+    lvlSpan.textContent = `${actualLvl}`
+    dmgSpan.textContent = `${actualDmg}`
+    magSpan.textContent = `${actualMag}`
+    powerSpan.textContent = `${actualPower}%`
+    }
+
+function heticLock(){
+    listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
+        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
+        listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
+            heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
+    for (const comptItemHetic in listRecupHetic) {
+        if (listRecupHetic[comptItemHetic] === 1){
+            listItemHetic[comptItemHetic].style.display = 'inline'
+            listHeticLock[comptItemHetic].style.opacity = '100%'
+        }
+    }
+    lvlSpan.textContent = `${actualLvl}`
+    dmgSpan.textContent = `${actualDmg}`
+    magSpan.textContent = `${actualMag}`
+    powerSpan.textContent = `${actualPower}%`
+}
+////////////////////////////////////////////////////////////////////////////////////////////
 
 
 setInterval (() =>{
@@ -733,7 +998,7 @@ leave2.addEventListener( 'click', () =>{
     elementHetic.style.display = 'inline'
 })
 
-// Loop through empties and call drag events
+///////////////////////////////////////// DRAG AND DROP FUNCTIONS
 
     function updateDropSlot(){
         emptiesInv = document.querySelectorAll('.inv-empty, .inv-head, .inv-hand, .inv-body, .inv-foot')
@@ -750,8 +1015,6 @@ leave2.addEventListener( 'click', () =>{
         }
     }
 
-
-//Drag Function
 function dragStart(e){
     this.className += ' hold'
     setTimeout(() => (this.className += ' invisible'), 0);
@@ -778,11 +1041,8 @@ function dragLeave(){
     // console.log('lolilol');
 }
 
-
-
-//////////////////////////////////////////////////// DROP////////////////////////////////////////////////
-
 function dragDrop(){
+    // VERIFICATION ITEM DROPPABLE
     let currentSlot = this.getAttribute('data-slot')
     let lastPos = inventoryLastPos.getAttribute('data-slot')
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
@@ -805,7 +1065,7 @@ function dragDrop(){
             inventoryLastPos.classList.add('inv-empty')
         }
     }
-    /////////////////////////////////////////// STUFF BOOST DMG
+    // STATS CHANGMENT 
     if  (currentSlot === 'head' && headEquip == null){
     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
     let tierItem = headEquip.classList[0]
@@ -896,337 +1156,3 @@ function dragDrop(){
     magSpan.textContent = `${actualMag}`
     powerSpan.textContent = `${actualPower}%`
 }
-
-//////////////////////////////////////////////////////BUYING HETIC CHARACTERS//////////////////////////////////////////////
-
-priceHetic1.textContent = price1
-priceHetic2.textContent = price2
-priceHetic3.textContent = price3
-priceHetic4.textContent = price4
-priceHetic5.textContent = price5
-priceHetic6.textContent = price6
-priceHetic7.textContent = price7
-priceHetic8.textContent = price8
-priceHetic9.textContent = price9
-priceHetic10.textContent = price10
-
-buy1.addEventListener('click', event => {
-    if (actualGold >= price1 && buy1.className === 'click-buy1')
-    {
-        heticRecup1 = 1
-        actualGold -= price1
-        ifBuy1.style.display = 'inline'
-        diamond1.style.display = 'none'
-        recrut1.style.display = 'none'
-        priceHetic1.style.display = 'none'
-        buy1.style.opacity = '100%'
-        buy1.classList.remove('click-buy1')
-        buy1.classList.add('buy1')
-        heticChac1.style.display = 'inline'
-        actualDmg += 3
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy2.addEventListener('click', event => {
-    if (actualGold >= price2 && buy2.className === 'click-buy2')
-    {
-        heticRecup2 = 1
-        actualGold -= price2
-        ifBuy2.style.display = 'inline'
-        diamond2.style.display = 'none'
-        recrut2.style.display = 'none'
-        priceHetic2.style.display = 'none'
-        buy2.style.opacity = '100%'
-        buy2.classList.remove('click-buy2')
-        buy2.classList.add('buy2')
-        heticChac2.style.display = 'inline'
-        actualMag += 3
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy3.addEventListener('click', event => {
-    if (actualGold >= price3 && buy3.className === 'click-buy3')
-    {
-        heticRecup3 = 1
-        actualGold -= price3
-        ifBuy3.style.display = 'inline'
-        diamond3.style.display = 'none'
-        recrut3.style.display = 'none'
-        priceHetic3.style.display = 'none'
-        buy3.style.opacity = '100%'
-        buy3.classList.remove('click-buy3')
-        buy3.classList.add('buy3')
-        heticChac3.style.display = 'inline'
-        actualDmg += 5
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy4.addEventListener('click', event => {
-    if (actualGold >= price4 && buy4.className === 'click-buy4')
-    {
-        heticRecup4 = 1
-        actualGold -= price4
-        ifBuy4.style.display = 'inline'
-        diamond4.style.display = 'none'
-        recrut4.style.display = 'none'
-        priceHetic4.style.display = 'none'
-        buy4.style.opacity = '100%'
-        buy4.classList.remove('click-buy4')
-        buy4.classList.add('buy4')
-        heticChac4.style.display = 'inline'
-        actualMag += 5
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy5.addEventListener('click', event => {
-    if (actualGold >= price5 && buy5.className === 'click-buy5')
-    {
-        heticRecup5 = 1
-        actualGold -= price5
-        ifBuy5.style.display = 'inline'
-        diamond5.style.display = 'none'
-        recrut5.style.display = 'none'
-        priceHetic5.style.display = 'none'
-        buy5.style.opacity = '100%'
-        buy5.classList.remove('click-buy5')
-        buy5.classList.add('buy5')
-        heticChac5.style.display = 'inline'
-        actualDmg += 8
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy6.addEventListener('click', event => {
-    if (actualGold >= price6 && buy6.className === 'click-buy6')
-    {
-        heticRecup6 = 1
-        actualGold -= price6
-        ifBuy6.style.display = 'inline'
-        diamond6.style.display = 'none'
-        recrut6.style.display = 'none'
-        priceHetic6.style.display = 'none'
-        buy6.style.opacity = '100%'
-        buy6.classList.remove('click-buy6')
-        buy6.classList.add('buy6')
-        heticChac6.style.display = 'inline'
-        actualMag += 8
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy7.addEventListener('click', event => {
-    if (actualGold >= price7 && buy7.className === 'click-buy7')
-    {
-        heticRecup7 = 1
-        actualGold -= price7
-        ifBuy7.style.display = 'inline'
-        diamond7.style.display = 'none'
-        recrut7.style.display = 'none'
-        priceHetic7.style.display = 'none'
-        buy7.style.opacity = '100%'
-        buy7.classList.remove('click-buy7')
-        buy7.classList.add('buy7')
-        heticChac7.style.display = 'inline'
-        actualDmg += 12
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy8.addEventListener('click', event => {
-    if (actualGold >= price8 && buy8.className === 'click-buy8')
-    {
-        heticRecup8 = 1
-        actualGold -= price8
-        ifBuy8.style.display = 'inline'
-        diamond8.style.display = 'none'
-        recrut8.style.display = 'none'
-        priceHetic8.style.display = 'none'
-        buy8.style.opacity = '100%'
-        buy8.classList.remove('click-buy8')
-        buy8.classList.add('buy8')
-        heticChac8.style.display = 'inline'
-        actualMag += 12
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy9.addEventListener('click', event => {
-    if (actualGold >= price9 && buy9.className === 'click-buy9')
-    {
-        heticRecup9 = 1
-        actualGold -= price9
-        ifBuy9.style.display = 'inline'
-        diamond9.style.display = 'none'
-        recrut9.style.display = 'none'
-        priceHetic9.style.display = 'none'
-        buy9.style.opacity = '100%'
-        buy9.classList.remove('click-buy9')
-        buy9.classList.add('buy9')
-        heticChac9.style.display = 'inline'
-        actualDmg += 15
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-buy10.addEventListener('click', event => {
-    if (actualGold >= price10 && buy10.className === 'click-buy10')
-    {
-        heticRecup10 = 1
-        actualGold -= price10
-        ifBuy10.style.display = 'inline-block'
-        diamond10.style.display = 'none'
-        recrut10.style.display = 'none'
-        priceHetic10.style.display = 'none'
-        buy10.style.opacity = '100%'
-        buy10.classList.remove('click-buy10')
-        buy10.classList.add('buy10')
-        heticChac10.style.display = 'inline'
-        actualMag += 15
-    }
-    goldSpan.textContent = `${actualGold}`
-    })
-
-
-
-//HETIC ITEMS RECUPERATION//
-
-let heticRecup1 = 0
-const heticItem1 = document.querySelector('.hetic-item1')
-let heticRecup2 = 0
-const heticItem2 = document.querySelector('.hetic-item2')
-let heticRecup3 = 0
-const heticItem3 = document.querySelector('.hetic-item3')
-let heticRecup4 = 0
-const heticItem4 = document.querySelector('.hetic-item4')
-let heticRecup5 = 0
-const heticItem5 = document.querySelector('.hetic-item5')
-let heticRecup6 = 0
-const heticItem6 = document.querySelector('.hetic-item6')
-let heticRecup7 = 0
-const heticItem7 = document.querySelector('.hetic-item7')
-let heticRecup8 = 0
-const heticItem8 = document.querySelector('.hetic-item8')
-let heticRecup9 = 0
-const heticItem9 = document.querySelector('.hetic-item9')
-let heticRecup10 = 0
-const heticItem10 = document.querySelector('.hetic-item10')
-let listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
-                        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
-let listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
-    heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
-const comptItemHetic = listRecupHetic.length
-
-/////////////////// HETIC ITEM POSSESSION
-
-// console.table(listRecupHetic)
-// console.table(listItemHetic)
-
-const heticItemLock1 = document.querySelector('.items-slots :nth-child(1) > .lock')
-const heticItemLock2 = document.querySelector('.items-slots :nth-child(2) > .lock')
-const heticItemLock3 = document.querySelector('.items-slots :nth-child(3) > .lock')
-const heticItemLock4 = document.querySelector('.items-slots :nth-child(4) > .lock')
-const heticItemLock5 = document.querySelector('.items-slots :nth-child(5) > .lock')
-const heticItemLock6 = document.querySelector('.items-slots :nth-child(6) > .lock')
-const heticItemLock7 = document.querySelector('.items-slots :nth-child(7) > .lock')
-const heticItemLock8 = document.querySelector('.items-slots :nth-child(8) > .lock')
-const heticItemLock9 = document.querySelector('.items-slots :nth-child(9) > .lock')
-const heticItemLock10 = document.querySelector('.items-slots :nth-child(10) > .lock')
-
-listHeticLock = [heticItemLock1, heticItemLock2, heticItemLock3, heticItemLock4, heticItemLock5,
-                heticItemLock6, heticItemLock7, heticItemLock8, heticItemLock9, heticItemLock10]
-
-
-
-
-function heticLock(){
-    listRecupHetic = [heticRecup1, heticRecup2, heticRecup3, heticRecup4, heticRecup5, 
-        heticRecup6, heticRecup7, heticRecup8, heticRecup9, heticRecup10]
-        listItemHetic = [heticItem1, heticItem2, heticItem3, heticItem4, heticItem5, 
-            heticItem6, heticItem7, heticItem8, heticItem9, heticItem10]
-    for (const comptItemHetic in listRecupHetic) {
-        if (listRecupHetic[comptItemHetic] === 1){
-            listItemHetic[comptItemHetic].style.display = 'inline'
-            listHeticLock[comptItemHetic].style.opacity = '100%'
-        }
-    }
-    lvlSpan.textContent = `${actualLvl}`
-    dmgSpan.textContent = `${actualDmg}`
-    magSpan.textContent = `${actualMag}`
-    powerSpan.textContent = `${actualPower}%`
-}
-////////////////////////////////////////////////////////////// STATS IMRPROVMENT//////////////////////////////////////
-
-const lvlUp = () =>
-{
-    actualLvl += lvlWin
-    cmptStatsUp += 1
-    if (cmptStatsUp%5 === 0)
-    {
-        actualDmg += dmgWin
-        actualMag += magWin
-        actualPower += powerWin
-        cmptStatsUp = 0
-    }
-    lvlSpan.textContent = `${actualLvl}`
-    dmgSpan.textContent = `${actualDmg}`
-    magSpan.textContent = `${actualMag}`
-    powerSpan.textContent = `${actualPower}%`
-    }
-
-
-
-// FUNCTION STATS IMRPOVMENT
-// const dmgUp = () =>
-// {
-//     actualDmg += dmgWin
-//     dmgSpan.textContent = `${actualDmg}`
-// }
-// const magUp = () =>
-// {
-//     actualMag += magWin
-//     magSpan.textContent = `${actualMag}`
-// }
-// const powerUp = () =>
-// {
-//     actualPower += powerWin
-//     powerSpan.textContent = `${actualPower}%`
-// }
-
-// console.log(headInv);
-// console.log(bodyInv);
-// console.log(handInv);
-// console.log(footInv);
-
-// const test = () =>
-// {
-//     if (headInv.hasChildNodes())
-//     {
-//     // console.log("équipé");
-//     let headEquip = document.querySelector('.character-item :nth-child(1) > div')
-//     console.log(headEquip);
-//     let tierItem = headEquip.className
-//     console.log(tierItem);
-//         if(headEquip.classList[0] == 'item1')
-//         {
-//         actualDmg += boost1
-//         }
-//         else if (headEquip.classList[0] == 'item2')
-//         {
-//             actualDmg += boost2
-//         } else if (headEquip.classList[0] == 'item3')
-//         {
-//             actualDmg += boost3
-//         }
-//     }else
-//     {
-//         // console.log("casque non-équipé");
-//     }
-// lvlSpan.textContent = `${actualLvl}`
-// dmgSpan.textContent = `${actualDmg}`
-// magSpan.textContent = `${actualMag}`
-// powerSpan.textContent = `${actualPower}%`
-    // }

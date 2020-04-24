@@ -11,17 +11,21 @@
 <body>
     <canvas class="game-bg">
     </canvas>
+    <!-- MONSTER HP LEFT HUD -->
     <span class="actualHP"></span>
+    <!-- ACTUAL LEVEL HUD -->
     <div class="level-hud"><span class="actualLvl"></span></div>
     <div class="container">
         <nav class="list-menu">
             <ul>
                 <li>
+                    <!-- BUTTON MENU CHARACTER -->
                     <img class="button-character" src="../images/button-character.png" title="Bouton-menu">
                     <ul class="list-menu-character">
                         <li>
                                 <!-- MAIN CHARACTER - STATS/ITEMS -->
                             <div class="menu-character">
+                                <!-- MENU CHARACTER - TOP PART. -->
                                 <div class="menu-character-t">
                                     <img class="return-inventory" src="../images/main-inventory.png" title="Menu inventaire"> 
                                     <img class="leave" src="../images/leave.png" title="Croix">
@@ -38,8 +42,10 @@
                                         <div class="inv-empty" data-slot="foot"></div>
                                     </div>
                                 </div>
+                                <!-- MENU CHARACTER - BOT PART. -->
                                 <div class="menu-character-b">
                                     <span class="inventory">INVENTAIRE</span>
+                                    <!-- INVENTORY LINE 1 -->
                                     <div class="line1">
                                         <div class="inv-empty" data-slot="inventory"><div class="item1" data-slot="hand" draggable="true"></div></div>
                                         <div class="inv-empty" data-slot="inventory"></div>
@@ -47,6 +53,7 @@
                                         <div class="inv-empty" data-slot="inventory"></div>
                                         <div class="inv-empty" data-slot="inventory"></div>
                                     </div>
+                                    <!-- INVENTORY LINE 2 -->
                                     <div class="line2">
                                         <div class="inv-empty" data-slot="inventory"></div>
                                         <div class="inv-empty" data-slot="inventory"></div>
@@ -54,6 +61,7 @@
                                         <div class="inv-empty" data-slot="inventory"></div>
                                         <div class="inv-empty" data-slot="inventory"></div>
                                     </div>
+                                    <!-- INVENTORY LINE 3 -->
                                     <div class="line3">
                                         <div class="inv-empty" data-slot="inventory"></div>
                                         <div class="inv-empty" data-slot="inventory"></div>
@@ -62,6 +70,7 @@
                                         <div class="inv-empty" data-slot="inventory"></div>
                                     </div>
                                 </div>
+                                <!-- TRASH -->
                                 <div class='inv-empty' data-slot='OOF'></div>
                             </div>
                         </li>
@@ -70,15 +79,17 @@
             </ul>
             <ul>
                 <li>
+                    <!-- BUTTON MENU SHOP HETIC -->
                     <img class="button-hetic" src="../images/button-hetic.png" title="Bouton-menu"></img>
                     <ul class="list-menu-hetic">
                         <li>
+                            <!-- SHOP HETIC MENU -->
                             <div class="menu-hetic">
                                 <img class="return-hetic" src="../images/hetic-inventory.png">
                                 <img class="leave2" src="../images/leave.png" title="Croix">
                                 <div class="shop-hetic">
 
-                                    <!-- HETIC 1 -->
+                                    <!-- HETIC CHARACTER 1 -->
                                     <div class="click-buy1">
                                         <img class="perso-hetic perso1" src="../images/perso1.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item1" src="../images/hetic-item1.png" title=""></div>
@@ -87,7 +98,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 6 -->
+                                        <!-- HETIC CHARACTER 6 -->
                                     <div class="click-buy6">
                                         <img class="perso-hetic perso6" src="../images/perso6.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item6" src="../images/hetic-item6.png" title=""></div>
@@ -96,7 +107,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 2 -->
+                                        <!-- HETIC 2 CHARACTER -->
                                     <div class="click-buy2">
                                         <img class="perso-hetic perso2" src="../images/perso2.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item2" src="../images/hetic-item2.png" title=""></div>
@@ -105,7 +116,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 7 -->
+                                        <!-- HETIC 7 CHARACTER -->
                                     <div class="click-buy7">
                                         <img class="perso-hetic perso7" src="../images/perso7.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item7" src="../images/hetic-item7.png" title=""></div>
@@ -114,7 +125,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 3 -->
+                                        <!-- HETIC 3 CHARACTER -->
                                     <div class="click-buy3">
                                         <img class="perso-hetic perso3" src="../images/perso3.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item3" src="../images/hetic-item3.png" title=""></div>
@@ -123,7 +134,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 8 -->
+                                        <!-- HETIC 8 CHARACTER -->
                                     <div class="click-buy8">
                                         <img class="perso-hetic perso8" src="../images/perso8.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item8" src="../images/hetic-item8.png" title=""></div>
@@ -132,7 +143,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 4 -->
+                                        <!-- HETIC 4 CHARACTER -->
                                     <div class="click-buy4">
                                         <img class="perso-hetic perso4" src="../images/perso4.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item4" src="../images/hetic-item4.png" title=""></div>
@@ -141,7 +152,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 9 -->
+                                        <!-- HETIC 9 CHARACTER -->
                                     <div class="click-buy9">
                                         <img class="perso-hetic perso9" src="../images/perso9.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item9" src="../images/hetic-item9.png" title=""></div>
@@ -150,7 +161,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 5 -->
+                                        <!-- HETIC 5 CHARACTER -->
                                     <div class="click-buy5">
                                         <img class="perso-hetic perso5" src="../images/perso5.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item5" src="../images/hetic-item5.png" title=""></div>
@@ -159,7 +170,7 @@
                                         <span class="recrut">RECRUTER</span>
                                     </div>
 
-                                        <!-- HETIC 10 -->
+                                        <!-- HETIC 10 CHARACTER -->
                                     <div class="click-buy10">
                                         <img class="perso-hetic perso10" src="../images/perso10.png" Title="">
                                         <div class="ifBuy"><img class="hetic-item10" src="../images/hetic-item10.png" title=""></div>
@@ -176,7 +187,6 @@
         </nav>
 
 <!-- HETIC CHARACTERS -->
-
         <div class="hetic-characters">
             <div class="hetic-character1"></div>
             <div class="hetic-character2"></div>
@@ -191,8 +201,7 @@
         </div>
 
 
-<!-- GOLD GESTION -->
-
+<!-- GOLD GESTION - TOP RIGHT -->
         <div class="top-right">
 
             <div class="button-plus">
@@ -202,20 +211,10 @@
                 <img class="diamond-top" src="../images/diamond.png" title="">
                 <span class="gold-posses">0000</span>
             </div>
-
-
-            <!-- <div class="shop-button">
-                <span class="plus-shop">+</span>
-            </div>
-            <div class="gold-button">
-                <img class="diamond-gold" src="../images/diamond.png" title="">
-                <span class="gold-posses">0055</span>
-            </div> -->
         </div>
 
 
 <!-- ITEM BAR -->
-
         <div class="item-bar">
             <div class="background-bar">
                 <div class="items-nmb">
@@ -255,8 +254,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
     <script src="../scripts/game.js"></script>
