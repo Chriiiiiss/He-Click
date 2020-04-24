@@ -44,7 +44,7 @@ html{
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 8.35%;
+    top: 7.5%;
     font-family: 'Anton', sans-serif;
     color: #ffffff;
     font-size: 15px;
@@ -56,8 +56,8 @@ html{
     background-size: contain;
     background-position: center;
     position: absolute;
-    top: 15.5%;
-    left: 46.5%;
+    top: 14%;
+    left: 45.5%;
     width: 120px;
     height: 50px;
     display: grid;
